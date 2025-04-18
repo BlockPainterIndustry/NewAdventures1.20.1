@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "minecraft:logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "newadventures:yira_planks"
+  }
+}

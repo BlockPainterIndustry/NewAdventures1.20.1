@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 public class NewAdventures {
 
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "new_adventures_1_20_1";
+    public static final String MODID = "newadventures";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "new_adventures_1_20_1" namespace

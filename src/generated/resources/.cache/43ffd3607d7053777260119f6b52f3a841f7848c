@@ -1,0 +1,13 @@
+// 1.20.1	2025-04-18T18:34:21.8514802	Item Models: newadventures
+ef38efff099823c8acfbb2d5efef4a5e8388d960 assets/newadventures/models/item/scroll.json
+e8682c3877695f0823a454cff70dd6e27438693f assets/newadventures/models/item/yira_boat.json
+2bfe3dca5fbbda3806784d88b18400d08dae9c0e assets/newadventures/models/item/yira_button.json
+099e8f237c32e8cab15bf19ea28708bf029c8d7d assets/newadventures/models/item/yira_chest_boat.json
+1a7217f4ce7b73ae127998cafdcd6c500bace704 assets/newadventures/models/item/yira_door.json
+9e3a3bd77e42ba8abcc996f32270814701d3f8b0 assets/newadventures/models/item/yira_fence.json
+bca0f6f0879d22dbde1729627d6c2042eeae4326 assets/newadventures/models/item/yira_fence_gate.json
+0af88fb7bd627ed34bb9fc4c1319776eab74d88e assets/newadventures/models/item/yira_pressure_plate.json
+e5970d196d84b1b4ee0b8bd7a6b5f1dcf8227962 assets/newadventures/models/item/yira_sapling.json
+1c61f66e12cdd025c028b90ca3c1565652554dc0 assets/newadventures/models/item/yira_slab.json
+9999f9ea872d6eee4e2030f71a9b15a1b2bf9ca2 assets/newadventures/models/item/yira_stairs.json
+b299a2e8e6d50a16487beafce624243b847fa33c assets/newadventures/models/item/yira_trapdoor.json

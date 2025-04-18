@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "newadventures:yira_log"
+    },
+    "title": {
+      "translate": "advancement.newadventures.root.title"
+    },
+    "description": {
+      "translate": "advancement.newadventures.root.description"
+    },
+    "background": "newadventures:textures/block/yira/yira_planks.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

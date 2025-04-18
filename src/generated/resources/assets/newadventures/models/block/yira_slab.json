@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "newadventures:block/yira_planks",
+    "side": "newadventures:block/yira_planks",
+    "top": "newadventures:block/yira_planks"
+  }
+}

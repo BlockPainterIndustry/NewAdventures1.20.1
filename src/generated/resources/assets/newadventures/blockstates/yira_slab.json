@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newadventures:block/yira_slab"
+    },
+    "type=double": {
+      "model": "newadventures:block/yira_planks"
+    },
+    "type=top": {
+      "model": "newadventures:block/yira_slab_top"
+    }
+  }
+}

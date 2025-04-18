@@ -1,0 +1,6 @@
+// 1.20.1	2025-04-18T18:18:01.0864916	Tags for minecraft:block mod id newadventures
+a80003f8bc77874c22e19ccd7bcb415786fc6d4f data/minecraft/tags/blocks/fences.json
+d7170425822e50949b2708884271d467adb172f1 data/minecraft/tags/blocks/fence_gates.json
+0212eb08b3c4d709104e93d78efbf915683a04f3 data/minecraft/tags/blocks/logs.json
+0212eb08b3c4d709104e93d78efbf915683a04f3 data/minecraft/tags/blocks/logs_that_burn.json
+f057ea4a99764e38daec91a137702c91c8e226ea data/minecraft/tags/blocks/planks.json

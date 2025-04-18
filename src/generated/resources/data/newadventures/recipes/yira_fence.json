@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "newadventures:yira_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "#S#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "newadventures:yira_fence"
+  },
+  "show_notification": true
+}

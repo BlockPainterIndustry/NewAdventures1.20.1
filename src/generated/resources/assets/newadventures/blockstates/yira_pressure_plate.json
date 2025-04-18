@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "newadventures:block/yira_pressure_plate"
+    },
+    "powered=true": {
+      "model": "newadventures:block/yira_pressure_plate_down"
+    }
+  }
+}

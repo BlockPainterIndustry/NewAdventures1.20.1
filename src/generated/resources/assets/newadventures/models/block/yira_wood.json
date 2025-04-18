@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "newadventures:block/yira_log",
+    "side": "newadventures:block/yira_log"
+  }
+}

@@ -1,7 +1,9 @@
 package net.blockpainter.newadventures.blocks;
 
 import net.blockpainter.newadventures.NewAdventures;
+import net.blockpainter.newadventures.blocks.custom.ModSaplingBlock;
 import net.blockpainter.newadventures.items.ModItems;
+import net.blockpainter.newadventures.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -71,12 +73,12 @@ public class ModBlocks {
                 }
             });
 
-    public static final RegistryObject<StairBlock> YIRA_STAIRS = registerBlock("yira_stairs",
+    public static final RegistryObject<Block> YIRA_STAIRS = registerBlock("yira_stairs",
             () -> new StairBlock(ModBlocks.YIRA_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS))
     );
 
-    public static final RegistryObject<SlabBlock> YIRA_SLAB = registerBlock("yira_slab",
+    public static final RegistryObject<Block> YIRA_SLAB = registerBlock("yira_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB))
     );
 
@@ -123,7 +125,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<Block> YIRA_SAPLING = registerBlock("yira_sapling",
-            () -> new ModSaplingBlock(ModTreeGrowers.YIRA, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), () -> Blocks.END_STONE));
+            () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), () -> Blocks.END_STONE));
 
 
 
@@ -135,8 +137,7 @@ public class ModBlocks {
     }
 
     private  static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
-                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, name)))));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
 
