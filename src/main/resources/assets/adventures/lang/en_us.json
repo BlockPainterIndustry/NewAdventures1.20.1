@@ -1,0 +1,28 @@
+{
+  "item.newadventures.scroll": "Old Scroll",
+
+  "creativetab.newadventures.scroll_tab" : "Scrolls & MagicStuff",
+
+  "creativetab.newadventures.misc_tab" : "New Adventures Misc",
+
+  "advancement.newadventures.root.title" : "New Adventures",
+  "advancement.newadventures.root.description" : "This is the start of an adventure.",
+  "advancement.newadventures.scroll.title" : "An Old Scroll",
+  "advancement.newadventures.scroll.description" : "An ancient scroll written by an adventurer who lived a long time ago.",
+
+  "block.newadventures.yira_log" : "Yira Log",
+  "block.newadventures.yira_wood" : "Yira Wood",
+  "block.newadventures.stripped_yira_log" : "Stripped Yira Log",
+  "block.newadventures.stripped_yira_wood" : "Stripped Yira Wood",
+  "block.newadventures.yira_planks" : "Yira Planks",
+  "block.newadventures.yira_fence_gate" : "Yira Fence Gate",
+  "block.newadventures.yira_fence" : "Yira Fence",
+  "block.newadventures.yira_pressure_plate" : "Yira Pressure Plate",
+  "block.newadventures.yira_door" : "Yira Door",
+  "block.newadventures.yira_slab" : "Yira Slab",
+  "block.newadventures.yira_button" : "Yira Button",
+  "block.newadventures.yira_trapdoor" : "Yira Trapdoor",
+  "block.newadventures.yira_leaves" : "Yira Leaves",
+  "block.newadventures.yira_stairs" : "Yira Stairs",
+  "block.newadventures.yira_sapling" : "Yira Sapling"
+}
