@@ -2,10 +2,8 @@ package net.blockpainter.newadventures.worldgen.tree;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.worldgen.tree.custom.YiraFoliagePlacer;
-import net.blockpainter.newadventures.worldgen.tree.custom.YiraTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

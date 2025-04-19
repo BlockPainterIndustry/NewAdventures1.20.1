@@ -1,5 +1,8 @@
 {
   "item.newadventures.scroll": "Old Scroll",
+  "item.newadventures.yira_boat": "Yira Boat",
+  "item.newadventures.yira_chest_boat": "Yira Chest Boat",
+  "item.newadventures.flowering_yira_branch": "Flowering Yira Branch",
 
   "creativetab.newadventures.scroll_tab" : "Scrolls & MagicStuff",
 
@@ -23,6 +26,10 @@
   "block.newadventures.yira_button" : "Yira Button",
   "block.newadventures.yira_trapdoor" : "Yira Trapdoor",
   "block.newadventures.yira_leaves" : "Yira Leaves",
+  "block.newadventures.flowering_yira_leaves" : "Flowering Yira Leaves",
   "block.newadventures.yira_stairs" : "Yira Stairs",
-  "block.newadventures.yira_sapling" : "Yira Sapling"
+  "block.newadventures.yira_sapling" : "Yira Sapling",
+
+  "entity.newadventures.yira_boat" : "Yira Boat",
+  "entity.newadventures.yira_chest_boat" : "Yira Chest Boat"
 }

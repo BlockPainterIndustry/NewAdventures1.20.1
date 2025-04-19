@@ -2,13 +2,11 @@ package net.blockpainter.newadventures.blocks;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.custom.ModSaplingBlock;
+import net.blockpainter.newadventures.blocks.custom.ShearableLeaveBlock;
 import net.blockpainter.newadventures.items.ModItems;
 import net.blockpainter.newadventures.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -109,6 +107,25 @@ public class ModBlocks {
     public static final RegistryObject<Block> YIRA_LEAVES = registerBlock("yira_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
                     ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+
+    public static final RegistryObject<Block> FLOWERING_YiRA_LEAVES = registerBlock("flowering_yira_leaves",
+            () -> new ShearableLeaveBlock(BlockBehaviour.Properties.copy(YIRA_LEAVES.get()), YIRA_LEAVES.get()
+            ) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;

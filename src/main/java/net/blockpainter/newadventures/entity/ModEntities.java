@@ -1,8 +1,9 @@
 package net.blockpainter.newadventures.entity;
 
 import net.blockpainter.newadventures.NewAdventures;
-import net.blockpainter.newadventures.entity.custom.ModBoatEntity;
-import net.blockpainter.newadventures.entity.custom.ModChestBoatEntity;
+
+import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
+import net.blockpainter.newadventures.entity.custom.YiraChestBoatEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -14,12 +15,12 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NewAdventures.MODID);
 
-    public static final RegistryObject<EntityType<ModBoatEntity>> MOD_BOAT =
-            ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC)
-                    .sized(1.375f, 0.5625f).build("mod_boat"));
-    public static final RegistryObject<EntityType<ModChestBoatEntity>> MOD_CHEST_BOAT =
-            ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC)
-                    .sized(1.375f, 0.5625f).build("mod_chest_boat"));
+    public static final RegistryObject<EntityType<YiraBoatEntity>> YIRA_BOAT =
+            ENTITY_TYPES.register("yira_boat", () -> EntityType.Builder.<YiraBoatEntity>of(YiraBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("yira_boat"));
+    public static final RegistryObject<EntityType<YiraChestBoatEntity>> YIRA_CHEST_BOAT =
+            ENTITY_TYPES.register("yira_chest_boat", () -> EntityType.Builder.<YiraChestBoatEntity>of(YiraChestBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("yira_chest_boat"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

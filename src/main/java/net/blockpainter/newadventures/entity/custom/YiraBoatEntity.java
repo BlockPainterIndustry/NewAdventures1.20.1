@@ -9,25 +9,23 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.IntFunction;
 
-public class ModBoatEntity extends Boat {
+public class YiraBoatEntity extends Boat {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
 
-    public ModBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
+    public YiraBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public ModBoatEntity(Level level, double pX, double pY, double pZ) {
-        this(ModEntities.MOD_BOAT.get(), level);
+    public YiraBoatEntity(Level level, double pX, double pY, double pZ) {
+        this(ModEntities.YIRA_BOAT.get(), level);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
         this.yo = pY;
@@ -69,8 +67,8 @@ public class ModBoatEntity extends Boat {
 
         private final String name;
         private final Block planks;
-        public static final StringRepresentable.EnumCodec<ModBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ModBoatEntity.Type::values);
-        private static final IntFunction<ModBoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        public static final StringRepresentable.EnumCodec<YiraBoatEntity.Type> CODEC = StringRepresentable.fromEnum(YiraBoatEntity.Type::values);
+        private static final IntFunction<YiraBoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
         private Type(Block pPlanks, String pName) {
             this.name = pName;
@@ -96,11 +94,11 @@ public class ModBoatEntity extends Boat {
         /**
          * Get a boat type by its enum ordinal
          */
-        public static ModBoatEntity.Type byId(int pId) {
+        public static YiraBoatEntity.Type byId(int pId) {
             return BY_ID.apply(pId);
         }
 
-        public static ModBoatEntity.Type byName(String pName) {
+        public static YiraBoatEntity.Type byName(String pName) {
             return CODEC.byName(pName, YIRA);
         }
     }

@@ -51,6 +51,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.YIRA_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.YIRA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.FLOWERING_YiRA_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.YIRA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         /*this.add(ModBlocks.PINE_SIGN.get(), block ->
                 createSingleItemTable(ModItems.PINE_SIGN.get()));

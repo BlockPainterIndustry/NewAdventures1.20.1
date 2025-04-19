@@ -31,9 +31,13 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.YIRA_SLAB.get());
                         output.accept(ModBlocks.YIRA_BUTTON.get());
                         output.accept(ModBlocks.YIRA_TRAPDOOR.get());
+                        output.accept(ModItems.YIRA_BOAT.get());
+                        output.accept(ModItems.YIRA_CHEST_BOAT.get());
                         output.accept(ModBlocks.YIRA_LEAVES.get());
+                        output.accept(ModBlocks.FLOWERING_YiRA_LEAVES.get());
                         output.accept(ModBlocks.YIRA_STAIRS.get());
                         output.accept(ModBlocks.YIRA_SAPLING.get());
+                        //output.accept(ModItems.FLOWERING_YIRA_BRANCH.get());
                     })
                     .build());
 
