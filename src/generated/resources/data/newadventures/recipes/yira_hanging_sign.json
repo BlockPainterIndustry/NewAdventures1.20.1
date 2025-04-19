@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "newadventures:stripped_yira_log"
+    },
+    "S": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "S S",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "newadventures:yira_hanging_sign"
+  },
+  "show_notification": true
+}

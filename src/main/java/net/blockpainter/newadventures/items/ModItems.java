@@ -1,10 +1,13 @@
 package net.blockpainter.newadventures.items;
 
 import net.blockpainter.newadventures.NewAdventures;
+import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
 import net.blockpainter.newadventures.items.custom.ModBoatItem;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -27,5 +30,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .stacksTo(64)
             ));
+
+    public static final RegistryObject<Item> YIRA_SIGN = ITEMS.register("yira_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.YIRA_SIGN.get(), ModBlocks.YIRA_WALL_SIGN.get()));
+    public static final RegistryObject<Item> YIRA_HANGING_SIGN = ITEMS.register("yira_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
 }

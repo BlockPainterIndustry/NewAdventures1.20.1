@@ -54,10 +54,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.YIRA_LEAVES);
         leavesBlock(ModBlocks.FLOWERING_YiRA_LEAVES);
 
-        /*signBlock(((StandingSignBlock) ModBlocks.PINE_SIGN.get()), ((WallSignBlock) ModBlocks.PINE_WALL_SIGN.get()),
-                blockTexture(ModBlocks.PINE_PLANKS.get()));
+        signBlock(((StandingSignBlock) ModBlocks.YIRA_SIGN.get()), ((WallSignBlock) ModBlocks.YIRA_WALL_SIGN.get()),
+                blockTexture(ModBlocks.YIRA_PLANKS.get()));
 
-        hangingSignBlock(ModBlocks.PINE_HANGING_SIGN.get(), ModBlocks.PINE_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.PINE_PLANKS.get()));*/
+        hangingSignBlock(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.YIRA_PLANKS.get()));
         saplingBlock(ModBlocks.YIRA_SAPLING);
 
     }

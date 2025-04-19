@@ -10,5 +10,4 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "boat/yira"), "main");
     public static final ModelLayerLocation YIRA_CHEST_BOAT_LAYER = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "chest_boat/yira"), "main");
-
 }

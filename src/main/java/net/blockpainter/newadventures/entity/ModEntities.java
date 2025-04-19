@@ -21,8 +21,4 @@ public class ModEntities {
     public static final RegistryObject<EntityType<YiraChestBoatEntity>> YIRA_CHEST_BOAT =
             ENTITY_TYPES.register("yira_chest_boat", () -> EntityType.Builder.<YiraChestBoatEntity>of(YiraChestBoatEntity::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("yira_chest_boat"));
-
-    public static void register(IEventBus eventBus) {
-        ENTITY_TYPES.register(eventBus);
-    }
 }

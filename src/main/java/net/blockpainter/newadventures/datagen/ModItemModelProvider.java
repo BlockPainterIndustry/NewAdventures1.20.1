@@ -59,12 +59,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
 
-        /*simpleItem(ModItems.PINE_SIGN);
-        simpleItem(ModItems.PINE_HANGING_SIGN);*/
+        simpleItem(ModItems.YIRA_SIGN);
+        simpleItem(ModItems.YIRA_HANGING_SIGN);
         saplingItem(ModBlocks.YIRA_SAPLING);
     }
-
-    // Shoutout to El_Redstoniano for making this
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),

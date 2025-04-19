@@ -2,10 +2,11 @@ package net.blockpainter.newadventures;
 
 import com.mojang.logging.LogUtils;
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.blocks.entity.ModBlockEntities;
 import net.blockpainter.newadventures.creativetabs.ModCreativeTabs;
 import net.blockpainter.newadventures.entity.ModEntities;
 import net.blockpainter.newadventures.entity.client.ModBoatRenderer;
-import net.blockpainter.newadventures.entity.util.ModWoodTypes;
+import net.blockpainter.newadventures.util.ModWoodTypes;
 import net.blockpainter.newadventures.items.ModItems;
 import net.blockpainter.newadventures.worldgen.tree.ModFoliagePlacers;
 import net.blockpainter.newadventures.worldgen.tree.ModTrunkPlacerTypes;
@@ -42,6 +43,7 @@ public class NewAdventures {
 
         ModTrunkPlacerTypes.TRUNK_PLACER.register(modEventBus);
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -60,7 +62,7 @@ public class NewAdventures {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            Sheets.addWoodType(ModWoodTypes.PINE);
+            Sheets.addWoodType(ModWoodTypes.YIRA);
 
             EntityRenderers.register(ModEntities.YIRA_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
             EntityRenderers.register(ModEntities.YIRA_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));

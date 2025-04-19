@@ -99,7 +99,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.CHEST)
                 .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
                 .save(pWriter);
-
-
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YIRA_SIGN.get(), 3)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" S ")
+                .define('#', ModBlocks.YIRA_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YIRA_HANGING_SIGN.get(), 3)
+                .pattern("S S")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModBlocks.STRIPPED_YIRA_LOG.get())
+                .define('S', Blocks.CHAIN)
+                .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
+                .save(pWriter);
     }
 }

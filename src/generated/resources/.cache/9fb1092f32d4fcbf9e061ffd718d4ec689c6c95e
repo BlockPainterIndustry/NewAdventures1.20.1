@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-19T13:03:30.8313509	Recipes
+// 1.20.1	2025-04-19T19:01:01.8358415	Recipes
 5e7c547518db69c7a863cbc5281272de42d0dab2 data/newadventures/advancements/recipes/building_blocks/stripped_yira_wood.json
 a8e4e8ac2e3ec7b530d745be2af40ca79186fd7e data/newadventures/advancements/recipes/building_blocks/yira_fence.json
 af2c8d32b7809e73f8860739f02d654b8b300d9d data/newadventures/advancements/recipes/building_blocks/yira_fence_gate.json
@@ -10,6 +10,8 @@ f415b9c457d49ba6b25710ecd22a2a1ccc047b25 data/newadventures/advancements/recipes
 c8923774526485612eeb7cc0f8b136fc26dd8b31 data/newadventures/advancements/recipes/building_blocks/yira_wood.json
 be7d29655ca3a8ce9d98fca9cddac45643796368 data/newadventures/advancements/recipes/misc/yira_boat.json
 b6a554c343d0ad34dc21208b773f5618ad97a527 data/newadventures/advancements/recipes/misc/yira_chest_boat.json
+f20eb1d5043626a8b38d2d6449f9767ded097bb1 data/newadventures/advancements/recipes/misc/yira_hanging_sign.json
+a5cc43174e8cc654518c931864f846426418957c data/newadventures/advancements/recipes/misc/yira_sign.json
 87b875905e451bcafc066ba853c96c95cb471103 data/newadventures/advancements/recipes/redstone/yira_button.json
 14585352967143575124efd34658bcddb993aa79 data/newadventures/advancements/recipes/redstone/yira_door.json
 79b62e88a19f88400dd34d4909b580862cb53ae3 data/newadventures/recipes/stripped_yira_wood.json
@@ -19,8 +21,10 @@ b6a554c343d0ad34dc21208b773f5618ad97a527 data/newadventures/advancements/recipes
 0cd155b484c521c589f5199c71c7ed10250998e1 data/newadventures/recipes/yira_door.json
 c14743e26b3b4109ac5e032d3a233d772f26475d data/newadventures/recipes/yira_fence.json
 c2149973accbc791e502edf37a15951526f16077 data/newadventures/recipes/yira_fence_gate.json
+c5bb638a5f395e0122a7cb5acab71cc64ac92d6c data/newadventures/recipes/yira_hanging_sign.json
 7c992dd14a420dae8913d4d2287e092a52289d93 data/newadventures/recipes/yira_planks.json
 6dff4926b7f16eb8f5add5f7673f23716b941b4a data/newadventures/recipes/yira_pressure_plate.json
+047cb6c2e3a3b68f66016b47fb4415533155f503 data/newadventures/recipes/yira_sign.json
 57355c9d6bb46c4ef36ac772309be92a93690a53 data/newadventures/recipes/yira_slab.json
 3100d52bc36edb823b7dee21a648ba0d8bb277b5 data/newadventures/recipes/yira_stairs.json
 634ffd2347f3dc205c7d5557a77d4b94c2fec393 data/newadventures/recipes/yira_trapdoor.json

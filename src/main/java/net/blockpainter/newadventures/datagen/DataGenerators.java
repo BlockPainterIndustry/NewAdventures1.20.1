@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
+
+//Credits to kaupenjoe https://github.com/Tutorials-By-Kaupenjoe for the Datagenerator
 @Mod.EventBusSubscriber(modid = NewAdventures.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent

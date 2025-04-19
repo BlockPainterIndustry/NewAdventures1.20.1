@@ -24,20 +24,22 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.YIRA_WOOD.get());
                         output.accept(ModBlocks.STRIPPED_YIRA_WOOD.get());
                         output.accept(ModBlocks.YIRA_PLANKS.get());
-                        output.accept(ModBlocks.YIRA_FENCE_GATE.get());
-                        output.accept(ModBlocks.YIRA_FENCE.get());
-                        output.accept(ModBlocks.YIRA_PRESSURE_PLATE.get());
-                        output.accept(ModBlocks.YIRA_DOOR.get());
+                        output.accept(ModBlocks.YIRA_STAIRS.get());
                         output.accept(ModBlocks.YIRA_SLAB.get());
-                        output.accept(ModBlocks.YIRA_BUTTON.get());
+                        output.accept(ModBlocks.YIRA_DOOR.get());
                         output.accept(ModBlocks.YIRA_TRAPDOOR.get());
+                        output.accept(ModBlocks.YIRA_FENCE.get());
+                        output.accept(ModBlocks.YIRA_FENCE_GATE.get());
+                        output.accept(ModBlocks.YIRA_SIGN.get());
+                        output.accept(ModBlocks.YIRA_HANGING_SIGN.get());
+                        output.accept(ModBlocks.YIRA_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.YIRA_BUTTON.get());
                         output.accept(ModItems.YIRA_BOAT.get());
                         output.accept(ModItems.YIRA_CHEST_BOAT.get());
+                        output.accept(ModBlocks.YIRA_SAPLING.get());
                         output.accept(ModBlocks.YIRA_LEAVES.get());
                         output.accept(ModBlocks.FLOWERING_YiRA_LEAVES.get());
-                        output.accept(ModBlocks.YIRA_STAIRS.get());
-                        output.accept(ModBlocks.YIRA_SAPLING.get());
-                        //output.accept(ModItems.FLOWERING_YIRA_BRANCH.get());
+                        output.accept(ModItems.FLOWERING_YIRA_BRANCH.get());
                     })
                     .build());
 

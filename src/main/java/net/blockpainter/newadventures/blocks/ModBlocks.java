@@ -1,8 +1,8 @@
 package net.blockpainter.newadventures.blocks;
 
 import net.blockpainter.newadventures.NewAdventures;
-import net.blockpainter.newadventures.blocks.custom.ModSaplingBlock;
-import net.blockpainter.newadventures.blocks.custom.ShearableLeaveBlock;
+import net.blockpainter.newadventures.blocks.custom.*;
+import net.blockpainter.newadventures.util.ModWoodTypes;
 import net.blockpainter.newadventures.items.ModItems;
 import net.blockpainter.newadventures.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -103,6 +103,17 @@ public class ModBlocks {
     public static final RegistryObject<Block> YIRA_FENCE_GATE = registerBlock("yira_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.register(YIRA_WOODTYPE))
     );
+
+    public static final RegistryObject<Block> YIRA_SIGN = BLOCKS.register("yira_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.YIRA));
+    public static final RegistryObject<Block> YIRA_WALL_SIGN = BLOCKS.register("yira_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.YIRA));
+
+    public static final RegistryObject<Block> YIRA_HANGING_SIGN = BLOCKS.register("yira_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.YIRA));
+    public static final RegistryObject<Block> YIRA_WALL_HANGING_SIGN = BLOCKS.register("yira_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.YIRA));
+
 
     public static final RegistryObject<Block> YIRA_LEAVES = registerBlock("yira_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)

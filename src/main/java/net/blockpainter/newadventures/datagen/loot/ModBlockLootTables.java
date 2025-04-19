@@ -1,6 +1,7 @@
 package net.blockpainter.newadventures.datagen.loot;
 
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.items.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -54,14 +55,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.FLOWERING_YiRA_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.YIRA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-        /*this.add(ModBlocks.PINE_SIGN.get(), block ->
-                createSingleItemTable(ModItems.PINE_SIGN.get()));
-        this.add(ModBlocks.PINE_WALL_SIGN.get(), block ->
-                createSingleItemTable(ModItems.PINE_SIGN.get()));
-        this.add(ModBlocks.PINE_HANGING_SIGN.get(), block ->
-                createSingleItemTable(ModItems.PINE_HANGING_SIGN.get()));
-        this.add(ModBlocks.PINE_WALL_HANGING_SIGN.get(), block ->
-                createSingleItemTable(ModItems.PINE_HANGING_SIGN.get()));*/
+        this.add(ModBlocks.YIRA_SIGN.get(), block ->
+                createSingleItemTable(ModItems.YIRA_SIGN.get()));
+        this.add(ModBlocks.YIRA_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.YIRA_SIGN.get()));
+        this.add(ModBlocks.YIRA_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.YIRA_HANGING_SIGN.get()));
+        this.add(ModBlocks.YIRA_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.YIRA_HANGING_SIGN.get()));
 
         this.dropSelf(ModBlocks.YIRA_SAPLING.get());
 

@@ -29,7 +29,9 @@
   "block.newadventures.flowering_yira_leaves" : "Flowering Yira Leaves",
   "block.newadventures.yira_stairs" : "Yira Stairs",
   "block.newadventures.yira_sapling" : "Yira Sapling",
+  "block.tutorialmod.yira_sign": "Yira  Sign",
+  "block.tutorialmod.yira_hanging_sign": "Yira Hanging Sign",
 
   "entity.newadventures.yira_boat" : "Yira Boat",
-  "entity.newadventures.yira_chest_boat" : "Yira Chest Boat"
+  "entity.newadventures.yira_chest_boat" : "Chest With Boat xD"
 }
