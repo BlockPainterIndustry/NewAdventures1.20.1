@@ -3,6 +3,8 @@ package net.blockpainter.newadventures.worldgen;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.worldgen.tree.custom.YiraFoliagePlacer;
+import net.blockpainter.newadventures.worldgen.tree.custom.YiraTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 
 import net.minecraft.data.worldgen.BootstapContext;
@@ -30,12 +32,14 @@ public class ModConfiguredFeatures {
 
         register(context, YIRA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.YIRA_LOG.get()),
-                new ForkingTrunkPlacer(4,4,3),
+                new YiraTrunkPlacer(4,4,3),
 
                 BlockStateProvider.simple(ModBlocks.YIRA_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),
+                new YiraFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(5), 0.25f, 0.25f, 0.166666667f, 0.33333334f),
 
                 new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(Blocks.END_STONE)).build());
+
+
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
