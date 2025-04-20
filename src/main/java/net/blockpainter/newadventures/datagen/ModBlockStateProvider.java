@@ -40,7 +40,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.YIRA_GRASS_BLOCK);
 
         blockWithItem(ModBlocks.YIRA_PLANKS);
-
+        blockWithItem(ModBlocks.YIRA_DIRT);
 
         stairsBlock(((StairBlock) ModBlocks.YIRA_STAIRS.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.YIRA_SLAB.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()));

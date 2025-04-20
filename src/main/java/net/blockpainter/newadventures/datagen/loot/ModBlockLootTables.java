@@ -34,7 +34,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_YIRA_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_YIRA_WOOD.get());
         this.dropSelf(ModBlocks.YIRA_PLANKS.get());
-        this.dropSelf(ModBlocks.YIRA_GRASS_BLOCK.get());
+        this.dropSelf(ModBlocks.YIRA_DIRT.get());
+        this.add(ModBlocks.YIRA_GRASS_BLOCK.get(), block -> createSingleItemTableWithSilkTouch(ModBlocks.YIRA_GRASS_BLOCK.get(), ModBlocks.YIRA_DIRT.get()));
 
         this.dropSelf(ModBlocks.YIRA_STAIRS.get());
         this.dropSelf(ModBlocks.YIRA_BUTTON.get());

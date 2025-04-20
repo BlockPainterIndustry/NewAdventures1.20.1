@@ -1,8 +1,9 @@
-// 1.20.1	2025-04-20T12:47:35.2572122	Block States: newadventures
+// 1.20.1	2025-04-20T15:43:02.5786821	Block States: newadventures
 7e377e40b27347eee08bc6166b9f87c453af064b assets/newadventures/blockstates/flowering_yira_leaves.json
 99da57ebd1210f1efd7755b15ab51041e4d8cb66 assets/newadventures/blockstates/stripped_yira_log.json
 c04d66c1ab0bd2f632fdf7133724420fb5c90c0b assets/newadventures/blockstates/stripped_yira_wood.json
 f80e8492df31bb11f421a291207b535b6531c231 assets/newadventures/blockstates/yira_button.json
+a09b2b0a0ce5e2d3285764187525669e8c901371 assets/newadventures/blockstates/yira_dirt.json
 e1ef1ea89371c15bbfff3c6d31762e38f7a2392a assets/newadventures/blockstates/yira_door.json
 8552837771a2f30914669407112bc19e0266bb0c assets/newadventures/blockstates/yira_fence.json
 7bf647233ddecc403c8f3b3aab85c3143a18460a assets/newadventures/blockstates/yira_fence_gate.json
@@ -27,6 +28,7 @@ f91cf061cc92c3293c223832a29719fd49896fde assets/newadventures/models/block/strip
 a507c1e978ed8b8bd512f9c21bef56dc41852446 assets/newadventures/models/block/stripped_yira_wood_horizontal.json
 f7a4e252322f9792e3f3c02e27d0d9178a85cbf3 assets/newadventures/models/block/yira_button.json
 ab9b643ee91b6ae70765fcc93eeef79b9b2cd5da assets/newadventures/models/block/yira_button_pressed.json
+cd92327c2e52e614e0de7ccf55578077a87ced93 assets/newadventures/models/block/yira_dirt.json
 04cb93be94c35b6bab4cff2c1d7e95cfefcdfc59 assets/newadventures/models/block/yira_door_bottom_left.json
 17e292c6949cefcebe42b5d0544ea65f5a6c9c43 assets/newadventures/models/block/yira_door_bottom_left_open.json
 158a68c1bf1279cdd0fd2a2d01e0ab63bc6520e1 assets/newadventures/models/block/yira_door_bottom_right.json
@@ -64,6 +66,7 @@ efaa487af2fa497cfae31389d13bf9325782f1f0 assets/newadventures/models/block/yira_
 5ba6af5bcd839ae5643932c8736b21a7ed8ef4d1 assets/newadventures/models/item/flowering_yira_leaves.json
 474c92ac1ca11f97b8c5eafa062f115cd2add950 assets/newadventures/models/item/stripped_yira_log.json
 ded0eb75b56e1840d8dbcc5f2ba3b14e77d81e0a assets/newadventures/models/item/stripped_yira_wood.json
+36be6e5aa8742befaa5335eccd55d6287018d981 assets/newadventures/models/item/yira_dirt.json
 76767783330fcd3fea59e861712bdec1a9aaad55 assets/newadventures/models/item/yira_grass_block.json
 ad8cd79ca206b110cb36bb751e256a18bf945f68 assets/newadventures/models/item/yira_leaves.json
 bed6b87e1cf7d37d4c0ad2322d2fb5a91e15ff21 assets/newadventures/models/item/yira_log.json
