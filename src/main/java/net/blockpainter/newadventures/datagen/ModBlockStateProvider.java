@@ -27,10 +27,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_YIRA_WOOD.get()), blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()),
                 blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()));
 
+        yiraGrassBlock(ModBlocks.YIRA_GRASS_BLOCK);
         blockItem(ModBlocks.YIRA_LOG);
         blockItem(ModBlocks.YIRA_WOOD);
         blockItem(ModBlocks.STRIPPED_YIRA_LOG);
         blockItem(ModBlocks.STRIPPED_YIRA_WOOD);
+        blockItem(ModBlocks.YIRA_GRASS_BLOCK);
 
         blockWithItem(ModBlocks.YIRA_PLANKS);
 
@@ -87,6 +89,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.fromNamespaceAndPath( "minecraft", "leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
@@ -97,7 +100,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
+
+
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
+
+    private void yiraGrassBlock(RegistryObject<Block> blockRegistryObject) {
+        ResourceLocation base = modLoc("block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath());
+        simpleBlock(blockRegistryObject.get(), models().cubeTop(
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                modLoc("block/yira_grass_block_side"),
+                modLoc("block/yira_grass_block_top")
+        ));
+    }
+
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "newadventures:block/yira_grass_block_side",
+    "top": "newadventures:block/yira_grass_block_top"
+  }
+}

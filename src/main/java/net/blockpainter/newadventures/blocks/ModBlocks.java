@@ -114,6 +114,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> YIRA_WALL_HANGING_SIGN = BLOCKS.register("yira_wall_hanging_sign",
             () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.YIRA));
 
+    public static final RegistryObject<Block> YIRA_GRASS_BLOCK = registerBlock("yira_grass_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+
 
     public static final RegistryObject<Block> YIRA_LEAVES = registerBlock("yira_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
