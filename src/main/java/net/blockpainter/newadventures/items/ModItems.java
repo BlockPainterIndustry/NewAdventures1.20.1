@@ -4,6 +4,7 @@ import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
 import net.blockpainter.newadventures.items.custom.ModBoatItem;
+import net.blockpainter.newadventures.items.custom.ModFloweringBranchItem;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -27,7 +28,7 @@ public class ModItems {
             () -> new ModBoatItem(true, YiraBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> FLOWERING_YIRA_BRANCH = ITEMS.register("flowering_yira_branch",
-            () -> new Item(new Item.Properties()
+            () -> new ModFloweringBranchItem(new Item.Properties()
                     .stacksTo(64)
             ));
 

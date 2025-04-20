@@ -41,6 +41,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.FLOWERING_YiRA_LEAVES.get());
                         output.accept(ModItems.FLOWERING_YIRA_BRANCH.get());
                         output.accept(ModBlocks.YIRA_GRASS_BLOCK.get());
+                        output.accept(ModBlocks.YIRA_DIRT.get());
                     })
                     .build());
 
