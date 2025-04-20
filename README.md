@@ -6,6 +6,6 @@ You can of course download the dev branch build a .jar but there is not much you
 
 Future Plans:
 
-  -First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first verion i will release. 
+    -First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first verion i will release. 
 
 Please Understand that all Verions with with alpha or beta in name could be unstable and or game breaking especially the dev branch. I will try to keep all versions in master and the uploaded mods on the mod poertal as clean and bug free as possible but understand that at    this point i coding the mod alone and to this in my free time.
