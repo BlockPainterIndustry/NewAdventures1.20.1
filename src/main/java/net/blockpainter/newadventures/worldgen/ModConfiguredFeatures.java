@@ -41,7 +41,7 @@ public class ModConfiguredFeatures {
 
 
 
-                new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(Blocks.END_STONE)).build());
+                new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(ModBlocks.YIRA_GRASS_BLOCK.get())).build());
 
 
     }

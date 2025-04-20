@@ -27,7 +27,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_YIRA_WOOD.get()), blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()),
                 blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()));
 
-        yiraGrassBlock(ModBlocks.YIRA_GRASS_BLOCK);
+        //yiraGrassBlock(ModBlocks.YIRA_GRASS_BLOCK);
+        cubeBottomTop(ModBlocks.YIRA_GRASS_BLOCK,
+                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_dirt"),
+                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_grass_block_side"),
+                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_grass_block_top"));
+
         blockItem(ModBlocks.YIRA_LOG);
         blockItem(ModBlocks.YIRA_WOOD);
         blockItem(ModBlocks.STRIPPED_YIRA_LOG);
@@ -106,12 +111,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    private void yiraGrassBlock(RegistryObject<Block> blockRegistryObject) {
-        ResourceLocation base = modLoc("block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath());
-        simpleBlock(blockRegistryObject.get(), models().cubeTop(
+    private void cubeBottomTop(RegistryObject<Block> blockRegistryObject, ResourceLocation bottom, ResourceLocation side, ResourceLocation top) {
+        simpleBlock(blockRegistryObject.get(), models().cubeBottomTop(
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                modLoc("block/yira_grass_block_side"),
-                modLoc("block/yira_grass_block_top")
+                side,
+                bottom,
+                top
+
+
         ));
     }
 

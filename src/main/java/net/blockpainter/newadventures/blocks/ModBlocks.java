@@ -156,7 +156,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<Block> YIRA_SAPLING = registerBlock("yira_sapling",
-            () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), () -> Blocks.END_STONE));
+            () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
 
 
 

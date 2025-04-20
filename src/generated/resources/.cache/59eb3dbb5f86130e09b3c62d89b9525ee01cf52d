@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-20T11:51:18.2675655	Loot Tables
+// 1.20.1	2025-04-20T12:23:33.4823242	Loot Tables
 5abfab5e649aa575b9b5f12fd58936f90eaada59 data/newadventures/loot_tables/blocks/flowering_yira_leaves.json
 18cf7005f2302e3001cc83481038170111b8b679 data/newadventures/loot_tables/blocks/stripped_yira_log.json
 a1ac6e8e9e9170b4ec861f1c5152603c5bafa8f2 data/newadventures/loot_tables/blocks/stripped_yira_wood.json
@@ -6,7 +6,7 @@ a1ac6e8e9e9170b4ec861f1c5152603c5bafa8f2 data/newadventures/loot_tables/blocks/s
 76d55fd32df121e7e6f5b2ba5489770316a3ce81 data/newadventures/loot_tables/blocks/yira_door.json
 0c13eba5f65831602a9aaf18822f8a473d4894ef data/newadventures/loot_tables/blocks/yira_fence.json
 096795ffd2798bd39a3590754b7c37c17225f34e data/newadventures/loot_tables/blocks/yira_fence_gate.json
-c82cbdddf26582a7beec7daa8f5a4ef880f94431 data/newadventures/loot_tables/blocks/yira_grass_block.json
+58c4d1abf45d9279fab2ca084efb36b52d5c2e25 data/newadventures/loot_tables/blocks/yira_grass_block.json
 cc89a8695a35aadacd8627d9705b27f9c55562f1 data/newadventures/loot_tables/blocks/yira_hanging_sign.json
 5c3c101ff1f6c35332ef377d79d780644558cfe3 data/newadventures/loot_tables/blocks/yira_leaves.json
 382f117c71fe51535a4481d6a63b30932eaa5f50 data/newadventures/loot_tables/blocks/yira_log.json
