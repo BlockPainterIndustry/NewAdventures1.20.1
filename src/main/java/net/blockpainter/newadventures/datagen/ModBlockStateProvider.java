@@ -3,13 +3,20 @@ package net.blockpainter.newadventures.datagen;
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Properties;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -28,6 +35,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()));
 
         //yiraGrassBlock(ModBlocks.YIRA_GRASS_BLOCK);
+
+
         cubeBottomTop(ModBlocks.YIRA_GRASS_BLOCK,
                 ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_dirt"),
                 ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_grass_block_side"),
@@ -42,6 +51,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.YIRA_PLANKS);
         blockWithItem(ModBlocks.YIRA_DIRT);
 
+
         stairsBlock(((StairBlock) ModBlocks.YIRA_STAIRS.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.YIRA_SLAB.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()), blockTexture(ModBlocks.YIRA_PLANKS.get()));
 
@@ -55,7 +65,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.YIRA_TRAPDOOR.get()), modLoc("block/yira_trapdoor"), true, "cutout");
 
 
+        tallPlant(ModBlocks.YIRA_TALL_GRASS.get(), "yira_tall_grass");
 
+
+
+        saplingBlock(ModBlocks.YIRA_SHORT_GRASS);
+        saplingBlock(ModBlocks.BLOODROSE);
+        saplingBlock(ModBlocks.WATERCORN);
+        saplingBlock(ModBlocks.VILE_FLOWER);
 
 
         leavesBlock(ModBlocks.YIRA_LEAVES);
@@ -73,7 +90,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+
     }
+
+    private void tallPlant(Block block, String name) {
+        getVariantBuilder(block).partialState()
+                .with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER)
+                .modelForState()
+                .modelFile(models().cross(name + "_bottom", modLoc("block/" + name + "_bottom")).renderType("cutout")).addModel()
+
+                .partialState()
+                .with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER)
+                .modelForState()
+                .modelFile(models().cross(name + "_top", modLoc("block/" + name + "_top")).renderType("cutout")).addModel();
+    }
+
 
     public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
@@ -94,7 +125,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
-
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.fromNamespaceAndPath( "minecraft", "leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
@@ -117,9 +147,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 side,
                 bottom,
                 top
-
-
         ));
     }
-
 }

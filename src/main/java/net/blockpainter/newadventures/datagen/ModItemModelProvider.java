@@ -62,6 +62,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.YIRA_SIGN);
         simpleItem(ModItems.YIRA_HANGING_SIGN);
         saplingItem(ModBlocks.YIRA_SAPLING);
+        saplingItem(ModBlocks.YIRA_SHORT_GRASS);
+        saplingItem(ModBlocks.BLOODROSE);
+        saplingItem(ModBlocks.WATERCORN);
+        saplingItem(ModBlocks.VILE_FLOWER);
+
+        tallgrass(ModBlocks.YIRA_TALL_GRASS);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
@@ -100,5 +106,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder tallgrass(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"block/" + item.getId().getPath() + "_top"));
     }
 }

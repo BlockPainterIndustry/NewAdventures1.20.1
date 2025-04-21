@@ -32,7 +32,11 @@
   "block.newadventures.yira_sign": "Yira  Sign",
   "block.newadventures.yira_hanging_sign": "Yira Hanging Sign",
   "block.newadventures.yira_grass_block": "Yira Grass Block",
-  "block.newadventures.yira_dirt": "Yira Dirt",
+  "block.newadventures.bloodrose": "Bloodrose",
+  "block.newadventures.watercorn": "Watercorn",
+  "block.newadventures.vile_flower": "Vile Flower",
+  "block.newadventures.yira_short_grass": "Yira Short Grass",
+  "block.newadventures.yira_tall_grass": "Yira Tall Grass",
 
   "entity.newadventures.yira_boat" : "Yira Boat",
   "entity.newadventures.yira_chest_boat" : "Chest With Boat xD"

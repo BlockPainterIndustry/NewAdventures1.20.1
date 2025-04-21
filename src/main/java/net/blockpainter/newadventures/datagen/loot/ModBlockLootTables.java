@@ -68,6 +68,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.YIRA_SAPLING.get());
 
+        this.dropSelf(ModBlocks.BLOODROSE.get());
+        this.dropSelf(ModBlocks.VILE_FLOWER.get());
+        this.dropSelf(ModBlocks.WATERCORN.get());
+
+        this.dropWhenSilkTouch(ModBlocks.YIRA_TALL_GRASS.get());
+        this.dropWhenSilkTouch(ModBlocks.YIRA_SHORT_GRASS.get());
+
     }
 
     @Override

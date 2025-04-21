@@ -8,6 +8,7 @@ import net.blockpainter.newadventures.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -159,6 +160,20 @@ public class ModBlocks {
             });
     public static final RegistryObject<Block> YIRA_SAPLING = registerBlock("yira_sapling",
             () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
+
+    public static final RegistryObject<Block> BLOODROSE = registerBlock("bloodrose",
+            () -> new ModFlowerBlock(() -> MobEffects.CONFUSION, 6 , BlockBehaviour.Properties.copy(Blocks.POPPY).noOcclusion()));
+    public static final RegistryObject<Block> WATERCORN = registerBlock("watercorn",
+            () -> new ModFlowerBlock(() -> MobEffects.DAMAGE_RESISTANCE, 3 , BlockBehaviour.Properties.copy(Blocks.CORNFLOWER).noOcclusion()));
+    public static final RegistryObject<Block> VILE_FLOWER = registerBlock("vile_flower",
+            () -> new ModFlowerBlock(() -> MobEffects.JUMP, 9 , BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()));
+
+    public static final RegistryObject<Block> YIRA_SHORT_GRASS = registerBlock("yira_short_grass",
+            () -> new ModShortGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).noOcclusion()));
+
+    public static final RegistryObject<Block> YIRA_TALL_GRASS = registerBlock("yira_tall_grass",
+            () -> new ModTallGrassBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS).noOcclusion()));
+
 
 
 

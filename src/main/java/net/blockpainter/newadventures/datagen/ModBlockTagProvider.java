@@ -2,6 +2,7 @@ package net.blockpainter.newadventures.datagen;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -35,5 +36,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_YIRA_WOOD.get());
         this.tag(BlockTags.PLANKS)
                 .add(ModBlocks.YIRA_PLANKS.get());
+
+        this.tag(ModTags.BLocks.YIRA_DIRT)
+                .add(ModBlocks.YIRA_DIRT.get())
+                .add(ModBlocks.YIRA_GRASS_BLOCK.get());
     }
 }
