@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "newadventures:block/yira_dirt",
+    "top": "newadventures:block/yira_farmland"
+  }
+}
