@@ -4,6 +4,8 @@ The mod is WP and at this moment not available for download.
 
 You can of course download the dev branch build a .jar but there is not much you could do especially in survival.
 
+License: Textures are models are All Rights Reserved unless otherwise given permission.
+
 Future Plans:
 
 -First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first verion i will release. 
