@@ -118,7 +118,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> YIRA_GRASS_BLOCK = registerBlock("yira_grass_block",
             () -> new ModGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
     public static final RegistryObject<Block> YIRA_DIRT = registerBlock("yira_dirt",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+            () -> new ModDirt(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+
+    public static final RegistryObject<Block> YIRA_FARMLAND = registerBlock("yira_farmland",
+            () -> new ModFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND)));
+
+    public static final RegistryObject<Block> YIRA_SAPLING_CROP = BLOCKS.register("yira_sapling_croap",
+            () -> new ModSaplingCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
 
     public static final RegistryObject<Block> YIRA_LEAVES = registerBlock("yira_leaves",

@@ -57,7 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.YIRA_DOOR);
         trapdoorItem(ModBlocks.YIRA_TRAPDOOR);
 
-
+        evenSimplerBlockItem(ModBlocks.YIRA_FARMLAND);
 
         simpleItem(ModItems.YIRA_SIGN);
         simpleItem(ModItems.YIRA_HANGING_SIGN);

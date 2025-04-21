@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-21T11:42:33.5500267	Loot Tables
+// 1.20.1	2025-04-21T20:00:50.3179126	Loot Tables
 918efaf008f4d8212523708e77bd02f3fe34bc3d data/newadventures/loot_tables/blocks/bloodrose.json
 5abfab5e649aa575b9b5f12fd58936f90eaada59 data/newadventures/loot_tables/blocks/flowering_yira_leaves.json
 18cf7005f2302e3001cc83481038170111b8b679 data/newadventures/loot_tables/blocks/stripped_yira_log.json
@@ -8,6 +8,7 @@ fdc5b5b7895625f396d21ab5eb0567e473355e99 data/newadventures/loot_tables/blocks/w
 7462bc28821a6983dc68ab225f63407aa3952bee data/newadventures/loot_tables/blocks/yira_button.json
 1d349aad01a99ed981f64f5446d1df4734b16586 data/newadventures/loot_tables/blocks/yira_dirt.json
 76d55fd32df121e7e6f5b2ba5489770316a3ce81 data/newadventures/loot_tables/blocks/yira_door.json
+6c88c4eb593e0386fdf1adfbbf31713f5662e966 data/newadventures/loot_tables/blocks/yira_farmland.json
 0c13eba5f65831602a9aaf18822f8a473d4894ef data/newadventures/loot_tables/blocks/yira_fence.json
 096795ffd2798bd39a3590754b7c37c17225f34e data/newadventures/loot_tables/blocks/yira_fence_gate.json
 aae1698879d419103fc379dcf168a814ff7d4c34 data/newadventures/loot_tables/blocks/yira_grass_block.json
@@ -17,6 +18,7 @@ cc89a8695a35aadacd8627d9705b27f9c55562f1 data/newadventures/loot_tables/blocks/y
 2959891173c29fc71bbd67fe432be94661d59383 data/newadventures/loot_tables/blocks/yira_planks.json
 5df1062cbe67d2448ef6ff42981be6300bda889d data/newadventures/loot_tables/blocks/yira_pressure_plate.json
 645c04a1ed1f829df965c4e982cfe190c7d47afd data/newadventures/loot_tables/blocks/yira_sapling.json
+32731df19bc4c6fb02a27a1d0796b879fbdadf74 data/newadventures/loot_tables/blocks/yira_sapling_croap.json
 1bc7028125a13fdd5f2483ee504e34375beedb97 data/newadventures/loot_tables/blocks/yira_short_grass.json
 6ebdb0a3f71b261494f73d17bb3ff13428a5f651 data/newadventures/loot_tables/blocks/yira_sign.json
 9b55d9b9f85e8aedc0f6f827b7001190e2ebd7d2 data/newadventures/loot_tables/blocks/yira_slab.json

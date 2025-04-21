@@ -5,10 +5,7 @@ import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
 import net.blockpainter.newadventures.items.custom.ModBoatItem;
 import net.blockpainter.newadventures.items.custom.ModFloweringBranchItem;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -36,5 +33,8 @@ public class ModItems {
             () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.YIRA_SIGN.get(), ModBlocks.YIRA_WALL_SIGN.get()));
     public static final RegistryObject<Item> YIRA_HANGING_SIGN = ITEMS.register("yira_hanging_sign",
             () -> new HangingSignItem(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> YIRA_SAPLING_SEED = ITEMS.register("yira_sapling_seed",
+            () -> new ItemNameBlockItem(ModBlocks.YIRA_SAPLING_CROP.get(), new Item.Properties()));
 
 }

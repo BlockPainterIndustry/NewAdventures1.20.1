@@ -1,7 +1,8 @@
-// 1.20.1	2025-04-21T02:21:58.7548013	Tags for minecraft:block mod id newadventures
+// 1.20.1	2025-04-21T15:55:44.1911585	Tags for minecraft:block mod id newadventures
 a80003f8bc77874c22e19ccd7bcb415786fc6d4f data/minecraft/tags/blocks/fences.json
 d7170425822e50949b2708884271d467adb172f1 data/minecraft/tags/blocks/fence_gates.json
 0212eb08b3c4d709104e93d78efbf915683a04f3 data/minecraft/tags/blocks/logs.json
 0212eb08b3c4d709104e93d78efbf915683a04f3 data/minecraft/tags/blocks/logs_that_burn.json
 f057ea4a99764e38daec91a137702c91c8e226ea data/minecraft/tags/blocks/planks.json
-30204d5a293edd66ef600ab7280f4fa52526da02 data/newadventures/tags/blocks/yira_dirt.json
+0420400467364b23d3d8b2201b9a0914fa951e1b data/newadventures/tags/blocks/yira_dirt.json
+4e54605d9913f72b4397e4447938715200684902 data/newadventures/tags/blocks/yira_soil.json

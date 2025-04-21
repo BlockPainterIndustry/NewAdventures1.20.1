@@ -39,6 +39,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(ModTags.BLocks.YIRA_DIRT)
                 .add(ModBlocks.YIRA_DIRT.get())
-                .add(ModBlocks.YIRA_GRASS_BLOCK.get());
+                .add(ModBlocks.YIRA_GRASS_BLOCK.get())
+                .add(ModBlocks.YIRA_FARMLAND.get());
+        this.tag(ModTags.BLocks.YIRA_SOIL)
+                .add(ModBlocks.YIRA_FARMLAND.get());
     }
 }

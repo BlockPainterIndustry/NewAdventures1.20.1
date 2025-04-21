@@ -1,6 +1,7 @@
 package net.blockpainter.newadventures.datagen.loot;
 
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.blocks.custom.ModSaplingCropBlock;
 import net.blockpainter.newadventures.items.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -36,6 +37,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.YIRA_PLANKS.get());
         this.dropSelf(ModBlocks.YIRA_DIRT.get());
         this.add(ModBlocks.YIRA_GRASS_BLOCK.get(), block -> createSingleItemTableWithSilkTouch(ModBlocks.YIRA_GRASS_BLOCK.get(), ModBlocks.YIRA_DIRT.get()));
+        this.add(ModBlocks.YIRA_FARMLAND.get(),block -> createSingleItemTable(ModBlocks.YIRA_DIRT.get()));
 
         this.dropSelf(ModBlocks.YIRA_STAIRS.get());
         this.dropSelf(ModBlocks.YIRA_BUTTON.get());
@@ -74,6 +76,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropWhenSilkTouch(ModBlocks.YIRA_TALL_GRASS.get());
         this.dropWhenSilkTouch(ModBlocks.YIRA_SHORT_GRASS.get());
+
+
+        LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.YIRA_SAPLING_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModSaplingCropBlock.AGE, 6))
+                .or(LootItemBlockStatePropertyCondition
+                        .hasBlockStateProperties(ModBlocks.YIRA_SAPLING_CROP.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModSaplingCropBlock.AGE, 8)));
+
+        this.add(ModBlocks.YIRA_SAPLING_CROP.get(), createCropDrops(ModBlocks.YIRA_SAPLING_CROP.get(), ModBlocks.YIRA_SAPLING.get().asItem(),
+                ModItems.YIRA_SAPLING_SEED.get(), lootitemcondition$builder2));
 
     }
 
