@@ -73,7 +73,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         tallPlant(ModBlocks.YIRA_TALL_GRASS.get(), "yira_tall_grass");
 
-        makeCornCrop(((CropBlock) ModBlocks.YIRA_SAPLING_CROP.get()), "yira_sapling_crop_stage", "yira_sapling_crop_stage");
+        makeSingleCropBlock(((CropBlock) ModBlocks.YIRA_SAPLING_CROP.get()), "yira_sapling_crop_stage", "yira_sapling_crop_stage");
 
         saplingBlock(ModBlocks.YIRA_SHORT_GRASS);
         saplingBlock(ModBlocks.BLOODROSE);
@@ -177,16 +177,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 });
     }
 
-    public void makeCornCrop(CropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, textureName);
+    public void makeSingleCropBlock(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> singleBlockCropStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] cornStates(BlockState state, CropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] singleBlockCropStates(BlockState state, CropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()),
-                 ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));
+                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
     }
