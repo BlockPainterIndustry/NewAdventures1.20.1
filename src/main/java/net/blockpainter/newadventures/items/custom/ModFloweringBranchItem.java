@@ -1,31 +1,36 @@
 package net.blockpainter.newadventures.items.custom;
 
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.blockpainter.newadventures.blocks.ModBlocks;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.core.*;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.commands.FillBiomeCommand;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.BiomeResolver;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.common.util.FakePlayerFactory;
-import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraft.world.level.chunk.*;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import org.apache.commons.lang3.mutable.MutableInt;
 
-import javax.annotation.Nullable;
+import java.lang.ref.Reference;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class ModFloweringBranchItem extends Item{
 
@@ -63,6 +68,8 @@ public class ModFloweringBranchItem extends Item{
                     BlockState current = level.getBlockState(mutablePos);
                     BlockPos abovePos = mutablePos.above();
                     BlockState above = level.getBlockState(abovePos);
+
+                    setBiome(serverLevel, mutablePos, level.getBiomeManager().getBiome(new BlockPos(0,0,0)));
 
                     boolean isReplaceableBase = current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT);
                     boolean isTallGrass = (above.is(Blocks.TALL_GRASS) || above.is(Blocks.LARGE_FERN)) && (current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT ));
@@ -124,5 +131,78 @@ public class ModFloweringBranchItem extends Item{
         }
 
         return InteractionResult.PASS;
+    }
+
+
+    @Deprecated
+    private void setBiome(ServerLevel level, BlockPos pos, Holder<Biome> newBiome) {
+        fill(level,
+                pos.offset(new Vec3i(-2, -2, -2)),
+                pos.offset(new Vec3i(2, 2, 2)),
+                newBiome,
+                new Predicate<Holder<Biome>>() {
+            @Override
+            public boolean test(Holder<Biome> biomeHolder) {
+                return true;
+            }
+        });
+
+
+    }
+
+    private static int quantize(int p_261998_) {
+        return QuartPos.toBlock(QuartPos.fromBlock(p_261998_));
+    }
+
+    private static BlockPos quantize(BlockPos p_262148_) {
+        return new BlockPos(quantize(p_262148_.getX()), quantize(p_262148_.getY()), quantize(p_262148_.getZ()));
+    }
+
+    private static BiomeResolver makeResolver(ChunkAccess p_262698_, BoundingBox p_262622_, Holder<Biome> p_262705_, Predicate<Holder<Biome>> p_262695_) {
+        return (p_262550_, p_262551_, p_262552_, p_262553_) -> {
+            int i = QuartPos.toBlock(p_262550_);
+            int j = QuartPos.toBlock(p_262551_);
+            int k = QuartPos.toBlock(p_262552_);
+            Holder<Biome> holder = p_262698_.getNoiseBiome(p_262550_, p_262551_, p_262552_);
+            if (p_262622_.isInside(i, j, k) && p_262695_.test(holder)) {
+                return p_262705_;
+            } else {
+                return holder;
+            }
+        };
+    }
+
+    private static void fill(ServerLevel serverlevel, BlockPos p_262651_, BlockPos p_262678_, Holder<Biome> p_262612_, Predicate<Holder<Biome>> p_262697_) {
+        BlockPos blockpos = quantize(p_262651_);
+        BlockPos blockpos1 = quantize(p_262678_);
+        BoundingBox boundingbox = BoundingBox.fromCorners(blockpos, blockpos1);
+        int i = boundingbox.getXSpan() * boundingbox.getYSpan() * boundingbox.getZSpan();
+
+
+
+            List<ChunkAccess> list = new ArrayList<>();
+
+            for(int k = SectionPos.blockToSectionCoord(boundingbox.minZ()); k <= SectionPos.blockToSectionCoord(boundingbox.maxZ()); ++k) {
+                for(int l = SectionPos.blockToSectionCoord(boundingbox.minX()); l <= SectionPos.blockToSectionCoord(boundingbox.maxX()); ++l) {
+                    ChunkAccess chunkaccess = serverlevel.getChunk(l, k, ChunkStatus.FULL, false);
+                    if (chunkaccess == null) {
+                        continue;
+                    }
+
+                    list.add(chunkaccess);
+                }
+            }
+
+
+
+            for(ChunkAccess chunkaccess1 : list) {
+                chunkaccess1.fillBiomesFromNoise(makeResolver( chunkaccess1, boundingbox, p_262612_, p_262697_), serverlevel.getChunkSource().randomState().sampler());
+                chunkaccess1.setUnsaved(true);
+            }
+
+            serverlevel.getChunkSource().chunkMap.resendBiomesForChunks(list);
+
+
+
     }
 }
