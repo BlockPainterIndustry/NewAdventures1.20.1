@@ -27,4 +27,5 @@ All textures and models are All Rights Reserved unless otherwise given permissio
 First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first version I will release.
 
 ## Warning
+
 Please Understand that all versions with alpha or beta in name could be unstable and or game breaking especially the dev branch. I will try to keep all versions in master and the uploaded mods on the mod poertal as clean and bug free as possible but understand that at    this point i coding the mod alone and to this in my free time.
