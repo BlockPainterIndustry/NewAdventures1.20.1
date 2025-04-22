@@ -1,30 +1,13 @@
-# <ins>New Adventures Mod</ins>
+This the repository for tne New Adventure Mod
 
-## About The Project
-This the repository for the New Adventures Mod
+The mod is WP and at this moment not available for download.
 
-## Getting Started
-### Download
-The mod is work in progress and at this moment not available for download.
-You can of course download the dev branch build as a .jar but there is not much you could do especially in survival.
+You can of course download the dev branch build a .jar but there is not much you could do especially in survival.
 
-### Build it your self
-1. Install Intellij
-2. Pull the latest Source of the 'dev' branch
-3. In Intellij create new Project from existing Source
-4. Build.gradle should install automatically when not run build.gradle
-5. Optional: Run the runData task in gradle. 
-6. Build Project
+License: Textures are models are All Rights Reserved unless otherwise given permission.
 
+Future Plans:
 
-## License
-All code (excluding the bundled APIs from other mods, which are covered by their respective licenses) are released without restriction into the public domain under the  GNU LESSER GENERAL PUBLIC LICENSE.
+-First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first verion i will release. 
 
-All textures and models are All Rights Reserved unless otherwise given permission. For Addon creator please contact me on Discord: https://discord.gg/nnyvMqWn
-
-## Future Plans
-
-First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first version I will release.
-
-## Warning
-Please Understand that all versions with alpha or beta in name could be unstable and or game breaking especially the dev branch. I will try to keep all versions in master and the uploaded mods on the mod poertal as clean and bug free as possible but understand that at    this point i coding the mod alone and to this in my free time.
+Please Understand that all Verions with with alpha or beta in name could be unstable and or game breaking especially the dev branch. I will try to keep all versions in master and the uploaded mods on the mod poertal as clean and bug free as possible but understand that at    this point i coding the mod alone and to this in my free time.
