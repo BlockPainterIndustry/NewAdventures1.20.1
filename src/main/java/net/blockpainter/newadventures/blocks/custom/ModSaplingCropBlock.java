@@ -22,10 +22,10 @@ import net.minecraftforge.common.IPlantable;
 
 import java.util.Properties;
 
-public class ModSaplingCropBlock extends CropBlock {
+public class ModSaplingCropBlock extends ModCropBlock {
 
-    public static final int MAX_AGE = 5;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
+    public static final int MAX_AGE = 7;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
 
     public ModSaplingCropBlock(Properties pProperties) {
         super(pProperties);
@@ -33,7 +33,7 @@ public class ModSaplingCropBlock extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ModItems.YIRA_SAPLING_SEED.get();
+        return ModItems.YIRA_SAPLING_SEEDS.get();
     }
 
     @Override

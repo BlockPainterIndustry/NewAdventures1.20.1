@@ -16,30 +16,18 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "block": "newadventures:yira_sapling_croap",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "age": "6"
-                      }
-                    },
-                    {
-                      "block": "newadventures:yira_sapling_croap",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "age": "8"
-                      }
-                    }
-                  ]
+                  "block": "newadventures:yira_sapling_croap",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "7"
+                  }
                 }
               ],
               "name": "newadventures:yira_sapling"
             },
             {
               "type": "minecraft:item",
-              "name": "newadventures:yira_sapling_seed"
+              "name": "newadventures:yira_sapling_seeds"
             }
           ]
         }
@@ -50,23 +38,11 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "condition": "minecraft:any_of",
-          "terms": [
-            {
-              "block": "newadventures:yira_sapling_croap",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "6"
-              }
-            },
-            {
-              "block": "newadventures:yira_sapling_croap",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "8"
-              }
-            }
-          ]
+          "block": "newadventures:yira_sapling_croap",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "7"
+          }
         }
       ],
       "entries": [
@@ -83,7 +59,7 @@
               }
             }
           ],
-          "name": "newadventures:yira_sapling_seed"
+          "name": "newadventures:yira_sapling_seeds"
         }
       ],
       "rolls": 1.0

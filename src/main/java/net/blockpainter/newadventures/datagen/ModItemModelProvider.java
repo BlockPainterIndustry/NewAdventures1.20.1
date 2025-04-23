@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.YIRA_BOAT);
         simpleItem(ModItems.YIRA_CHEST_BOAT);
         simpleItem(ModItems.FLOWERING_YIRA_BRANCH);
+        simpleItem(ModItems.YIRA_SAPLING_SEEDS);
 
 
 

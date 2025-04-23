@@ -17,6 +17,12 @@
     },
     "age=5": {
       "model": "newadventures:block/yira_sapling_crop_stage5"
+    },
+    "age=6": {
+      "model": "newadventures:block/yira_sapling_crop_stage6"
+    },
+    "age=7": {
+      "model": "newadventures:block/yira_sapling_crop_stage7"
     }
   }
 }

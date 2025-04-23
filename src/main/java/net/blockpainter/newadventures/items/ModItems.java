@@ -34,7 +34,7 @@ public class ModItems {
     public static final RegistryObject<Item> YIRA_HANGING_SIGN = ITEMS.register("yira_hanging_sign",
             () -> new HangingSignItem(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
-    public static final RegistryObject<Item> YIRA_SAPLING_SEED = ITEMS.register("yira_sapling_seed",
+    public static final RegistryObject<Item> YIRA_SAPLING_SEEDS = ITEMS.register("yira_sapling_seeds",
             () -> new ItemNameBlockItem(ModBlocks.YIRA_SAPLING_CROP.get(), new Item.Properties()));
 
 }

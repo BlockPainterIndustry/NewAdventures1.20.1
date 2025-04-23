@@ -3,6 +3,7 @@
   "item.newadventures.yira_boat": "Yira Boat",
   "item.newadventures.yira_chest_boat": "Yira Chest Boat",
   "item.newadventures.flowering_yira_branch": "Flowering Yira Branch",
+  "item.newadventures.yira_sapling_seeds": "Yira Sapling Seeds",
 
   "creativetab.newadventures.scroll_tab" : "Scrolls & MagicStuff",
 
@@ -32,6 +33,8 @@
   "block.newadventures.yira_sign": "Yira  Sign",
   "block.newadventures.yira_hanging_sign": "Yira Hanging Sign",
   "block.newadventures.yira_grass_block": "Yira Grass Block",
+  "block.newadventures.yira_dirt": "Yira Dirt",
+  "block.newadventures.yira_farmland": "Yira Farmland",
   "block.newadventures.bloodrose": "Bloodrose",
   "block.newadventures.watercorn": "Watercorn",
   "block.newadventures.vile_flower": "Vile Flower",

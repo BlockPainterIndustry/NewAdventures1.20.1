@@ -80,13 +80,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.YIRA_SAPLING_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModSaplingCropBlock.AGE, 6))
-                .or(LootItemBlockStatePropertyCondition
-                        .hasBlockStateProperties(ModBlocks.YIRA_SAPLING_CROP.get())
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModSaplingCropBlock.AGE, 8)));
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModSaplingCropBlock.AGE, 7));
 
         this.add(ModBlocks.YIRA_SAPLING_CROP.get(), createCropDrops(ModBlocks.YIRA_SAPLING_CROP.get(), ModBlocks.YIRA_SAPLING.get().asItem(),
-                ModItems.YIRA_SAPLING_SEED.get(), lootitemcondition$builder2));
+                ModItems.YIRA_SAPLING_SEEDS.get(), lootitemcondition$builder2));
 
     }
 

@@ -2,6 +2,7 @@ package net.blockpainter.newadventures.datagen;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.blocks.custom.ModCropBlock;
 import net.blockpainter.newadventures.blocks.custom.ModSaplingCropBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -73,7 +74,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         tallPlant(ModBlocks.YIRA_TALL_GRASS.get(), "yira_tall_grass");
 
-        makeSingleCropBlock(((CropBlock) ModBlocks.YIRA_SAPLING_CROP.get()), "yira_sapling_crop_stage", "yira_sapling_crop_stage");
+        makeSingleCropBlock(((ModCropBlock) ModBlocks.YIRA_SAPLING_CROP.get()), "yira_sapling_crop_stage", "yira_sapling_crop_stage");
 
         saplingBlock(ModBlocks.YIRA_SHORT_GRASS);
         saplingBlock(ModBlocks.BLOODROSE);
@@ -177,13 +178,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 });
     }
 
-    public void makeSingleCropBlock(CropBlock block, String modelName, String textureName) {
+    public void makeSingleCropBlock(ModCropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> singleBlockCropStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] singleBlockCropStates(BlockState state, CropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] singleBlockCropStates(BlockState state, ModCropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()),
                 ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));

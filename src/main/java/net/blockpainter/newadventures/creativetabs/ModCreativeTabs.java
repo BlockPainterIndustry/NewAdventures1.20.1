@@ -37,6 +37,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.YIRA_BOAT.get());
                         output.accept(ModItems.YIRA_CHEST_BOAT.get());
                         output.accept(ModBlocks.YIRA_SAPLING.get());
+                        output.accept(ModItems.YIRA_SAPLING_SEEDS.get());
                         output.accept(ModBlocks.YIRA_LEAVES.get());
                         output.accept(ModBlocks.FLOWERING_YiRA_LEAVES.get());
                         output.accept(ModItems.FLOWERING_YIRA_BRANCH.get());

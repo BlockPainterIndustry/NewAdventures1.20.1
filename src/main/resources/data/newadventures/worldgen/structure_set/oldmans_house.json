@@ -1,0 +1,18 @@
+{
+
+  "structures": [
+    {
+      "structure": "newadventures:oldmans_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1642134678,
+
+    "spacing": 60,
+
+    "separation": 20,
+
+    "type": "minecraft:random_spread"
+  }
+}
