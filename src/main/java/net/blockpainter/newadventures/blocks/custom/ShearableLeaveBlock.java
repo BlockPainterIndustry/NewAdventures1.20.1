@@ -4,8 +4,10 @@ import net.blockpainter.newadventures.items.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.RandomSequence;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShearsItem;
@@ -33,6 +35,9 @@ public class ShearableLeaveBlock extends LeavesBlock {
                 level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.setBlock(pos, replacementBlock.defaultBlockState().setValue(PERSISTENT, true), 3);
                 Block.popResource(level, pos, new ItemStack(ModItems.FLOWERING_YIRA_BRANCH.get()));
+                if(RandomSource.create().nextFloat() < 0.2f) {
+                    Block.popResource(level, pos, new ItemStack(ModItems.YIRA_SAPLING_SEEDS.get()));
+                }
 
                 player.getItemInHand(hand).hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
             }

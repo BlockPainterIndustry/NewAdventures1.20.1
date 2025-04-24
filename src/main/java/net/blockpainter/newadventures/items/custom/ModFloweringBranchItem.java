@@ -3,10 +3,14 @@ package net.blockpainter.newadventures.items.custom;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.blockpainter.newadventures.blocks.ModBlocks;
+import net.blockpainter.newadventures.worldgen.biome.ModBiomes;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.*;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.FillBiomeCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -24,12 +28,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.chunk.*;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.mutable.MutableInt;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.Reference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public class ModFloweringBranchItem extends Item{
@@ -69,7 +76,9 @@ public class ModFloweringBranchItem extends Item{
                     BlockPos abovePos = mutablePos.above();
                     BlockState above = level.getBlockState(abovePos);
 
-                    setBiome(serverLevel, mutablePos, level.getBiomeManager().getBiome(new BlockPos(0,0,0)));
+                    Holder<Biome> biomeHolder = getBiomeHolder(ModBiomes.YIRA_BIOME, level.registryAccess());
+
+                    setBiome(serverLevel, mutablePos, biomeHolder);
 
                     boolean isReplaceableBase = current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT);
                     boolean isTallGrass = (above.is(Blocks.TALL_GRASS) || above.is(Blocks.LARGE_FERN)) && (current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT ));
@@ -204,5 +213,10 @@ public class ModFloweringBranchItem extends Item{
 
 
 
+    }
+
+    public static Holder<Biome> getBiomeHolder(ResourceKey<Biome> biomeKey, RegistryAccess access) {
+        return access.registryOrThrow(Registries.BIOME)
+                .getHolderOrThrow(biomeKey);
     }
 }

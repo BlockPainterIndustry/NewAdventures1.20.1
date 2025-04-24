@@ -8,6 +8,7 @@ import net.blockpainter.newadventures.entity.ModEntities;
 import net.blockpainter.newadventures.entity.client.ModBoatRenderer;
 import net.blockpainter.newadventures.util.ModWoodTypes;
 import net.blockpainter.newadventures.items.ModItems;
+import net.blockpainter.newadventures.worldgen.biome.ModTerrablender;
 import net.blockpainter.newadventures.worldgen.tree.ModFoliagePlacers;
 import net.blockpainter.newadventures.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.renderer.Sheets;
@@ -41,16 +42,16 @@ public class NewAdventures {
         ModItems.ITEMS.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
 
+        ModTerrablender.registerBiomes();
+
         ModTrunkPlacerTypes.TRUNK_PLACER.register(modEventBus);
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
+
+
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
