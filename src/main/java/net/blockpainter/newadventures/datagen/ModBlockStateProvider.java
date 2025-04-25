@@ -35,7 +35,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.YIRA_WOOD.get()), blockTexture(ModBlocks.YIRA_LOG.get()), blockTexture(ModBlocks.YIRA_LOG.get()));
 
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_YIRA_LOG.get()), blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()),
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/stripped_yira_log_top"));
+                new ResourceLocation(NewAdventures.MODID, "block/stripped_yira_log_top"));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_YIRA_WOOD.get()), blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()),
                 blockTexture(ModBlocks.STRIPPED_YIRA_LOG.get()));
 
@@ -43,9 +43,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
         cubeBottomTop(ModBlocks.YIRA_GRASS_BLOCK,
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_dirt"),
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_grass_block_side"),
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/yira_grass_block_top")
+                new ResourceLocation(NewAdventures.MODID, "block/yira_dirt"),
+                new ResourceLocation(NewAdventures.MODID, "block/yira_grass_block_side"),
+                new ResourceLocation(NewAdventures.MODID, "block/yira_grass_block_top")
         );
 
         blockItem(ModBlocks.YIRA_LOG);
@@ -133,7 +133,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),
-                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.fromNamespaceAndPath( "minecraft", "leaves"),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation( "minecraft", "leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
@@ -187,7 +187,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] singleBlockCropStates(BlockState state, ModCropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()),
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));
+                new ResourceLocation(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
     }

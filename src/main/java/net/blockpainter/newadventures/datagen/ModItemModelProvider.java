@@ -73,14 +73,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"block/" + item.getId().getPath()));
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(NewAdventures.MODID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"item/" + item.getId().getPath()));
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(NewAdventures.MODID,"item/" + item.getId().getPath()));
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
@@ -95,23 +95,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture",   new ResourceLocation(NewAdventures.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture",  new ResourceLocation(NewAdventures.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"item/" + item.getId().getPath()));
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(NewAdventures.MODID,"item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder tallgrass(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID,"block/" + item.getId().getPath() + "_top"));
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(NewAdventures.MODID,"block/" + item.getId().getPath() + "_top"));
     }
 }

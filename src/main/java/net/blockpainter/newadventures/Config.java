@@ -26,13 +26,13 @@ public class Config {
     public static Set<Item> items;
 
     private static boolean validateItemName(final Object obj) {
-        return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
+        return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey( new ResourceLocation(itemName));
     }
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event) {
 
         // convert the list of strings into a set of items
-        items = ITEM_STRINGS.get().stream().map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName))).collect(Collectors.toSet());
+        items = ITEM_STRINGS.get().stream().map(itemName -> ForgeRegistries.ITEMS.getValue( new ResourceLocation(itemName))).collect(Collectors.toSet());
     }
 }

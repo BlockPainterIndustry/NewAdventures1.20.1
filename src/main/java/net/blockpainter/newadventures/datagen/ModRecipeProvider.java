@@ -23,7 +23,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.YIRA_PLANKS.get(), 4)
-                .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("minecraft", "logs")))
+                .requires(TagKey.create(Registries.ITEM,  new ResourceLocation("minecraft", "logs")))
                 .unlockedBy(getHasName(ModBlocks.YIRA_LOG.get()), has(ModBlocks.YIRA_LOG.get()))
                 .save(pWriter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.YIRA_BUTTON.get(), 4)

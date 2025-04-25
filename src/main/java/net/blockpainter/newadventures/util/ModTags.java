@@ -16,7 +16,7 @@ public class ModTags {
         public static final TagKey<Block> YIRA_SOIL = createTag("yira_soil");
 
         private static TagKey<Block> createTag(String name) {
-            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, name));
+            return BlockTags.create( new ResourceLocation(NewAdventures.MODID, name));
         }
     }
 

@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.openjdk.nashorn.internal.ir.annotations.Ignore;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -32,9 +33,8 @@ public class NewAdventures {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "new_adventures_1_20_1" namespace
-
-    public NewAdventures(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public NewAdventures() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
         ModEntities.ENTITY_TYPES.register(modEventBus);

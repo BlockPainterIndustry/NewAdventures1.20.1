@@ -18,7 +18,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 public class ModBiomes {
 
     public static final ResourceKey<Biome> YIRA_BIOME = ResourceKey.create(Registries.BIOME,
-            ResourceLocation.fromNamespaceAndPath(NewAdventures.MODID, "yira_biome"));
+            new ResourceLocation(NewAdventures.MODID, "yira_biome"));
 
     public static void boostrap(BootstapContext<Biome> context) {
         context.register(YIRA_BIOME, yiraBiome(context));
