@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.FillBiomeCommand;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -83,6 +84,10 @@ public class ModFloweringBranchItem extends Item{
                     boolean isReplaceableBase = current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT);
                     boolean isTallGrass = (above.is(Blocks.TALL_GRASS) || above.is(Blocks.LARGE_FERN)) && (current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT ));
                     boolean isSurfacePlant = above.is(Blocks.GRASS) || above.is(Blocks.FERN);
+                    boolean isFlower = above.is(BlockTags.FLOWERS);
+                    boolean isShortGras = (above.is(Blocks.GRASS) || above.is(Blocks.FERN));
+
+
 
                     BlockState lower = ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                             .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER);
@@ -90,10 +95,31 @@ public class ModFloweringBranchItem extends Item{
                     BlockState upper = ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                             .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER);
 
+                    if (isFlower) {
+                        level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
+                        BlockState toPlace = null;
+                        switch (random.nextInt(3)) {
+                            case 0 -> toPlace = ModBlocks.BLOODROSE.get().defaultBlockState();
+                            case 1 -> toPlace = ModBlocks.VILE_FLOWER.get().defaultBlockState();
+                            case 2 -> toPlace = ModBlocks.WATERCORN.get().defaultBlockState();
+                            default -> toPlace = Blocks.AIR.defaultBlockState();
+
+                        }
+
+                        level.setBlock(abovePos, toPlace, 3);
+                        success = true;
+                        continue;
+                    }
                     if (isTallGrass) {
                         level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
                         level.setBlock(abovePos, lower, 3);
                         level.setBlock(abovePos.above(), upper, 3);
+                        success = true;
+                        continue;
+                    }
+                    if (isShortGras) {
+                        level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
+                        level.setBlock(abovePos, ModBlocks.YIRA_SHORT_GRASS.get().defaultBlockState(), 3);
                         success = true;
                         continue;
                     }
@@ -106,12 +132,9 @@ public class ModFloweringBranchItem extends Item{
                         success = true;
                         BlockState toPlace = null;
                         boolean tallGrassPlaced = false;
-                        if (random.nextFloat() < 0.5F) {
-                            switch (random.nextInt(5)) {
-                                case 0 -> toPlace = ModBlocks.VILE_FLOWER.get().defaultBlockState();
-                                case 1 -> toPlace = ModBlocks.WATERCORN.get().defaultBlockState();
-                                case 2 -> toPlace = ModBlocks.BLOODROSE.get().defaultBlockState();
-                                case 3 -> {
+                        if (random.nextFloat() < 0.3F) {
+                            switch (random.nextInt(2)) {
+                                case 1 -> {
 
                                     if (level.getBlockState(abovePos).isAir() && level.getBlockState(abovePos.above()).isAir()) {
                                         level.setBlock(abovePos, ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
@@ -122,12 +145,27 @@ public class ModFloweringBranchItem extends Item{
                                         tallGrassPlaced = true;
                                     }
                                 }
-                                default -> toPlace = ModBlocks.YIRA_SHORT_GRASS.get().defaultBlockState();
+                                case 2 -> toPlace = ModBlocks.YIRA_SHORT_GRASS.get().defaultBlockState();
+                                default -> toPlace = Blocks.AIR.defaultBlockState();
                             }
                             if (toPlace != null && !tallGrassPlaced) {
                                 level.setBlock(abovePos, toPlace, 3);
                             }
                         }
+
+                        if (random.nextFloat() < 0.1F) {
+                            switch (random.nextInt(5)) {
+                                case 1 -> toPlace = ModBlocks.VILE_FLOWER.get().defaultBlockState();
+                                case 2 -> toPlace = ModBlocks.WATERCORN.get().defaultBlockState();
+                                case 3 -> toPlace = ModBlocks.BLOODROSE.get().defaultBlockState();
+                                default -> toPlace = Blocks.AIR.defaultBlockState();
+                            }
+                            if (toPlace != null && !tallGrassPlaced) {
+                                level.setBlock(abovePos, toPlace, 3);
+                            }
+                        }
+
+
                     }
                 }
             }
