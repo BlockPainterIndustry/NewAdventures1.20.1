@@ -65,51 +65,47 @@ public class ModFloweringBranchItem extends Item{
         int radius = 5;
         BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
 
+        Holder<Biome> biomeHolder = getBiomeHolder(ModBiomes.YIRA_BIOME, level.registryAccess());
+
         for (int x = -radius; x <= radius; x++) {
-            for (int y = -1; y <= 1; y++) {
+            for (int y = -radius; y <= radius; y++) {
                 for (int z = -radius; z <= radius; z++) {
 
-                    if (x * x + z * z > radius * radius) continue;
+                    double distanceSq = x * x + y * y + z * z;
+                    if (distanceSq > radius * radius) continue; // Nur innerhalb der Kugel
 
                     mutablePos.set(origin.offset(x, y, z));
-
                     BlockState current = level.getBlockState(mutablePos);
                     BlockPos abovePos = mutablePos.above();
                     BlockState above = level.getBlockState(abovePos);
 
-                    Holder<Biome> biomeHolder = getBiomeHolder(ModBiomes.YIRA_BIOME, level.registryAccess());
-
                     setBiome(serverLevel, mutablePos, biomeHolder);
 
                     boolean isReplaceableBase = current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT);
-                    boolean isTallGrass = (above.is(Blocks.TALL_GRASS) || above.is(Blocks.LARGE_FERN)) && (current.is(Blocks.GRASS_BLOCK) || current.is(Blocks.DIRT) || current.is(Blocks.COARSE_DIRT ));
+                    boolean isTallGrass = (above.is(Blocks.TALL_GRASS) || above.is(Blocks.LARGE_FERN));
                     boolean isSurfacePlant = above.is(Blocks.GRASS) || above.is(Blocks.FERN);
                     boolean isFlower = above.is(BlockTags.FLOWERS);
-                    boolean isShortGras = (above.is(Blocks.GRASS) || above.is(Blocks.FERN));
-
-
+                    boolean isShortGrass = above.is(Blocks.GRASS) || above.is(Blocks.FERN);
 
                     BlockState lower = ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                             .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER);
-
                     BlockState upper = ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                             .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER);
 
+                    // 🌿 Oberfläche ersetzen
                     if (isFlower) {
                         level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
-                        BlockState toPlace = null;
-                        switch (random.nextInt(3)) {
-                            case 0 -> toPlace = ModBlocks.BLOODROSE.get().defaultBlockState();
-                            case 1 -> toPlace = ModBlocks.VILE_FLOWER.get().defaultBlockState();
-                            case 2 -> toPlace = ModBlocks.WATERCORN.get().defaultBlockState();
-                            default -> toPlace = Blocks.AIR.defaultBlockState();
-
-                        }
-
+                        BlockState toPlace = switch (random.nextInt(3)) {
+                            case 0 -> ModBlocks.BLOODROSE.get().defaultBlockState();
+                            case 1 -> ModBlocks.VILE_FLOWER.get().defaultBlockState();
+                            case 2 -> ModBlocks.WATERCORN.get().defaultBlockState();
+                            default -> Blocks.AIR.defaultBlockState();
+                        };
                         level.setBlock(abovePos, toPlace, 3);
                         success = true;
                         continue;
                     }
+
                     if (isTallGrass) {
                         level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
                         level.setBlock(abovePos, lower, 3);
@@ -117,29 +113,33 @@ public class ModFloweringBranchItem extends Item{
                         success = true;
                         continue;
                     }
-                    if (isShortGras) {
+
+                    if (isShortGrass) {
                         level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
                         level.setBlock(abovePos, ModBlocks.YIRA_SHORT_GRASS.get().defaultBlockState(), 3);
                         success = true;
                         continue;
                     }
+
+                    // 🌎 Unterirdisch Dirt in YIRA_DIRT umwandeln (Spikes!)
                     if (isReplaceableBase && (above.isAir() || isSurfacePlant)) {
+                        // 🥀 Oberfläche ersetzen
                         if (isSurfacePlant) {
                             level.destroyBlock(abovePos, false);
                         }
 
                         level.setBlock(mutablePos, ModBlocks.YIRA_GRASS_BLOCK.get().defaultBlockState(), 3);
                         success = true;
+
                         BlockState toPlace = null;
                         boolean tallGrassPlaced = false;
+
                         if (random.nextFloat() < 0.3F) {
                             switch (random.nextInt(2)) {
                                 case 1 -> {
-
                                     if (level.getBlockState(abovePos).isAir() && level.getBlockState(abovePos.above()).isAir()) {
                                         level.setBlock(abovePos, ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                                                 .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER), 3);
-
                                         level.setBlock(abovePos.above(), ModBlocks.YIRA_TALL_GRASS.get().defaultBlockState()
                                                 .setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), 3);
                                         tallGrassPlaced = true;
@@ -164,21 +164,38 @@ public class ModFloweringBranchItem extends Item{
                                 level.setBlock(abovePos, toPlace, 3);
                             }
                         }
+                    }
 
+// 🌎 Zusätzlich: Untergrund Dirt/Coarse Dirt/Grass in YIRA_DIRT verwandeln!
+                    if (isReplaceableBase) {
+                        boolean spike = random.nextFloat() < 0.2F; // 20% Chance für Spikes
+                        int depth = spike ? random.nextInt(3, 7) : 1; // Spikes tiefer machen
 
+                        for (int d = 0; d < depth; d++) {
+                            BlockPos dirtPos = mutablePos.below(d);
+                            BlockState dirtState = level.getBlockState(dirtPos);
+
+                            if (dirtState.is(Blocks.DIRT) || dirtState.is(Blocks.COARSE_DIRT) || dirtState.is(Blocks.GRASS_BLOCK)) {
+                                level.setBlock(dirtPos, ModBlocks.YIRA_DIRT.get().defaultBlockState(), 3);
+                            } else {
+                                break; // Aufhören, wenn kein Dirt mehr da
+                            }
+                        }
                     }
                 }
             }
         }
 
         if (success) {
-            level.levelEvent(1505, origin, 0);
+            level.levelEvent(1505, origin, 0); // Partikel
             if (!player.isCreative()) stack.shrink(1);
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
         return InteractionResult.PASS;
     }
+
+
 
 
     @Deprecated
