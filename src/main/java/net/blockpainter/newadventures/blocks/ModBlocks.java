@@ -220,6 +220,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GRAY_CUT_SANDSTONE_SLAB = registerBlock("gray_cut_sandstone_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
 
+    public static final RegistryObject<Block> RED_CACTUS = registerBlock("red_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
+
 
 
     public static void register(IEventBus eventBus) {

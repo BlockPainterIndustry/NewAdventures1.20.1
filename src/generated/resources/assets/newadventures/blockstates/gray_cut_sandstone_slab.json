@@ -4,7 +4,7 @@
       "model": "newadventures:block/gray_cut_sandstone_slab"
     },
     "type=double": {
-      "model": "newadventures:block/gray_cut_sandstone"
+      "model": "newadventures:block/gray_cut_sandstone_slab_top"
     },
     "type=top": {
       "model": "newadventures:block/gray_cut_sandstone_slab_top"

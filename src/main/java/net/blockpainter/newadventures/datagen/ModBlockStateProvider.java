@@ -17,6 +17,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -91,11 +92,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.YIRA_LEAVES);
         leavesBlock(ModBlocks.FLOWERING_YiRA_LEAVES);
 
-        cubeAll(ModBlocks.GRAY_SAND.get());
+        blockWithItem(ModBlocks.GRAY_SAND);
 
         cubeBottomTop(ModBlocks.GRAY_SANDSTONE, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
-        stairsBlock((StairBlock) ModBlocks.GRAY_SANDSTONE_STAIRS.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
-        slabBlock((SlabBlock) ModBlocks.GRAY_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
+        stairBottomTop(ModBlocks.GRAY_SANDSTONE_STAIRS, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
+        slabBottomTop(ModBlocks.GRAY_SANDSTONE_SLAB, "gray_sandstone_slab", "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
         wallBlock((WallBlock) ModBlocks.GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
 
         cubeColumn(ModBlocks.GRAY_CHISELED_SANDSTONE, "gray_sandstone_top", "gray_chiseled_sandstone");
@@ -105,13 +106,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_SMOOTH_SANDSTONE.get()), new ResourceLocation(NewAdventures.MODID, "block/gray_sandstone_top"));
 
         cubeColumn(ModBlocks.GRAY_CUT_SANDSTONE, "gray_sandstone_top", "gray_cut_sandstone");
-        slabBlock((SlabBlock) ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_CUT_SANDSTONE.get()), blockTexture(ModBlocks.GRAY_CUT_SANDSTONE.get()));
+        slabBottomTop(ModBlocks.GRAY_CUT_SANDSTONE_SLAB, "gray_cut_sandstone_slab", "gray_sandstone_top", "gray_cut_sandstone", "gray_sandstone_top");
 
-        blockItem(ModBlocks.GRAY_SAND);
         blockItem(ModBlocks.GRAY_SANDSTONE);
         blockItem(ModBlocks.GRAY_CHISELED_SANDSTONE);
         blockItem(ModBlocks.GRAY_SMOOTH_SANDSTONE);
         blockItem(ModBlocks.GRAY_CUT_SANDSTONE);
+
+        cubeBottomTop(ModBlocks.GRAY_SANDSTONE, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
+
+        cactusBlock(ModBlocks.RED_CACTUS);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
@@ -170,8 +174,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void cubeBottomTop(RegistryObject<Block> blockRegistryObject, String bottom, String side, String top) {
         simpleBlock(blockRegistryObject.get(), models().cubeBottomTop(
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
                 new ResourceLocation(NewAdventures.MODID, "block/" + side),
+                new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
                 new ResourceLocation(NewAdventures.MODID, "block/" + top)
         ));
     }
@@ -179,9 +183,34 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void cubeColumn(RegistryObject<Block> blockRegistryObject, String end, String side) {
         simpleBlock(blockRegistryObject.get(), models().cubeColumn(
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                new ResourceLocation(NewAdventures.MODID, "block/" + end),
-                new ResourceLocation(NewAdventures.MODID, "block/" + side)
+                new ResourceLocation(NewAdventures.MODID, "block/" + side),
+                new ResourceLocation(NewAdventures.MODID, "block/" + end)
+
         ));
+    }
+
+    private void stairBottomTop(RegistryObject<Block> blockRegistryObject, String bottom, String side, String top) {
+        String name = ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath();
+        if (name.endsWith("_stairs")) {
+            name = name.substring(0, name.length() - "_stairs".length());
+        }
+
+        stairsBlock((StairBlock) blockRegistryObject.get(),
+                name,
+                new ResourceLocation(NewAdventures.MODID, "block/" + side),
+                new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
+                new ResourceLocation(NewAdventures.MODID, "block/" + top)
+        );
+    }
+
+    private void slabBottomTop(RegistryObject<Block> blockRegistryObject, String key, String bottom, String side, String top) {
+        slabBlock((SlabBlock) blockRegistryObject.get(),
+               new ResourceLocation(NewAdventures.MODID, key + "_top"),
+               new ResourceLocation(NewAdventures.MODID, "block/" + side),
+               new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
+               new ResourceLocation(NewAdventures.MODID, "block/" + top)
+       );
+
     }
 
     private void cubeAllWithOtherTexture(RegistryObject<Block> blockRegistryObject, String all) {
@@ -225,6 +254,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(NewAdventures.MODID, "block/" + textureName + state.getValue(((ModSaplingCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
+    }
+    private void cactusBlock(RegistryObject<Block> block) {
+        String name = ForgeRegistries.BLOCKS.getKey(block.get()).getPath();
+
+        // Das Model
+        simpleBlockWithItem(block.get(),
+                models().cubeColumn(
+                        name,
+                        new ResourceLocation(NewAdventures.MODID, "block/" + name + "_side"),
+                        new ResourceLocation(NewAdventures.MODID, "block/" + name + "_top")
+                )
+        );
     }
 
 }

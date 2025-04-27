@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "newadventures:block/gray_chiseled_sandstone",
-    "side": "newadventures:block/gray_sandstone_top"
+    "end": "newadventures:block/gray_sandstone_top",
+    "side": "newadventures:block/gray_chiseled_sandstone"
   }
 }

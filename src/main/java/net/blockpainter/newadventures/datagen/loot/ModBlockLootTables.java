@@ -103,6 +103,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.GRAY_CUT_SANDSTONE.get());
         this.add(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.RED_CACTUS.get());
     }
 
     @Override
