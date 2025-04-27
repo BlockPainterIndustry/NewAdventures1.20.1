@@ -1,0 +1,8 @@
+{
+  "asset_id": "newadventures:curse",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.newadventures.curse"
+  },
+  "template_item": "newadventures:curse_armor_trim_smithing_template"
+}

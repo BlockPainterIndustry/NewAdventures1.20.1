@@ -1,5 +1,6 @@
 package net.blockpainter.newadventures.datagen;
 
+import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.items.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -115,5 +116,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.CHAIN)
                 .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
                 .save(pWriter);
+        trimSmithing(pWriter, ModItems.CURSE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "curse"));
     }
 }

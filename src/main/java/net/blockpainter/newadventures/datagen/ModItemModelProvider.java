@@ -46,8 +46,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.YIRA_SAPLING_SEEDS);
 
 
-
-
         fenceItem(ModBlocks.YIRA_FENCE, ModBlocks.YIRA_PLANKS);
         buttonItem(ModBlocks.YIRA_BUTTON, ModBlocks.YIRA_PLANKS);
 
@@ -69,6 +67,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.VILE_FLOWER);
 
         tallgrass(ModBlocks.YIRA_TALL_GRASS);
+
+        basicItem(ModItems.GOBLIN_GOLD_INGOT.get());
+        basicItem(ModItems.CURSE_SMITHING_TEMPALTE.get());
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

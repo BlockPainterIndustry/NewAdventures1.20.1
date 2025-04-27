@@ -5,6 +5,7 @@ import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
 import net.blockpainter.newadventures.items.custom.ModBoatItem;
 import net.blockpainter.newadventures.items.custom.ModFloweringBranchItem;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,5 +37,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> YIRA_SAPLING_SEEDS = ITEMS.register("yira_sapling_seeds",
             () -> new ItemNameBlockItem(ModBlocks.YIRA_SAPLING_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> GOBLIN_GOLD_INGOT = ITEMS.register("goblin_gold_ingot",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+
+    public static final RegistryObject<Item> CURSE_SMITHING_TEMPALTE = ITEMS.register("curse_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "curse")));
 
 }

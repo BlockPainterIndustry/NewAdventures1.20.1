@@ -194,7 +194,8 @@ public class ModBlocks {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-
+    /*public static final RegistryObject<Block> GRAY_SAND = registerBlock("gray_sand",
+            () -> new SandBlock(3582982, BlockBehaviour.Properties.copy(Blocks.SAND).noOcclusion()));*/
 
 
     public static void register(IEventBus eventBus) {

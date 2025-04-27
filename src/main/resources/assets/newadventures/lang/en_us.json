@@ -4,6 +4,9 @@
   "item.newadventures.yira_chest_boat": "Yira Chest Boat",
   "item.newadventures.flowering_yira_branch": "Flowering Yira Branch",
   "item.newadventures.yira_sapling_seeds": "Yira Sapling Seeds",
+  "item.newadventures.goblin_gold_ingot": "Goblin Gold Ingot",
+  "item.newadventures.curse_armor_trim_smithing_template": "Curse Trim Template",
+
 
   "creativetab.newadventures.scroll_tab" : "Scrolls & MagicStuff",
 
@@ -42,5 +45,9 @@
   "block.newadventures.yira_tall_grass": "Yira Tall Grass",
 
   "entity.newadventures.yira_boat" : "Yira Boat",
-  "entity.newadventures.yira_chest_boat" : "Chest With Boat xD"
+  "entity.newadventures.yira_chest_boat" : "Chest With Boat xD",
+
+  "trim_material.newadventures.goblin_gold" : "Goblin Gold Material",
+
+  "trim_pattern.newadventures.curse": "Curse Armor Trim"
 }

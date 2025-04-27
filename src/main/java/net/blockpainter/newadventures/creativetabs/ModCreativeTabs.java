@@ -49,6 +49,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.BLOODROSE.get());
                         output.accept(ModBlocks.WATERCORN.get());
                         output.accept(ModBlocks.VILE_FLOWER.get());
+                        output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
+                        output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
                     })
                     .build());
 
