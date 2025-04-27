@@ -43,9 +43,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
         cubeBottomTop(ModBlocks.YIRA_GRASS_BLOCK,
-                new ResourceLocation(NewAdventures.MODID, "block/yira_dirt"),
-                new ResourceLocation(NewAdventures.MODID, "block/yira_grass_block_side"),
-                new ResourceLocation(NewAdventures.MODID, "block/yira_grass_block_top")
+                "yira_dirt",
+                "yira_grass_block_side",
+                "yira_grass_block_top"
         );
 
         blockItem(ModBlocks.YIRA_LOG);
@@ -71,6 +71,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(((DoorBlock) ModBlocks.YIRA_DOOR.get()), modLoc("block/yira_door_bottom"), modLoc("block/yira_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.YIRA_TRAPDOOR.get()), modLoc("block/yira_trapdoor"), true, "cutout");
 
+        signBlock(((StandingSignBlock) ModBlocks.YIRA_SIGN.get()), ((WallSignBlock) ModBlocks.YIRA_WALL_SIGN.get()),
+                blockTexture(ModBlocks.YIRA_PLANKS.get()));
+
+        hangingSignBlock(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.YIRA_PLANKS.get()));
+        saplingBlock(ModBlocks.YIRA_SAPLING);
 
         tallPlant(ModBlocks.YIRA_TALL_GRASS.get(), "yira_tall_grass");
 
@@ -85,13 +91,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.YIRA_LEAVES);
         leavesBlock(ModBlocks.FLOWERING_YiRA_LEAVES);
 
-        signBlock(((StandingSignBlock) ModBlocks.YIRA_SIGN.get()), ((WallSignBlock) ModBlocks.YIRA_WALL_SIGN.get()),
-                blockTexture(ModBlocks.YIRA_PLANKS.get()));
+        cubeAll(ModBlocks.GRAY_SAND.get());
 
-        hangingSignBlock(ModBlocks.YIRA_HANGING_SIGN.get(), ModBlocks.YIRA_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.YIRA_PLANKS.get()));
-        saplingBlock(ModBlocks.YIRA_SAPLING);
+        cubeBottomTop(ModBlocks.GRAY_SANDSTONE, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
+        stairsBlock((StairBlock) ModBlocks.GRAY_SANDSTONE_STAIRS.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
+        slabBlock((SlabBlock) ModBlocks.GRAY_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
+        wallBlock((WallBlock) ModBlocks.GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
 
+        cubeColumn(ModBlocks.GRAY_CHISELED_SANDSTONE, "gray_sandstone_top", "gray_chiseled_sandstone");
+
+        cubeAllWithOtherTexture(ModBlocks.GRAY_SMOOTH_SANDSTONE, "gray_sandstone_top");
+        stairsBlock((StairBlock) ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get(), new ResourceLocation(NewAdventures.MODID, "block/gray_sandstone_top"));
+        slabBlock((SlabBlock) ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_SMOOTH_SANDSTONE.get()), new ResourceLocation(NewAdventures.MODID, "block/gray_sandstone_top"));
+
+        cubeColumn(ModBlocks.GRAY_CUT_SANDSTONE, "gray_sandstone_top", "gray_cut_sandstone");
+        slabBlock((SlabBlock) ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.GRAY_CUT_SANDSTONE.get()), blockTexture(ModBlocks.GRAY_CUT_SANDSTONE.get()));
+
+        blockItem(ModBlocks.GRAY_SAND);
+        blockItem(ModBlocks.GRAY_SANDSTONE);
+        blockItem(ModBlocks.GRAY_CHISELED_SANDSTONE);
+        blockItem(ModBlocks.GRAY_SMOOTH_SANDSTONE);
+        blockItem(ModBlocks.GRAY_CUT_SANDSTONE);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
@@ -147,12 +167,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    private void cubeBottomTop(RegistryObject<Block> blockRegistryObject, ResourceLocation bottom, ResourceLocation side, ResourceLocation top) {
+    private void cubeBottomTop(RegistryObject<Block> blockRegistryObject, String bottom, String side, String top) {
         simpleBlock(blockRegistryObject.get(), models().cubeBottomTop(
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                side,
-                bottom,
-                top
+                new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
+                new ResourceLocation(NewAdventures.MODID, "block/" + side),
+                new ResourceLocation(NewAdventures.MODID, "block/" + top)
+        ));
+    }
+
+    private void cubeColumn(RegistryObject<Block> blockRegistryObject, String end, String side) {
+        simpleBlock(blockRegistryObject.get(), models().cubeColumn(
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                new ResourceLocation(NewAdventures.MODID, "block/" + end),
+                new ResourceLocation(NewAdventures.MODID, "block/" + side)
+        ));
+    }
+
+    private void cubeAllWithOtherTexture(RegistryObject<Block> blockRegistryObject, String all) {
+        simpleBlock(blockRegistryObject.get(), models().cubeAll(
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                new ResourceLocation(NewAdventures.MODID, "block/" + all)
         ));
     }
 

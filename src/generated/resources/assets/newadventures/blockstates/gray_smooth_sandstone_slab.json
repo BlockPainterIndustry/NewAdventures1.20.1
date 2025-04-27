@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newadventures:block/gray_smooth_sandstone_slab"
+    },
+    "type=double": {
+      "model": "newadventures:block/gray_smooth_sandstone"
+    },
+    "type=top": {
+      "model": "newadventures:block/gray_smooth_sandstone_slab_top"
+    }
+  }
+}

@@ -194,8 +194,32 @@ public class ModBlocks {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    /*public static final RegistryObject<Block> GRAY_SAND = registerBlock("gray_sand",
-            () -> new SandBlock(3582982, BlockBehaviour.Properties.copy(Blocks.SAND).noOcclusion()));*/
+    public static final RegistryObject<Block> GRAY_SAND = registerBlock("gray_sand",
+            () -> new SandBlock(3582982, BlockBehaviour.Properties.copy(Blocks.SAND)));
+
+    public static final RegistryObject<Block> GRAY_SANDSTONE = registerBlock("gray_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final RegistryObject<Block> GRAY_SANDSTONE_STAIRS = registerBlock("gray_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.GRAY_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SANDSTONE_STAIRS)));
+    public static final RegistryObject<Block> GRAY_SANDSTONE_SLAB = registerBlock("gray_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE_SLAB)));
+    public static final RegistryObject<Block> GRAY_SANDSTONE_WALL = registerBlock("gray_sandstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE_WALL)));
+    public static final RegistryObject<Block> GRAY_CHISELED_SANDSTONE = registerBlock("gray_chiseled_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE)));
+
+    public static final RegistryObject<Block> GRAY_SMOOTH_SANDSTONE = registerBlock("gray_smooth_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
+    public static final RegistryObject<Block> GRAY_SMOOTH_SANDSTONE_STAIRS = registerBlock("gray_smooth_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.GRAY_SMOOTH_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
+    public static final RegistryObject<Block> GRAY_SMOOTH_SANDSTONE_SLAB = registerBlock("gray_smooth_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
+
+    public static final RegistryObject<Block> GRAY_CUT_SANDSTONE = registerBlock("gray_cut_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)));
+    public static final RegistryObject<Block> GRAY_CUT_SANDSTONE_SLAB = registerBlock("gray_cut_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
+
 
 
     public static void register(IEventBus eventBus) {

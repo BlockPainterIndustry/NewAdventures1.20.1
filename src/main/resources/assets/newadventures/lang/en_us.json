@@ -43,6 +43,18 @@
   "block.newadventures.vile_flower": "Vile Flower",
   "block.newadventures.yira_short_grass": "Yira Short Grass",
   "block.newadventures.yira_tall_grass": "Yira Tall Grass",
+  "block.newadventures.gray_sand" : "Gray Sand",
+  "block.newadventures.gray_sandstone" : "Gray Sandstone",
+  "block.newadventures.gray_sandstone_stairs" : "Gray Sandstone Stairs",
+  "block.newadventures.gray_sandstone_slab" : "Gray Sandstone Slab",
+  "block.newadventures.gray_sandstone_wall" : "Gray Sandstone Wall",
+  "block.newadventures.gray_chiseled_sandstone" : "Gray Chiseled Sandstone",
+  "block.newadventures.gray_smooth_sandstone" : "Gray Smooth Sandstone",
+  "block.newadventures.gray_smooth_sandstone_stairs" : "Gray Smooth Sandstone Stairs",
+  "block.newadventures.gray_smooth_sandstone_slab" : "Gray Smooth Sandstone Slab",
+  "block.newadventures.gray_cut_sandstone" : "Gray Cut Sandstone",
+  "block.newadventures.gray_cut_sandstone_slab" : "Gray Cut Sandstone Slab",
+
 
   "entity.newadventures.yira_boat" : "Yira Boat",
   "entity.newadventures.yira_chest_boat" : "Chest With Boat xD",

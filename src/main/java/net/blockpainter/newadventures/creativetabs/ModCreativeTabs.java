@@ -51,6 +51,17 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.VILE_FLOWER.get());
                         output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
                         output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
+                        output.accept(ModBlocks.GRAY_SAND.get());
+                        output.accept(ModBlocks.GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.GRAY_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.GRAY_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.GRAY_SANDSTONE_WALL.get());
+                        output.accept(ModBlocks.GRAY_CHISELED_SANDSTONE.get());
+                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE.get());
+                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.GRAY_CUT_SANDSTONE.get());
+                        output.accept(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get());
                     })
                     .build());
 

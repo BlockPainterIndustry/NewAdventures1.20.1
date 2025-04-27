@@ -85,6 +85,24 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.YIRA_SAPLING_CROP.get(), createCropDrops(ModBlocks.YIRA_SAPLING_CROP.get(), ModBlocks.YIRA_SAPLING.get().asItem(),
                 ModItems.YIRA_SAPLING_SEEDS.get(), lootitemcondition$builder2));
 
+        this.dropSelf(ModBlocks.GRAY_SAND.get());
+
+        this.dropSelf(ModBlocks.GRAY_SANDSTONE.get());
+        this.dropSelf(ModBlocks.GRAY_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GRAY_SANDSTONE_STAIRS.get()));
+        this.dropSelf(ModBlocks.GRAY_SANDSTONE_WALL.get());
+
+        this.dropSelf(ModBlocks.GRAY_CHISELED_SANDSTONE.get());
+
+        this.dropSelf(ModBlocks.GRAY_SMOOTH_SANDSTONE.get());
+        this.dropSelf(ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.GRAY_CUT_SANDSTONE.get());
+        this.add(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get()));
     }
 
     @Override
