@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "newadventures:block/gray_sandstone_top",
-    "side": "newadventures:block/gray_sandstone_top",
-    "top": "newadventures:block/gray_sandstone_top"
-  }
-}

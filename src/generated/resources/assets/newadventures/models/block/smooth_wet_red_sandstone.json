@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "newadventures:block/wet_red_sandstone_top"
+  }
+}

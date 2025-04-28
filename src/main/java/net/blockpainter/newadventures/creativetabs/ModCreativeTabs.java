@@ -15,9 +15,9 @@ public class ModCreativeTabs {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, NewAdventures.MODID);
 
-    public static final RegistryObject<CreativeModeTab> NA_MISC_TAB = CREATIVE_MODE_TAB.register("na_misc_tab",
+    public static final RegistryObject<CreativeModeTab> NA_BIOME_TAB = CREATIVE_MODE_TAB.register("na_biome_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.YIRA_LOG.get()))
-                    .title(Component.translatable("creativetab.newadventures.misc_tab"))
+                    .title(Component.translatable("creativetab.newadventures.biome_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.YIRA_LOG.get());
                         output.accept(ModBlocks.STRIPPED_YIRA_LOG.get());
@@ -49,31 +49,61 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.BLOODROSE.get());
                         output.accept(ModBlocks.WATERCORN.get());
                         output.accept(ModBlocks.VILE_FLOWER.get());
-                        output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
-                        output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
                         output.accept(ModBlocks.GRAY_SAND.get());
                         output.accept(ModBlocks.GRAY_SANDSTONE.get());
                         output.accept(ModBlocks.GRAY_SANDSTONE_SLAB.get());
                         output.accept(ModBlocks.GRAY_SANDSTONE_STAIRS.get());
                         output.accept(ModBlocks.GRAY_SANDSTONE_WALL.get());
-                        output.accept(ModBlocks.GRAY_CHISELED_SANDSTONE.get());
-                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE.get());
-                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get());
-                        output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get());
-                        output.accept(ModBlocks.GRAY_CUT_SANDSTONE.get());
-                        output.accept(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get());
-                        output.accept(ModBlocks.RED_CACTUS.get());
+                        output.accept(ModBlocks.GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.CUT_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get());
                         output.accept(ModBlocks.WET_SAND.get());
                         output.accept(ModBlocks.WET_SANDSTONE.get());
                         output.accept(ModBlocks.WET_SANDSTONE_SLAB.get());
                         output.accept(ModBlocks.WET_SANDSTONE_STAIRS.get());
                         output.accept(ModBlocks.WET_SANDSTONE_WALL.get());
-                        output.accept(ModBlocks.WET_CHISELED_SANDSTONE.get());
-                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE.get());
-                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get());
-                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE_STAIRS.get());
-                        output.accept(ModBlocks.WET_CUT_SANDSTONE.get());
-                        output.accept(ModBlocks.WET_CUT_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.CHISELED_WET_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.CUT_WET_SANDSTONE.get());
+                        output.accept(ModBlocks.CUT_WET_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_GRAY_SAND.get());
+                        output.accept(ModBlocks.WET_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_GRAY_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.WET_GRAY_SANDSTONE_WALL.get());
+                        output.accept(ModBlocks.WET_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.CUT_WET_GRAY_SANDSTONE.get());
+                        output.accept(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_RED_SAND.get());
+                        output.accept(ModBlocks.WET_RED_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_RED_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_RED_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.WET_RED_SANDSTONE_WALL.get());
+                        output.accept(ModBlocks.CHISELED_WET_RED_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_RED_SANDSTONE.get());
+                        output.accept(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.CUT_WET_RED_SANDSTONE.get());
+                        output.accept(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get());
+
+                        output.accept(ModBlocks.RED_CACTUS.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> NA_ITEMS = CREATIVE_MODE_TAB.register("na_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GOBLIN_GOLD_INGOT.get()))
+                    .title(Component.translatable("creativetab.newadventures.items_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
+                        output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
                     })
                     .build());
 

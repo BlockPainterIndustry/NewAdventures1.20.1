@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "newadventures:block/gray_sandstone_top",
+    "side": "newadventures:block/cut_gray_sandstone"
+  }
+}

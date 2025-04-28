@@ -5,19 +5,10 @@ import net.blockpainter.newadventures.blocks.custom.ModSaplingCropBlock;
 import net.blockpainter.newadventures.items.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -93,16 +84,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.GRAY_SANDSTONE_STAIRS.get()));
         this.dropSelf(ModBlocks.GRAY_SANDSTONE_WALL.get());
 
-        this.dropSelf(ModBlocks.GRAY_CHISELED_SANDSTONE.get());
+        this.dropSelf(ModBlocks.CHISELED_GRAY_SANDSTONE.get());
 
-        this.dropSelf(ModBlocks.GRAY_SMOOTH_SANDSTONE.get());
-        this.dropSelf(ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.GRAY_SMOOTH_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.SMOOTH_GRAY_SANDSTONE.get());
+        this.dropSelf(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get()));
 
-        this.dropSelf(ModBlocks.GRAY_CUT_SANDSTONE.get());
-        this.add(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.CUT_GRAY_SANDSTONE.get());
+        this.add(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get()));
         this.dropSelf(ModBlocks.RED_CACTUS.get());
 
         this.dropSelf(ModBlocks.WET_SAND.get());
@@ -113,16 +104,56 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.WET_SANDSTONE_STAIRS.get()));
         this.dropSelf(ModBlocks.WET_SANDSTONE_WALL.get());
 
-        this.dropSelf(ModBlocks.WET_CHISELED_SANDSTONE.get());
+        this.dropSelf(ModBlocks.CHISELED_WET_SANDSTONE.get());
 
-        this.dropSelf(ModBlocks.WET_SMOOTH_SANDSTONE.get());
-        this.dropSelf(ModBlocks.WET_SMOOTH_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.SMOOTH_WET_SANDSTONE.get());
+        this.dropSelf(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get()));
 
-        this.dropSelf(ModBlocks.WET_CUT_SANDSTONE.get());
-        this.add(ModBlocks.WET_CUT_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.WET_CUT_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.CUT_WET_SANDSTONE.get());
+        this.add(ModBlocks.CUT_WET_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CUT_WET_SANDSTONE_SLAB.get()));
+
+
+        this.dropSelf(ModBlocks.WET_GRAY_SAND.get());
+
+        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE.get());
+        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.WET_GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get()));
+        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE_WALL.get());
+
+        this.dropSelf(ModBlocks.CHISELED_WET_GRAY_SANDSTONE.get());
+
+        this.dropSelf(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE.get());
+        this.dropSelf(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.CUT_WET_GRAY_SANDSTONE.get());
+        this.add(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.WET_RED_SAND.get());
+
+        this.dropSelf(ModBlocks.WET_RED_SANDSTONE.get());
+        this.dropSelf(ModBlocks.WET_RED_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.WET_RED_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WET_RED_SANDSTONE_STAIRS.get()));
+        this.dropSelf(ModBlocks.WET_RED_SANDSTONE_WALL.get());
+
+        this.dropSelf(ModBlocks.CHISELED_WET_RED_SANDSTONE.get());
+
+        this.dropSelf(ModBlocks.SMOOTH_WET_RED_SANDSTONE.get());
+        this.dropSelf(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.CUT_WET_RED_SANDSTONE.get());
+        this.add(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get()));
+
     }
 
     @Override

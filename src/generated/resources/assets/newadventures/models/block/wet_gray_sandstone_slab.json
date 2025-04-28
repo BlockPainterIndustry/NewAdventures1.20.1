@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "newadventures:block/wet_gray_sandstone_bottom",
+    "side": "newadventures:block/wet_gray_sandstone",
+    "top": "newadventures:block/wet_gray_sandstone_top"
+  }
+}
