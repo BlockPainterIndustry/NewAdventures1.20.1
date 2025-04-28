@@ -4,6 +4,7 @@ import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.blocks.custom.ModCropBlock;
 import net.blockpainter.newadventures.blocks.custom.ModSaplingCropBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.model.TextureMapping;
@@ -13,9 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -113,9 +112,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.GRAY_SMOOTH_SANDSTONE);
         blockItem(ModBlocks.GRAY_CUT_SANDSTONE);
 
-        cubeBottomTop(ModBlocks.GRAY_SANDSTONE, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
-
-        cactusBlock(ModBlocks.RED_CACTUS);
+        cactusLikeBlock(ModBlocks.RED_CACTUS.get());
+        blockItem(ModBlocks.RED_CACTUS);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
@@ -258,8 +256,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void cactusBlock(RegistryObject<Block> block) {
         String name = ForgeRegistries.BLOCKS.getKey(block.get()).getPath();
 
-        // Das Model
-        simpleBlockWithItem(block.get(),
+        simpleBlock(block.get(),
                 models().cubeColumn(
                         name,
                         new ResourceLocation(NewAdventures.MODID, "block/" + name + "_side"),
@@ -268,4 +265,56 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
+    private void cactusLikeBlock(Block block) {
+        String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        ResourceLocation resourceLocation = new ResourceLocation(NewAdventures.MODID, "block/red_cactus");
+
+        // Modell erstellen
+        models().withExistingParent(name, mcLoc("block/block"))
+                .texture("bottom", resourceLocation + "_bottom")
+                .texture("particle", resourceLocation + "_side")
+                .texture("top", resourceLocation + "_top")
+                .texture("side", resourceLocation + "_side")
+                .element()
+                .from(0, 0, 0)
+                .to(16, 16, 16)
+                .face(Direction.DOWN)
+                .uvs(0, 0, 16, 16)
+                .texture("#bottom")
+                .cullface(Direction.DOWN)
+                .end()
+                .face(Direction.UP)
+                .uvs(0, 0, 16, 16)
+                .texture("#top")
+                .cullface(Direction.UP)
+                .end()
+                .end()
+                .element()
+                .from(0, 0, 1)
+                .to(16, 16, 15)
+                .face(Direction.NORTH)
+                .uvs(0, 0, 16, 16)
+                .texture("#side")
+                .end()
+                .face(Direction.SOUTH)
+                .uvs(0, 0, 16, 16)
+                .texture("#side")
+                .end()
+                .end()
+                .element()
+                .from(1, 0, 0)
+                .to(15, 16, 16)
+                .face(Direction.WEST)
+                .uvs(0, 0, 16, 16)
+                .texture("#side")
+                .end()
+                .face(Direction.EAST)
+                .uvs(0, 0, 16, 16)
+                .texture("#side")
+                .end()
+                .end();
+
+        // Blockstate-Datei erstellen (einfacher Blockstate für dein Cactus-Block)
+        simpleBlock(block, models().getExistingFile(resourceLocation));
+    }
 }
