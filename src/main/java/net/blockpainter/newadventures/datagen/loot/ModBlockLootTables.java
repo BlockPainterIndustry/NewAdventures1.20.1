@@ -104,6 +104,25 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get()));
         this.dropSelf(ModBlocks.RED_CACTUS.get());
+
+        this.dropSelf(ModBlocks.WET_SAND.get());
+
+        this.dropSelf(ModBlocks.WET_SANDSTONE.get());
+        this.dropSelf(ModBlocks.WET_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.WET_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WET_SANDSTONE_STAIRS.get()));
+        this.dropSelf(ModBlocks.WET_SANDSTONE_WALL.get());
+
+        this.dropSelf(ModBlocks.WET_CHISELED_SANDSTONE.get());
+
+        this.dropSelf(ModBlocks.WET_SMOOTH_SANDSTONE.get());
+        this.dropSelf(ModBlocks.WET_SMOOTH_SANDSTONE_STAIRS.get());
+        this.add(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.WET_CUT_SANDSTONE.get());
+        this.add(ModBlocks.WET_CUT_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WET_CUT_SANDSTONE_SLAB.get()));
     }
 
     @Override

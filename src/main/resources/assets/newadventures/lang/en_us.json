@@ -54,6 +54,18 @@
   "block.newadventures.gray_smooth_sandstone_slab" : "Gray Smooth Sandstone Slab",
   "block.newadventures.gray_cut_sandstone" : "Gray Cut Sandstone",
   "block.newadventures.gray_cut_sandstone_slab" : "Gray Cut Sandstone Slab",
+  "block.newadventures.red_cactus" : "Red Cactus",
+  "block.newadventures.wet_sand" : "Wet Sand",
+  "block.newadventures.wet_sandstone" : "Wet Sandstone",
+  "block.newadventures.wet_sandstone_stairs" : "Wet Sandstone Stairs",
+  "block.newadventures.wet_sandstone_slab" : "Wet Sandstone Slab",
+  "block.newadventures.wet_sandstone_wall" : "Wet Sandstone Wall",
+  "block.newadventures.wet_chiseled_sandstone" : "Wet Chiseled Sandstone",
+  "block.newadventures.wet_smooth_sandstone" : "Wet Smooth Sandstone",
+  "block.newadventures.wet_smooth_sandstone_stairs" : "Wet Smooth Sandstone Stairs",
+  "block.newadventures.wet_smooth_sandstone_slab" : "Wet Smooth Sandstone Slab",
+  "block.newadventures.wet_cut_sandstone" : "Wet Cut Sandstone",
+  "block.newadventures.wet_cut_sandstone_slab" : "Wet Cut Sandstone Slab",
 
 
   "entity.newadventures.yira_boat" : "Yira Boat",

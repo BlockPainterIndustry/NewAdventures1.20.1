@@ -62,6 +62,18 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.GRAY_SMOOTH_SANDSTONE_STAIRS.get());
                         output.accept(ModBlocks.GRAY_CUT_SANDSTONE.get());
                         output.accept(ModBlocks.GRAY_CUT_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.RED_CACTUS.get());
+                        output.accept(ModBlocks.WET_SAND.get());
+                        output.accept(ModBlocks.WET_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.WET_SANDSTONE_WALL.get());
+                        output.accept(ModBlocks.WET_CHISELED_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE_SLAB.get());
+                        output.accept(ModBlocks.WET_SMOOTH_SANDSTONE_STAIRS.get());
+                        output.accept(ModBlocks.WET_CUT_SANDSTONE.get());
+                        output.accept(ModBlocks.WET_CUT_SANDSTONE_SLAB.get());
                     })
                     .build());
 

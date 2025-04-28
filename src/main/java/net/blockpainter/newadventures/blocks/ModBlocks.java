@@ -223,6 +223,34 @@ public class ModBlocks {
     public static final RegistryObject<Block> RED_CACTUS = registerBlock("red_cactus",
             () -> new ModCactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
 
+    public static final RegistryObject<Block> WET_SAND = registerBlock("wet_sand",
+            () -> new SandBlock(3582982, BlockBehaviour.Properties.copy(Blocks.SAND)));
+
+    public static final RegistryObject<Block> WET_SANDSTONE = registerBlock("wet_sandstone",
+            () -> new ModWetBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final RegistryObject<Block> WET_SANDSTONE_STAIRS = registerBlock("wet_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.WET_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SANDSTONE_STAIRS)));
+    public static final RegistryObject<Block> WET_SANDSTONE_SLAB = registerBlock("wet_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE_SLAB)));
+    public static final RegistryObject<Block> WET_SANDSTONE_WALL = registerBlock("wet_sandstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE_WALL)));
+    public static final RegistryObject<Block> WET_CHISELED_SANDSTONE = registerBlock("wet_chiseled_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE)));
+
+    public static final RegistryObject<Block> WET_SMOOTH_SANDSTONE = registerBlock("wet_smooth_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
+    public static final RegistryObject<Block> WET_SMOOTH_SANDSTONE_STAIRS = registerBlock("wet_smooth_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.WET_SMOOTH_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_STAIRS)));
+    public static final RegistryObject<Block> WET_SMOOTH_SANDSTONE_SLAB = registerBlock("wet_smooth_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
+
+    public static final RegistryObject<Block> WET_CUT_SANDSTONE = registerBlock("wet_cut_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)));
+    public static final RegistryObject<Block> WET_CUT_SANDSTONE_SLAB = registerBlock("wet_cut_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE_SLAB)));
+
+
+
 
 
     public static void register(IEventBus eventBus) {
