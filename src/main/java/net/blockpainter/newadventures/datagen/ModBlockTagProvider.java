@@ -6,6 +6,7 @@ import net.blockpainter.newadventures.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -43,5 +44,69 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.YIRA_FARMLAND.get());
         this.tag(ModTags.BLocks.YIRA_SOIL)
                 .add(ModBlocks.YIRA_FARMLAND.get());
+
+        this.tag(ModTags.BLocks.DRY_SAND)
+                .add(Blocks.SAND)
+                .add(Blocks.SANDSTONE)
+                .add(Blocks.SANDSTONE_SLAB)
+                .add(Blocks.SANDSTONE_STAIRS)
+                .add(Blocks.SANDSTONE_WALL)
+                .add(Blocks.SMOOTH_SANDSTONE)
+                .add(Blocks.SMOOTH_SANDSTONE_SLAB)
+                .add(Blocks.SMOOTH_SANDSTONE_STAIRS)
+                .add(Blocks.CUT_SANDSTONE)
+                .add(Blocks.CUT_SANDSTONE_SLAB)
+                .add(Blocks.RED_SAND)
+                .add(Blocks.RED_SANDSTONE)
+                .add(Blocks.RED_SANDSTONE_SLAB)
+                .add(Blocks.RED_SANDSTONE_STAIRS)
+                .add(Blocks.RED_SANDSTONE_WALL)
+                .add(Blocks.SMOOTH_RED_SANDSTONE)
+                .add(Blocks.SMOOTH_RED_SANDSTONE_SLAB)
+                .add(Blocks.SMOOTH_RED_SANDSTONE_STAIRS)
+                .add(Blocks.CUT_RED_SANDSTONE)
+                .add(Blocks.CUT_RED_SANDSTONE_SLAB)
+                .add(ModBlocks.GRAY_SAND.get())
+                .add(ModBlocks.GRAY_SANDSTONE.get())
+                .add(ModBlocks.GRAY_SANDSTONE_SLAB.get())
+                .add(ModBlocks.GRAY_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.GRAY_SANDSTONE_WALL.get())
+                .add(ModBlocks.SMOOTH_GRAY_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get())
+                .add(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.CUT_GRAY_SANDSTONE.get())
+                .add(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get());
+
+        this.tag(ModTags.BLocks.WET_SAND)
+                .add(ModBlocks.WET_SAND.get())
+                .add(ModBlocks.WET_SANDSTONE.get())
+                .add(ModBlocks.WET_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WET_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.WET_SANDSTONE_WALL.get())
+                .add(ModBlocks.SMOOTH_WET_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get())
+                .add(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.CUT_WET_SANDSTONE.get())
+                .add(ModBlocks.CUT_WET_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WET_RED_SAND.get())
+                .add(ModBlocks.WET_RED_SANDSTONE.get())
+                .add(ModBlocks.WET_RED_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WET_RED_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.WET_RED_SANDSTONE_WALL.get())
+                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get())
+                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.CUT_WET_RED_SANDSTONE.get())
+                .add(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WET_GRAY_SAND.get())
+                .add(ModBlocks.WET_GRAY_SANDSTONE.get())
+                .add(ModBlocks.WET_GRAY_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.WET_GRAY_SANDSTONE_WALL.get())
+                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB.get())
+                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.CUT_WET_GRAY_SANDSTONE.get())
+                .add(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get());
     }
 }

@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "tag": "minecraft:logs"
+      "tag": "newadventures:yira_log"
     }
   ],
   "result": {

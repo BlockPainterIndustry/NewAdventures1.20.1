@@ -3,6 +3,7 @@ package net.blockpainter.newadventures.datagen;
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.items.ModItems;
+import net.blockpainter.newadventures.util.ModTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -24,10 +25,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.YIRA_PLANKS.get(), 4)
-                .requires(TagKey.create(Registries.ITEM,  new ResourceLocation("minecraft", "logs")))
+                .requires(ModTags.Items.YIRA_LOG)
                 .unlockedBy(getHasName(ModBlocks.YIRA_LOG.get()), has(ModBlocks.YIRA_LOG.get()))
                 .save(pWriter);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.YIRA_BUTTON.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.YIRA_BUTTON.get(), 1)
                 .requires(ModBlocks.YIRA_PLANKS.get())
                 .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
                 .save(pWriter);

@@ -3,6 +3,7 @@ package net.blockpainter.newadventures.datagen;
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
 import net.blockpainter.newadventures.items.ModItems;
+import net.blockpainter.newadventures.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -29,7 +30,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_YIRA_WOOD.get().asItem());
 
-        this.tag(ItemTags.LOGS)
+        this.tag(ModTags.Items.YIRA_LOG)
                 .add(ModBlocks.YIRA_WOOD.get().asItem())
                 .add(ModBlocks.YIRA_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get().asItem())
@@ -42,5 +43,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.GOBLIN_GOLD_INGOT.get());
         this.tag(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.CURSE_SMITHING_TEMPALTE.get());
+
+
     }
 }

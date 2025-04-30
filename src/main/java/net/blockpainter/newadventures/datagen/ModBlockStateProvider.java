@@ -13,9 +13,8 @@ import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.Map;
 import java.util.function.Function;
+
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -90,18 +89,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.GRAY_SAND);
 
         cubeBottomTop(ModBlocks.GRAY_SANDSTONE);
-        modWetStairBottomTop(ModBlocks.GRAY_SANDSTONE_STAIRS, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.GRAY_SANDSTONE_SLAB, "gray_sandstone_slab", "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
-        wallBlock((ModWetWallBlock) ModBlocks.GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
+        stairBottomTop(ModBlocks.GRAY_SANDSTONE_STAIRS, "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
+        slabBottomTop(ModBlocks.GRAY_SANDSTONE_SLAB, "gray_sandstone_slab", "gray_sandstone_bottom", "gray_sandstone", "gray_sandstone_top");
+        wallBlock((WallBlock) ModBlocks.GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.GRAY_SANDSTONE.get()));
 
         cubeColumnWithAlt(ModBlocks.CHISELED_GRAY_SANDSTONE, "gray_sandstone_top", "chiseled_gray_sandstone");
 
         cubeAllWithOtherTexture(ModBlocks.SMOOTH_GRAY_SANDSTONE, "gray_sandstone_top");
-        stairsBlock((ModWetStairBlock) ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS.get(),"gray_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB, "smooth_gray_sandstone_slab", "gray_sandstone_top", "gray_sandstone_top", "gray_sandstone_top");
+        stairBottomTop(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS,  "gray_sandstone_top", "gray_sandstone_top", "gray_sandstone_top");
+        slabBottomTop(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB, "smooth_gray_sandstone_slab", "gray_sandstone_top", "gray_sandstone_top", "gray_sandstone_top");
 
         cubeColumnWithAlt(ModBlocks.CUT_GRAY_SANDSTONE, "gray_sandstone_top", "cut_gray_sandstone");
-        modWetSlabBottomTop(ModBlocks.CUT_GRAY_SANDSTONE_SLAB, "cut_gray_sandstone_slab", "gray_sandstone_top", "cut_gray_sandstone", "gray_sandstone_top");
+        slabBottomTop(ModBlocks.CUT_GRAY_SANDSTONE_SLAB, "cut_gray_sandstone_slab", "gray_sandstone_top", "cut_gray_sandstone", "gray_sandstone_top");
 
         blockItem(ModBlocks.GRAY_SANDSTONE);
         blockItem(ModBlocks.CHISELED_GRAY_SANDSTONE);
@@ -111,18 +110,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.WET_SAND);
 
         cubeBottomTop(ModBlocks.WET_SANDSTONE);
-        modWetStairBottomTop(ModBlocks.WET_SANDSTONE_STAIRS, "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.WET_SANDSTONE_SLAB, "wet_sandstone_slab", "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
-        wallBlock((ModWetWallBlock) ModBlocks.WET_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_SANDSTONE.get()));
+        stairBottomTop(ModBlocks.WET_SANDSTONE_STAIRS, "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
+        slabBottomTop(ModBlocks.WET_SANDSTONE_SLAB, "wet_sandstone_slab", "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
+        wallBlock((WallBlock) ModBlocks.WET_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_SANDSTONE.get()));
 
         cubeColumnWithAlt(ModBlocks.CHISELED_WET_SANDSTONE, "wet_sandstone_top", "chiseled_wet_sandstone");
 
         cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_SANDSTONE, "wet_sandstone_top");
-        stairsBlock((ModWetStairBlock) ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get(), "wet_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB, "smooth_wet_sandstone_slab", "wet_sandstone_top", "wet_sandstone_top", "wet_sandstone_top");
+        stairBottomTop(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS,  "wet_sandstone_top", "wet_sandstone_top", "wet_sandstone_top");
+        slabBottomTop(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB, "smooth_wet_sandstone_slab", "wet_sandstone_top", "wet_sandstone_top", "wet_sandstone_top");
 
         cubeColumnWithAlt(ModBlocks.CUT_WET_SANDSTONE, "wet_sandstone_top", "cut_wet_sandstone");
-        modWetSlabBottomTop(ModBlocks.CUT_WET_SANDSTONE_SLAB, "cut_wet_sandstone_slab", "wet_sandstone_top", "cut_wet_sandstone", "wet_sandstone_top");
+        slabBottomTop(ModBlocks.CUT_WET_SANDSTONE_SLAB, "cut_wet_sandstone_slab", "wet_sandstone_top", "cut_wet_sandstone", "wet_sandstone_top");
 
         blockItem(ModBlocks.WET_SANDSTONE);
         blockItem(ModBlocks.CHISELED_WET_SANDSTONE);
@@ -132,18 +131,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.WET_GRAY_SAND);
 
         cubeBottomTop(ModBlocks.WET_GRAY_SANDSTONE);
-        modWetStairBottomTop(ModBlocks.WET_GRAY_SANDSTONE_STAIRS, "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.WET_GRAY_SANDSTONE_SLAB, "wet_gray_sandstone_slab", "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
-        wallBlock((ModWetWallBlock) ModBlocks.WET_GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_GRAY_SANDSTONE.get()));
+        stairBottomTop(ModBlocks.WET_GRAY_SANDSTONE_STAIRS, "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
+        slabBottomTop(ModBlocks.WET_GRAY_SANDSTONE_SLAB, "wet_gray_sandstone_slab", "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
+        wallBlock((WallBlock) ModBlocks.WET_GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_GRAY_SANDSTONE.get()));
 
         cubeColumnWithAlt(ModBlocks.CHISELED_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top", "chiseled_wet_gray_sandstone");
 
         cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top");
-        stairsBlock((ModWetStairBlock) ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get(),  "wet_gray_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB, "smooth_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "wet_gray_sandstone_top", "wet_gray_sandstone_top");
+        stairBottomTop(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS,  "wet_gray_sandstone_top", "wet_gray_sandstone_top", "wet_gray_sandstone_top");
+        slabBottomTop(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB, "smooth_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "wet_gray_sandstone_top", "wet_gray_sandstone_top");
 
         cubeColumnWithAlt(ModBlocks.CUT_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top", "cut_wet_gray_sandstone");
-        modWetSlabBottomTop(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB, "cut_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "cut_wet_gray_sandstone", "wet_gray_sandstone_top");
+        slabBottomTop(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB, "cut_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "cut_wet_gray_sandstone", "wet_gray_sandstone_top");
 
         blockItem(ModBlocks.WET_GRAY_SANDSTONE);
         blockItem(ModBlocks.CHISELED_WET_GRAY_SANDSTONE);
@@ -153,18 +152,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.WET_RED_SAND);
 
         cubeBottomTop(ModBlocks.WET_RED_SANDSTONE);
-        modWetStairBottomTop(ModBlocks.WET_RED_SANDSTONE_STAIRS, "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.WET_RED_SANDSTONE_SLAB, "wet_red_sandstone_slab", "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
-        wallBlock((ModWetWallBlock) ModBlocks.WET_RED_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_RED_SANDSTONE.get()));
+        stairBottomTop(ModBlocks.WET_RED_SANDSTONE_STAIRS, "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
+        slabBottomTop(ModBlocks.WET_RED_SANDSTONE_SLAB, "wet_red_sandstone_slab", "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
+        wallBlock((WallBlock) ModBlocks.WET_RED_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_RED_SANDSTONE.get()));
 
         cubeColumnWithAlt(ModBlocks.CHISELED_WET_RED_SANDSTONE, "wet_red_sandstone_top", "chiseled_wet_red_sandstone");
 
         cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_RED_SANDSTONE, "wet_red_sandstone_top");
-        stairsBlock((ModWetStairBlock) ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get(),  "wet_red_sandstone_top");
-        modWetSlabBottomTop(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB, "smooth_wet_red_sandstone_slab", "wet_red_sandstone_top", "wet_red_sandstone_top", "wet_red_sandstone_top");
+        stairBottomTop(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS,  "wet_red_sandstone_top", "wet_red_sandstone_top", "wet_red_sandstone_top");
+        slabBottomTop(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB, "smooth_wet_red_sandstone_slab", "wet_red_sandstone_top", "wet_red_sandstone_top", "wet_red_sandstone_top");
 
         cubeColumnWithAlt(ModBlocks.CUT_WET_RED_SANDSTONE, "wet_red_sandstone_top", "cut_wet_red_sandstone");
-        modWetSlabBottomTop(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB, "cut_wet_red_sandstone_slab", "wet_sandstone_top", "cut_wet_red_sandstone", "wet_red_sandstone_top");
+        slabBottomTop(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB, "cut_wet_red_sandstone_slab", "wet_sandstone_top", "cut_wet_red_sandstone", "wet_red_sandstone_top");
 
         blockItem(ModBlocks.WET_RED_SANDSTONE);
         blockItem(ModBlocks.CHISELED_WET_RED_SANDSTONE);
@@ -279,55 +278,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
-    private void modWetStairBottomTop(RegistryObject<Block> blockRegistryObject, String bottom, String side, String top) {
-        String name = ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath();
-        if (name.endsWith("_stairs")) {
-            name = name.substring(0, name.length() - "_stairs".length());
-        }
-
-        stairsBlock((ModWetStairBlock) blockRegistryObject.get(),
-                side,
-                bottom,
-                top
-        );
-    }
-
-
-
-
     private void slabBottomTop(RegistryObject<Block> blockRegistryObject, String key, String bottom, String side, String top) {
-        slabBlock((SlabBlock) blockRegistryObject.get(),
-               new ResourceLocation(NewAdventures.MODID, key + "_top"),
-               new ResourceLocation(NewAdventures.MODID, "block/" + side),
-               new ResourceLocation(NewAdventures.MODID, "block/" + bottom),
-               new ResourceLocation(NewAdventures.MODID, "block/" + top)
-       );
+        SlabBlock block = (SlabBlock) blockRegistryObject.get();
 
-    }
+        ResourceLocation sideTex = modLoc("block/" + side);
+        ResourceLocation bottomTex = modLoc("block/" + bottom);
+        ResourceLocation topTex = modLoc("block/" + top);
 
-    private void modWetSlabBottomTop(RegistryObject<Block> obj, String key, String bottom, String side, String top) {
-        Block block = obj.get();
-        // Erzeuge die drei Modelle (bottom, top, double) über models().slab(...) und slabTop(...):
-        ModelFile bottomModel = models().slab(key,
-                modLoc("block/" + side),
-                modLoc("block/" + bottom),
-                modLoc("block/" + top));
-        ModelFile topModel = models().slabTop(key + "_top",
-                modLoc("block/" + side),
-                modLoc("block/" + bottom),
-                modLoc("block/" + top));
-        ModelFile doubleModel = models().getExistingFile(modLoc("block/" + key + "_top"));
+        ModelFile slab = models().slab(key, sideTex, bottomTex, topTex);
+        ModelFile slabTop = models().slabTop(key + "_top", sideTex, bottomTex, topTex);
+        ModelFile slabDouble = models().cubeBottomTop(key + "_double", sideTex, bottomTex, topTex);
 
-        // Baue die Blockstate-Variants ohne Cast auf SlabBlock:
         getVariantBuilder(block)
                 .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM)
-                .addModels(new ConfiguredModel(bottomModel))
+                .addModels(new ConfiguredModel(slab))
                 .partialState().with(SlabBlock.TYPE, SlabType.TOP)
-                .addModels(new ConfiguredModel(topModel))
+                .addModels(new ConfiguredModel(slabTop))
                 .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE)
-                .addModels(new ConfiguredModel(doubleModel));
+                .addModels(new ConfiguredModel(slabDouble));
     }
-
     private void cubeAllWithOtherTexture(RegistryObject<Block> blockRegistryObject, String all) {
         simpleBlock(blockRegistryObject.get(), models().cubeAll(
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
@@ -423,68 +392,4 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Blockstate-Datei erstellen (einfacher Blockstate für dein Cactus-Block)
         simpleBlock(block, models().getExistingFile(resourceLocation));
     }
-
-    public void stairsBlock(ModWetStairBlock block, String texture) {
-        stairsBlock(block, texture, texture, texture);
-    }
-    private void stairsBlock(ModWetStairBlock block, String side, String bottom, String top) {
-        String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
-        ModelFile model = models().stairs(name,
-                modLoc("block/" + side),
-                modLoc("block/" + bottom),
-                modLoc("block/" + top));
-        simpleBlock(block, model);
-    }
-
-    public void slabBlock(ModWetSlabBlock block, ResourceLocation doubleslab, ResourceLocation texture) {
-        slabBlock(block, doubleslab, texture, texture, texture);
-    }
-
-    public void slabBlock(ModWetSlabBlock block, ResourceLocation doubleslab, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
-        slabBlock(block, models().slab(name(block), side, bottom, top), models().slabTop(name(block) + "_top", side, bottom, top), models().getExistingFile(doubleslab));
-    }
-
-    public void slabBlock(ModWetSlabBlock block, ModelFile bottom, ModelFile top, ModelFile doubleslab) {
-        getVariantBuilder(block)
-                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel(bottom))
-                .partialState().with(SlabBlock.TYPE, SlabType.TOP).addModels(new ConfiguredModel(top))
-                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).addModels(new ConfiguredModel(doubleslab));
-    }
-
-    public void wallBlock(ModWetWallBlock block, ResourceLocation texture) {
-        wallBlockInternal(block, name(block), texture);
-    }
-
-    public void wallBlock(ModWetWallBlock block, String name, ResourceLocation texture) {
-        wallBlockInternal(block, name + "_wall", texture);
-    }
-
-    private void wallBlockInternal(ModWetWallBlock block, String baseName, ResourceLocation texture) {
-        modWetWallBlock(block, models().wallPost(baseName + "_post", texture),
-                models().wallSide(baseName + "_side", texture),
-                models().wallSideTall(baseName + "_side_tall", texture));
-    }
-
-    public void modWetWallBlock(ModWetWallBlock block, ModelFile post, ModelFile side, ModelFile sideTall) {
-        MultiPartBlockStateBuilder builder = getMultipartBuilder(block)
-                .part().modelFile(post).addModel()
-                .condition(WallBlock.UP, true).end();
-        WALL_PROPS.entrySet().stream()
-                .filter(e -> e.getKey().getAxis().isHorizontal())
-                .forEach(e -> {
-                    wallSidePart(builder, side, e, WallSide.LOW);
-                    wallSidePart(builder, sideTall, e, WallSide.TALL);
-                });
-    }
-
-    private void wallSidePart(MultiPartBlockStateBuilder builder, ModelFile model, Map.Entry<Direction, Property<WallSide>> entry, WallSide height) {
-        builder.part()
-                .modelFile(model)
-                .rotationY((((int) entry.getKey().toYRot()) + 180) % 360)
-                .uvLock(true)
-                .addModel()
-                .condition(entry.getValue(), height);
-    }
-
-
 }

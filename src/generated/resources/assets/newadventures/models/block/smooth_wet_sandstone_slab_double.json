@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "newadventures:block/wet_sandstone_top",
+    "side": "newadventures:block/wet_sandstone_top",
+    "top": "newadventures:block/wet_sandstone_top"
+  }
+}

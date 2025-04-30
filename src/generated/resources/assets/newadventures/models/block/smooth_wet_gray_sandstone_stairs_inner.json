@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "newadventures:block/wet_gray_sandstone_top",
+    "side": "newadventures:block/wet_gray_sandstone_top",
+    "top": "newadventures:block/wet_gray_sandstone_top"
+  }
+}
