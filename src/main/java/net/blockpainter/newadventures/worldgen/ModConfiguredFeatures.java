@@ -42,9 +42,7 @@ public class ModConfiguredFeatures {
 
                 new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(ModBlocks.YIRA_GRASS_BLOCK.get())).build());
 
-
     }
-
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE,  new ResourceLocation(NewAdventures.MODID, name));
     }
@@ -53,5 +51,4 @@ public class ModConfiguredFeatures {
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
-
 }

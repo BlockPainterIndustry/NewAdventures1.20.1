@@ -8,12 +8,16 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkAccess;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,27 +27,62 @@ import net.minecraftforge.server.ServerLifecycleHooks;
 public class ModBlockEvents {
 
     @SubscribeEvent
+    public static void onBiomeLoading(ChunkEvent.Load event) {
+        if (event.isNewChunk()) {
+            BlockPos.MutableBlockPos mbp = new BlockPos.MutableBlockPos();
+            ChunkAccess chunk = event.getChunk();
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < 16; j++) {
+                    mbp.set(i, chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, j), j);
+
+                    BlockState current = chunk.getBlockState(mbp);
+                    while (current.is(BlockTags.LEAVES) || current.isAir() || chunk.getFluidState(mbp).is(FluidTags.WATER) || current.is(BlockTags.CORAL_BLOCKS)) {
+                        mbp.move(Direction.DOWN);
+                        current = chunk.getBlockState(mbp);
+                        if (mbp.getY() < chunk.getMinBuildHeight()) break;
+                    }
+
+                    current = chunk.getBlockState(mbp);
+                    while (chunk.getFluidState(mbp.above()).is(FluidTags.WATER) || chunk.getBlockState(mbp.above()).is(ModTags.BLocks.WET_SAND)) {
+                        if (current.is(ModTags.BLocks.DRY_SAND)) {
+                            Block wetVariant = ModBlockEvents.getWetVersion(current.getBlock());
+                            if (wetVariant != null) {
+                                chunk.setBlockState(mbp, wetVariant.defaultBlockState(), true);
+                            }
+                        } else {
+                            break;
+                        }
+                        mbp.move(Direction.DOWN);
+                        current = chunk.getBlockState(mbp);
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
 
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-        if (server == null) return;
+        if (server == null) {return;}
 
-        for (ServerLevel level : server.getAllLevels()) {
+
             for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+                Level level = player.level();
                 BlockPos center = player.blockPosition();
                 BlockPos.betweenClosed(center.offset(-16, -4, -16), center.offset(16, 4, 16)).forEach(pos -> {
                     BlockState state = level.getBlockState(pos);
                     Block block = state.getBlock();
 
-                    if (state.is(ModTags.BLocks.DRY_SAND) && isNearWater(level, pos)) {
+                    if (state.is(ModTags.BLocks.DRY_SAND) && isWaterAbove(level, pos)) {
                         Block wetVariant = getWetVersion(block);
                         if (wetVariant != null) {
                             level.setBlock(pos, wetVariant.defaultBlockState(), Block.UPDATE_ALL);
                         }
                     }
 
-                    if (state.is(ModTags.BLocks. WET_SAND) && isExposedToSunOrHeat(level, pos) && !isNearWater(level, pos)) {
+                    if (state.is(ModTags.BLocks. WET_SAND) && isExposedToSunOrHeat(level, pos) && !isWaterAbove(level, pos)) {
                         Block dryVariant = getDryVersion(block);
                         if (dryVariant != null) {
                             level.setBlock(pos, dryVariant.defaultBlockState(), Block.UPDATE_ALL);
@@ -51,10 +90,10 @@ public class ModBlockEvents {
                     }
                 });
             }
-        }
+
     }
 
-    private static Block getDryVersion(Block block) {
+    public static Block getDryVersion(Block block) {
         ResourceLocation registryName = ForgeRegistries.BLOCKS.getKey(block);
         if (registryName == null) return null;
 
@@ -75,7 +114,7 @@ public class ModBlockEvents {
         }
     }
 
-    private static boolean isExposedToSunOrHeat(Level level, BlockPos pos) {
+    public static boolean isExposedToSunOrHeat(Level level, BlockPos pos) {
         if (level.canSeeSky(pos.above()) && level.getBrightness(LightLayer.SKY, pos.above()) >= 15) {
             return true;
         }
@@ -90,13 +129,8 @@ public class ModBlockEvents {
     }
 
 
-    private static boolean isNearWater(Level level, BlockPos pos) {
-        for (Direction dir : Direction.values()) {
-            if (level.getFluidState(pos.relative(dir)).is(FluidTags.WATER)) {
-                return true;
-            }
-        }
-        return false;
+    public static boolean isWaterAbove(Level level, BlockPos pos) {
+        return level.getFluidState(pos.above()).is(FluidTags.WATER);
     }
 
     public static Block getWetVersion(Block block) {
