@@ -37,7 +37,11 @@
         "trims/models/armor/host",
         "trims/models/armor/host_leggings",
         "newadventures:trims/models/armor/curse",
-        "newadventures:trims/models/armor/curse_leggings"
+        "newadventures:trims/models/armor/curse_leggings",
+        "newadventures:trims/models/armor/shape",
+        "newadventures:trims/models/armor/shape_leggings",
+        "newadventures:trims/models/armor/blind",
+        "newadventures:trims/models/armor/blind_leggings"
 
       ],
       "palette_key": "trims/color_palettes/trim_palette",

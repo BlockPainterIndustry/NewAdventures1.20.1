@@ -14,19 +14,26 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 
+import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> YIRA_KEY = registerKey("yira");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_BASIN =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(NewAdventures.MODID, "large_basin"));
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -42,7 +49,10 @@ public class ModConfiguredFeatures {
 
                 new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(ModBlocks.YIRA_GRASS_BLOCK.get())).build());
 
+        register(context, LARGE_BASIN, ModFeatures.LARGE_BASIN.get(), NoneFeatureConfiguration.INSTANCE);
     }
+
+
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE,  new ResourceLocation(NewAdventures.MODID, name));
     }

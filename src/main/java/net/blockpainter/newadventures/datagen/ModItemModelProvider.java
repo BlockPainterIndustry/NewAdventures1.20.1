@@ -69,7 +69,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         tallgrass(ModBlocks.YIRA_TALL_GRASS);
 
         basicItem(ModItems.GOBLIN_GOLD_INGOT.get());
+
         basicItem(ModItems.CURSE_SMITHING_TEMPALTE.get());
+        basicItem(ModItems.SHAPE_SMITHING_TEMPALTE.get());
+        basicItem(ModItems.BLIND_SMITHING_TEMPALTE.get());
 
         evenSimplerBlockItem(ModBlocks.GRAY_SANDSTONE_STAIRS);
         evenSimplerBlockItem(ModBlocks.GRAY_SANDSTONE_SLAB);

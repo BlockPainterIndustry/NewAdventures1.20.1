@@ -1,0 +1,8 @@
+{
+  "asset_id": "newadventures:shape",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.newadventures.shape"
+  },
+  "template_item": "newadventures:shape_armor_trim_smithing_template"
+}

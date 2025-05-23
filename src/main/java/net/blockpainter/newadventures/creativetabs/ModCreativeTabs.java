@@ -104,6 +104,8 @@ public class ModCreativeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
                         output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
+                        output.accept(ModItems.SHAPE_SMITHING_TEMPALTE.get());
+                        output.accept(ModItems.BLIND_SMITHING_TEMPALTE.get());
                     })
                     .build());
 

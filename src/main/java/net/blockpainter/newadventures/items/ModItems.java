@@ -43,5 +43,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> CURSE_SMITHING_TEMPALTE = ITEMS.register("curse_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "curse")));
+    public static final RegistryObject<Item> SHAPE_SMITHING_TEMPALTE = ITEMS.register("shape_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "shape")));
+    public static final RegistryObject<Item> BLIND_SMITHING_TEMPALTE = ITEMS.register("blind_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "blind")));
+
+
 
 }

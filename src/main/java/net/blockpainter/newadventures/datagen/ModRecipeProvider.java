@@ -118,5 +118,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
                 .save(pWriter);
         trimSmithing(pWriter, ModItems.CURSE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "curse"));
+        trimSmithing(pWriter, ModItems.SHAPE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "shape"));
+        trimSmithing(pWriter, ModItems.BLIND_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "blind"));
     }
 }

@@ -8,11 +8,16 @@ import net.blockpainter.newadventures.entity.ModEntities;
 import net.blockpainter.newadventures.entity.client.ModBoatRenderer;
 import net.blockpainter.newadventures.util.ModWoodTypes;
 import net.blockpainter.newadventures.items.ModItems;
+import net.blockpainter.newadventures.worldgen.ModFeatures;
+import net.blockpainter.newadventures.worldgen.biome.ModRegionDesert;
+import net.blockpainter.newadventures.worldgen.biome.ModSurfaceRuleData;
 import net.blockpainter.newadventures.worldgen.biome.ModTerrablender;
 import net.blockpainter.newadventures.worldgen.tree.ModFoliagePlacers;
 import net.blockpainter.newadventures.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +28,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.openjdk.nashorn.internal.ir.annotations.Ignore;
 import org.slf4j.Logger;
+import terrablender.api.RegionType;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(NewAdventures.MODID)
@@ -48,14 +56,28 @@ public class NewAdventures {
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
+        ModFeatures.FEATURES.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        // Some common setup code
+
         LOGGER.info("HELLO FROM COMMON SETUP");
+
+        event.enqueueWork(() ->
+        {
+            Regions.register(new ModRegionDesert(new ResourceLocation(MODID, "overworld_1"), 20));
+
+            SurfaceRules.RuleSource combined = SurfaceRules.sequence(
+                    ModSurfaceRuleData.makerules(), // dein Wüstenbiom
+                    SurfaceRuleManager.getDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD)
+            );
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, combined);
+        });
+        
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

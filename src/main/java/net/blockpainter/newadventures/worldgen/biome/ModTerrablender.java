@@ -7,7 +7,8 @@ import terrablender.api.Regions;
 public class ModTerrablender {
 
         public static void registerBiomes() {
-            Regions.register(new ModOverworldRegion( new ResourceLocation(NewAdventures.MODID, "overworld"), 5));
+            Regions.register(new ModOverworldRegion( new ResourceLocation(NewAdventures.MODID, "overworld"), 2));
+            Regions.register(new ModRegionDesert( new ResourceLocation(NewAdventures.MODID, "overworld"), 20));
         }
 
 

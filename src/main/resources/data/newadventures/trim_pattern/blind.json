@@ -1,0 +1,8 @@
+{
+  "asset_id": "newadventures:blind",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.newadventures.blind"
+  },
+  "template_item": "newadventures:blind_armor_trim_smithing_template"
+}

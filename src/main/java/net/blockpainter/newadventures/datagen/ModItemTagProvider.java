@@ -42,8 +42,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.GOBLIN_GOLD_INGOT.get());
         this.tag(ItemTags.TRIM_TEMPLATES)
-                .add(ModItems.CURSE_SMITHING_TEMPALTE.get());
-
-
+                .add(ModItems.CURSE_SMITHING_TEMPALTE.get())
+                .add(ModItems.BLIND_SMITHING_TEMPALTE.get())
+                .add(ModItems.SHAPE_SMITHING_TEMPALTE.get());
     }
 }

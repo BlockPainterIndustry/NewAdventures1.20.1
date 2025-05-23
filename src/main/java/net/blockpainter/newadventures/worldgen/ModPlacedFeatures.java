@@ -14,10 +14,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementContext;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
+import net.minecraft.world.level.levelgen.placement.*;
 
 
 import java.util.ArrayList;
@@ -26,6 +23,10 @@ import java.util.stream.Stream;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> YIRA_PLACED_KEY = registerKey("yira_placed");
+
+    public static final ResourceKey<PlacedFeature> LARGE_BASIN_PLACED =
+            ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(NewAdventures.MODID, "large_basin"));
+
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -36,6 +37,12 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.YIRA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.YIRA_SAPLING.get())
         );
+
+        register(context, LARGE_BASIN_PLACED,
+                        configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_BASIN),
+                        List.of(RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())
+        );
+
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
