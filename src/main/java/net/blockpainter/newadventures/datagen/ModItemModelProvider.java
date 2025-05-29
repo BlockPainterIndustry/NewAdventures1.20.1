@@ -81,26 +81,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS);
         evenSimplerBlockItem(ModBlocks.CUT_GRAY_SANDSTONE_SLAB);
 
-        evenSimplerBlockItem(ModBlocks.WET_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.WET_SANDSTONE_SLAB);
-        wallItem(ModBlocks.WET_SANDSTONE_WALL, ModBlocks.WET_SANDSTONE);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.CUT_WET_SANDSTONE_SLAB);
 
-        evenSimplerBlockItem(ModBlocks.WET_GRAY_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.WET_GRAY_SANDSTONE_SLAB);
-        wallItem(ModBlocks.WET_GRAY_SANDSTONE_WALL, ModBlocks.WET_GRAY_SANDSTONE);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB);
+        simpleItem(ModItems.PALME_BOAT);
+        simpleItem(ModItems.PALME_CHEST_BOAT);
+        fenceItem(ModBlocks.PALME_FENCE, ModBlocks.PALME_PLANKS);
+        buttonItem(ModBlocks.PALME_BUTTON, ModBlocks.PALME_PLANKS);
 
-        evenSimplerBlockItem(ModBlocks.WET_RED_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.WET_RED_SANDSTONE_SLAB);
-        wallItem(ModBlocks.WET_RED_SANDSTONE_WALL, ModBlocks.WET_RED_SANDSTONE);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB);
-        evenSimplerBlockItem(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS);
-        evenSimplerBlockItem(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB);
+        evenSimplerBlockItem(ModBlocks.PALME_STAIRS);
+        evenSimplerBlockItem(ModBlocks.PALME_SLAB);
+        evenSimplerBlockItem(ModBlocks.PALME_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.PALME_FENCE_GATE);
+        simpleBlockItem(ModBlocks.PALME_DOOR);
+        trapdoorItem(ModBlocks.PALME_TRAPDOOR);
+        simpleItem(ModItems.PALME_SIGN);
+        simpleItem(ModItems.PALME_HANGING_SIGN);
+        saplingItem(ModBlocks.PALME_SAPLING);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

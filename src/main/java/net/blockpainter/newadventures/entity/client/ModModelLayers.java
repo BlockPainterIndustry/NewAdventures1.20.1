@@ -10,4 +10,9 @@ public class ModModelLayers {
             new ResourceLocation(NewAdventures.MODID, "boat/yira"), "main");
     public static final ModelLayerLocation YIRA_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(NewAdventures.MODID, "chest_boat/yira"), "main");
+
+    public static final ModelLayerLocation PALME_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NewAdventures.MODID, "boat/palme"), "main");
+    public static final ModelLayerLocation PALME_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(NewAdventures.MODID, "chest_boat/palme"), "main");
 }

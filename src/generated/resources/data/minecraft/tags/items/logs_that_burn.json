@@ -3,6 +3,10 @@
     "newadventures:yira_wood",
     "newadventures:yira_log",
     "newadventures:stripped_yira_log",
-    "newadventures:stripped_yira_wood"
+    "newadventures:stripped_yira_wood",
+    "newadventures:palme_wood",
+    "newadventures:palme_log",
+    "newadventures:stripped_palme_log",
+    "newadventures:stripped_palme_wood"
   ]
 }

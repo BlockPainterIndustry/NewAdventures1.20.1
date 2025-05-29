@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "newadventures:block/wet_gray_sandstone_bottom",
-    "side": "newadventures:block/wet_gray_sandstone",
-    "top": "newadventures:block/wet_gray_sandstone_top"
-  }
-}

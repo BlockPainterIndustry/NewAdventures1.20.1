@@ -107,69 +107,40 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.SMOOTH_GRAY_SANDSTONE);
         blockItem(ModBlocks.CUT_GRAY_SANDSTONE);
 
-        blockWithItem(ModBlocks.WET_SAND);
+        logBlock(((RotatedPillarBlock) ModBlocks.PALME_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.PALME_WOOD.get()), blockTexture(ModBlocks.PALME_LOG.get()), blockTexture(ModBlocks.PALME_LOG.get()));
 
-        cubeBottomTop(ModBlocks.WET_SANDSTONE);
-        stairBottomTop(ModBlocks.WET_SANDSTONE_STAIRS, "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
-        slabBottomTop(ModBlocks.WET_SANDSTONE_SLAB, "wet_sandstone_slab", "wet_sandstone_bottom", "wet_sandstone", "wet_sandstone_top");
-        wallBlock((WallBlock) ModBlocks.WET_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_SANDSTONE.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PALME_LOG.get()), blockTexture(ModBlocks.STRIPPED_PALME_LOG.get()),
+                new ResourceLocation(NewAdventures.MODID, "block/stripped_palme_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PALME_WOOD.get()), blockTexture(ModBlocks.STRIPPED_PALME_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_PALME_LOG.get()));
 
-        cubeColumnWithAlt(ModBlocks.CHISELED_WET_SANDSTONE, "wet_sandstone_top", "chiseled_wet_sandstone");
+        blockItem(ModBlocks.PALME_LOG);
+        blockItem(ModBlocks.PALME_WOOD);
+        blockItem(ModBlocks.STRIPPED_PALME_LOG);
+        blockItem(ModBlocks.STRIPPED_PALME_WOOD);
+        blockWithItem(ModBlocks.PALME_PLANKS);
 
-        cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_SANDSTONE, "wet_sandstone_top");
-        stairBottomTop(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS,  "wet_sandstone_top", "wet_sandstone_top", "wet_sandstone_top");
-        slabBottomTop(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB, "smooth_wet_sandstone_slab", "wet_sandstone_top", "wet_sandstone_top", "wet_sandstone_top");
+        stairsBlock(((StairBlock) ModBlocks.PALME_STAIRS.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.PALME_SLAB.get()), blockTexture(ModBlocks.PALME_PLANKS.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
 
-        cubeColumnWithAlt(ModBlocks.CUT_WET_SANDSTONE, "wet_sandstone_top", "cut_wet_sandstone");
-        slabBottomTop(ModBlocks.CUT_WET_SANDSTONE_SLAB, "cut_wet_sandstone_slab", "wet_sandstone_top", "cut_wet_sandstone", "wet_sandstone_top");
+        buttonBlock(((ButtonBlock) ModBlocks.PALME_BUTTON.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.PALME_PRESSURE_PLATE.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
 
-        blockItem(ModBlocks.WET_SANDSTONE);
-        blockItem(ModBlocks.CHISELED_WET_SANDSTONE);
-        blockItem(ModBlocks.SMOOTH_WET_SANDSTONE);
-        blockItem(ModBlocks.CUT_WET_SANDSTONE);
+        fenceBlock(((FenceBlock) ModBlocks.PALME_FENCE.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.PALME_FENCE_GATE.get()), blockTexture(ModBlocks.PALME_PLANKS.get()));
 
-        blockWithItem(ModBlocks.WET_GRAY_SAND);
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.PALME_DOOR.get()), modLoc("block/palme_door_bottom"), modLoc("block/palme_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.PALME_TRAPDOOR.get()), modLoc("block/palme_trapdoor"), true, "cutout");
 
-        cubeBottomTop(ModBlocks.WET_GRAY_SANDSTONE);
-        stairBottomTop(ModBlocks.WET_GRAY_SANDSTONE_STAIRS, "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
-        slabBottomTop(ModBlocks.WET_GRAY_SANDSTONE_SLAB, "wet_gray_sandstone_slab", "wet_gray_sandstone_bottom", "wet_gray_sandstone", "wet_gray_sandstone_top");
-        wallBlock((WallBlock) ModBlocks.WET_GRAY_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_GRAY_SANDSTONE.get()));
+        signBlock(((StandingSignBlock) ModBlocks.PALME_SIGN.get()), ((WallSignBlock) ModBlocks.PALME_WALL_SIGN.get()),
+                blockTexture(ModBlocks.PALME_PLANKS.get()));
 
-        cubeColumnWithAlt(ModBlocks.CHISELED_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top", "chiseled_wet_gray_sandstone");
+        hangingSignBlock(ModBlocks.PALME_HANGING_SIGN.get(), ModBlocks.PALME_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.PALME_PLANKS.get()));
+        saplingBlock(ModBlocks.PALME_SAPLING);
 
-        cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top");
-        stairBottomTop(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS,  "wet_gray_sandstone_top", "wet_gray_sandstone_top", "wet_gray_sandstone_top");
-        slabBottomTop(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB, "smooth_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "wet_gray_sandstone_top", "wet_gray_sandstone_top");
-
-        cubeColumnWithAlt(ModBlocks.CUT_WET_GRAY_SANDSTONE, "wet_gray_sandstone_top", "cut_wet_gray_sandstone");
-        slabBottomTop(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB, "cut_wet_gray_sandstone_slab", "wet_gray_sandstone_top", "cut_wet_gray_sandstone", "wet_gray_sandstone_top");
-
-        blockItem(ModBlocks.WET_GRAY_SANDSTONE);
-        blockItem(ModBlocks.CHISELED_WET_GRAY_SANDSTONE);
-        blockItem(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE);
-        blockItem(ModBlocks.CUT_WET_GRAY_SANDSTONE);
-
-        blockWithItem(ModBlocks.WET_RED_SAND);
-
-        cubeBottomTop(ModBlocks.WET_RED_SANDSTONE);
-        stairBottomTop(ModBlocks.WET_RED_SANDSTONE_STAIRS, "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
-        slabBottomTop(ModBlocks.WET_RED_SANDSTONE_SLAB, "wet_red_sandstone_slab", "wet_red_sandstone_bottom", "wet_red_sandstone", "wet_red_sandstone_top");
-        wallBlock((WallBlock) ModBlocks.WET_RED_SANDSTONE_WALL.get(), blockTexture(ModBlocks.WET_RED_SANDSTONE.get()));
-
-        cubeColumnWithAlt(ModBlocks.CHISELED_WET_RED_SANDSTONE, "wet_red_sandstone_top", "chiseled_wet_red_sandstone");
-
-        cubeAllWithOtherTexture(ModBlocks.SMOOTH_WET_RED_SANDSTONE, "wet_red_sandstone_top");
-        stairBottomTop(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS,  "wet_red_sandstone_top", "wet_red_sandstone_top", "wet_red_sandstone_top");
-        slabBottomTop(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB, "smooth_wet_red_sandstone_slab", "wet_red_sandstone_top", "wet_red_sandstone_top", "wet_red_sandstone_top");
-
-        cubeColumnWithAlt(ModBlocks.CUT_WET_RED_SANDSTONE, "wet_red_sandstone_top", "cut_wet_red_sandstone");
-        slabBottomTop(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB, "cut_wet_red_sandstone_slab", "wet_sandstone_top", "cut_wet_red_sandstone", "wet_red_sandstone_top");
-
-        blockItem(ModBlocks.WET_RED_SANDSTONE);
-        blockItem(ModBlocks.CHISELED_WET_RED_SANDSTONE);
-        blockItem(ModBlocks.SMOOTH_WET_RED_SANDSTONE);
-        blockItem(ModBlocks.CUT_WET_RED_SANDSTONE);
-
+        leavesBlock(ModBlocks.PALME_LEAVES);
 
     }
 

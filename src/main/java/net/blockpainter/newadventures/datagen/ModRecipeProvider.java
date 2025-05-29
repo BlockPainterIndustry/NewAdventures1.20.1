@@ -117,6 +117,102 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Blocks.CHAIN)
                 .unlockedBy(getHasName(ModBlocks.YIRA_PLANKS.get()), has(ModBlocks.YIRA_PLANKS.get()))
                 .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_PLANKS.get(), 4)
+                .requires(ModTags.Items.PALME_LOG)
+                .unlockedBy(getHasName(ModBlocks.PALME_LOG.get()), has(ModBlocks.PALME_LOG.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.PALME_BUTTON.get(), 1)
+                .requires(ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.PALME_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_LOG.get()), has(ModBlocks.PALME_LOG.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_PALME_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.STRIPPED_PALME_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.STRIPPED_PALME_LOG.get()), has(ModBlocks.STRIPPED_PALME_LOG.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.PALME_DOOR.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_STAIRS.get(), 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_SLAB.get(), 6)
+                .pattern("###")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_PRESSURE_PLATE.get())
+                .pattern("##")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_TRAPDOOR.get(), 2)
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_FENCE.get(), 2)
+                .pattern("#S#")
+                .pattern("#S#")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PALME_FENCE_GATE.get(), 2)
+                .pattern("S#S")
+                .pattern("S#S")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PALME_BOAT.get())
+                .pattern("# #")
+                .pattern("###")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PALME_CHEST_BOAT.get())
+                .requires(ModItems.YIRA_BOAT.get())
+                .requires(Blocks.CHEST)
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PALME_SIGN.get(), 3)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" S ")
+                .define('#', ModBlocks.PALME_PLANKS.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PALME_HANGING_SIGN.get(), 3)
+                .pattern("S S")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModBlocks.STRIPPED_PALME_LOG.get())
+                .define('S', Blocks.CHAIN)
+                .unlockedBy(getHasName(ModBlocks.PALME_PLANKS.get()), has(ModBlocks.PALME_PLANKS.get()))
+                .save(pWriter);
+
+
         trimSmithing(pWriter, ModItems.CURSE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "curse"));
         trimSmithing(pWriter, ModItems.SHAPE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "shape"));
         trimSmithing(pWriter, ModItems.BLIND_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "blind"));

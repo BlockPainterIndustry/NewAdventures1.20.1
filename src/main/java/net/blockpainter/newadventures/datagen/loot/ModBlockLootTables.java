@@ -96,63 +96,35 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get()));
         this.dropSelf(ModBlocks.RED_CACTUS.get());
 
-        this.dropSelf(ModBlocks.WET_SAND.get());
+        this.dropSelf(ModBlocks.PALME_LOG.get());
+        this.dropSelf(ModBlocks.PALME_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PALME_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_PALME_WOOD.get());
+        this.dropSelf(ModBlocks.PALME_PLANKS.get());
+        this.dropSelf(ModBlocks.PALME_STAIRS.get());
+        this.dropSelf(ModBlocks.PALME_BUTTON.get());
+        this.dropSelf(ModBlocks.PALME_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PALME_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.PALME_FENCE.get());
+        this.dropSelf(ModBlocks.PALME_FENCE_GATE.get());
 
-        this.dropSelf(ModBlocks.WET_SANDSTONE.get());
-        this.dropSelf(ModBlocks.WET_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.WET_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.WET_SANDSTONE_STAIRS.get()));
-        this.dropSelf(ModBlocks.WET_SANDSTONE_WALL.get());
+        this.add(ModBlocks.PALME_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PALME_SLAB.get()));
+        this.add(ModBlocks.PALME_DOOR.get(),
+                block -> createDoorTable(ModBlocks.PALME_DOOR.get()));
 
-        this.dropSelf(ModBlocks.CHISELED_WET_SANDSTONE.get());
+        this.add(ModBlocks.PALME_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.PALME_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.PALME_SIGN.get(), block ->
+                createSingleItemTable(ModItems.PALME_SIGN.get()));
+        this.add(ModBlocks.PALME_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.PALME_SIGN.get()));
+        this.add(ModBlocks.PALME_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.PALME_HANGING_SIGN.get()));
+        this.add(ModBlocks.PALME_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.PALME_HANGING_SIGN.get()));
 
-        this.dropSelf(ModBlocks.SMOOTH_WET_SANDSTONE.get());
-        this.dropSelf(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get()));
-
-        this.dropSelf(ModBlocks.CUT_WET_SANDSTONE.get());
-        this.add(ModBlocks.CUT_WET_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.CUT_WET_SANDSTONE_SLAB.get()));
-
-
-        this.dropSelf(ModBlocks.WET_GRAY_SAND.get());
-
-        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE.get());
-        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.WET_GRAY_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get()));
-        this.dropSelf(ModBlocks.WET_GRAY_SANDSTONE_WALL.get());
-
-        this.dropSelf(ModBlocks.CHISELED_WET_GRAY_SANDSTONE.get());
-
-        this.dropSelf(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE.get());
-        this.dropSelf(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.SMOOTH_GRAY_SANDSTONE_SLAB.get()));
-
-        this.dropSelf(ModBlocks.CUT_WET_GRAY_SANDSTONE.get());
-        this.add(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get()));
-
-        this.dropSelf(ModBlocks.WET_RED_SAND.get());
-
-        this.dropSelf(ModBlocks.WET_RED_SANDSTONE.get());
-        this.dropSelf(ModBlocks.WET_RED_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.WET_RED_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.WET_RED_SANDSTONE_STAIRS.get()));
-        this.dropSelf(ModBlocks.WET_RED_SANDSTONE_WALL.get());
-
-        this.dropSelf(ModBlocks.CHISELED_WET_RED_SANDSTONE.get());
-
-        this.dropSelf(ModBlocks.SMOOTH_WET_RED_SANDSTONE.get());
-        this.dropSelf(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get());
-        this.add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get()));
-
-        this.dropSelf(ModBlocks.CUT_WET_RED_SANDSTONE.get());
-        this.add(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.PALME_SAPLING.get());
 
     }
 

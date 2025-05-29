@@ -2,7 +2,7 @@ package net.blockpainter.newadventures.items;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.blocks.ModBlocks;
-import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
+import net.blockpainter.newadventures.entity.custom.ModBoatEntity;
 import net.blockpainter.newadventures.items.custom.ModBoatItem;
 import net.blockpainter.newadventures.items.custom.ModFloweringBranchItem;
 import net.minecraft.resources.ResourceLocation;
@@ -21,9 +21,9 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
             ));
     public static final RegistryObject<Item> YIRA_BOAT = ITEMS.register("yira_boat",
-            () -> new ModBoatItem(false, YiraBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
+            () -> new ModBoatItem(false, ModBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> YIRA_CHEST_BOAT = ITEMS.register("yira_chest_boat",
-            () -> new ModBoatItem(true, YiraBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
+            () -> new ModBoatItem(true, ModBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> FLOWERING_YIRA_BRANCH = ITEMS.register("flowering_yira_branch",
             () -> new ModFloweringBranchItem(new Item.Properties()
@@ -49,5 +49,13 @@ public class ModItems {
             () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "blind")));
 
 
+    public static final RegistryObject<Item> PALME_BOAT = ITEMS.register("palme_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.PALME, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PALME_CHEST_BOAT = ITEMS.register("palme_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.PALME, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PALME_SIGN = ITEMS.register("palme_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.PALME_SIGN.get(), ModBlocks.PALME_WALL_SIGN.get()));
+    public static final RegistryObject<Item> PALME_HANGING_SIGN = ITEMS.register("palme_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.PALME_HANGING_SIGN.get(), ModBlocks.PALME_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
 }

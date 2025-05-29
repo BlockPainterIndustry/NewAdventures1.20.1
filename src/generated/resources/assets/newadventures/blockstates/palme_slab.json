@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "newadventures:block/palme_slab"
+    },
+    "type=double": {
+      "model": "newadventures:block/palme_planks"
+    },
+    "type=top": {
+      "model": "newadventures:block/palme_slab_top"
+    }
+  }
+}

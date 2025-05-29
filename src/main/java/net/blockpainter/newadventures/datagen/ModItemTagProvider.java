@@ -28,16 +28,25 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.YIRA_WOOD.get().asItem())
                 .add(ModBlocks.YIRA_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_YIRA_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_YIRA_WOOD.get().asItem())
+                .add(ModBlocks.PALME_WOOD.get().asItem())
+                .add(ModBlocks.PALME_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_PALME_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_PALME_WOOD.get().asItem());
 
         this.tag(ModTags.Items.YIRA_LOG)
                 .add(ModBlocks.YIRA_WOOD.get().asItem())
                 .add(ModBlocks.YIRA_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_YIRA_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_YIRA_WOOD.get().asItem())
+                .add(ModBlocks.PALME_WOOD.get().asItem())
+                .add(ModBlocks.PALME_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_PALME_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_PALME_WOOD.get().asItem());
 
         this.tag(ItemTags.PLANKS)
-                .add(ModBlocks.YIRA_PLANKS.get().asItem());
+                .add(ModBlocks.YIRA_PLANKS.get().asItem())
+                .add(ModBlocks.PALME_PLANKS.get().asItem());
 
         this.tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.GOBLIN_GOLD_INGOT.get());

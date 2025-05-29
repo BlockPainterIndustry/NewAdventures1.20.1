@@ -6,13 +6,19 @@ import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ModSignBlockEntity extends SignBlockEntity {
-    public ModSignBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.YIRA_SIGN.get(), pPos, pBlockState);
+    private final ModSignType signType;
+
+    public ModSignBlockEntity(ModSignType signType, BlockPos pos, BlockState state) {
+        super(signType.blockEntityType().get(), pos, state);
+        this.signType = signType;
     }
 
     @Override
     public BlockEntityType<?> getType() {
-        return ModBlockEntities.YIRA_SIGN.get();
+        return signType.blockEntityType().get();
     }
 
+    public ModSignType getModSignType() {
+        return signType;
+    }
 }

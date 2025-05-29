@@ -1,8 +1,8 @@
 package net.blockpainter.newadventures.items.custom;
 
 
-import net.blockpainter.newadventures.entity.custom.YiraBoatEntity;
-import net.blockpainter.newadventures.entity.custom.YiraChestBoatEntity;
+import net.blockpainter.newadventures.entity.custom.ModBoatEntity;
+import net.blockpainter.newadventures.entity.custom.ModChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -24,10 +24,10 @@ import java.util.function.Predicate;
 
 public class ModBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final YiraBoatEntity.Type type;
+    private final ModBoatEntity.Type type;
     private final boolean hasChest;
 
-    public ModBoatItem(boolean pHasChest, YiraBoatEntity.Type pType, Item.Properties pProperties) {
+    public ModBoatItem(boolean pHasChest, ModBoatEntity.Type pType, Item.Properties pProperties) {
         super(pProperties);
         this.hasChest = pHasChest;
         this.type = pType;
@@ -54,10 +54,10 @@ public class ModBoatItem extends Item {
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 Boat boat = this.getBoat(pLevel, hitresult);
-                if(boat instanceof YiraChestBoatEntity chestBoat) {
+                if(boat instanceof ModChestBoatEntity chestBoat) {
                     chestBoat.setVariant(this.type);
-                } else if(boat instanceof YiraBoatEntity) {
-                    ((YiraBoatEntity)boat).setVariant(this.type);
+                } else if(boat instanceof ModBoatEntity) {
+                    ((ModBoatEntity)boat).setVariant(this.type);
                 }
                 boat.setYRot(pPlayer.getYRot());
                 if (!pLevel.noCollision(boat, boat.getBoundingBox())) {
@@ -81,7 +81,7 @@ public class ModBoatItem extends Item {
     }
 
     private Boat getBoat(Level p_220017_, HitResult p_220018_) {
-        return (Boat)(this.hasChest ? new YiraChestBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) :
-                new YiraBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
+        return (Boat)(this.hasChest ? new ModChestBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) :
+                new ModBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
     }
 }

@@ -21,11 +21,17 @@ public class ModEventBusClientEvents {
 
         event.registerLayerDefinition(ModModelLayers.YIRA_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.YIRA_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
+        event.registerLayerDefinition(ModModelLayers.PALME_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(ModModelLayers.PALME_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
 
         event.registerBlockEntityRenderer(ModBlockEntities.YIRA_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.YIRA_HANGING_SIGN.get(), HangingSignRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.PALME_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.PALME_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
 }

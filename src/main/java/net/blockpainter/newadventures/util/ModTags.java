@@ -18,8 +18,6 @@ public class ModTags {
 
         public static final TagKey<Block> DRY_SAND = createTag("dry_sand");
 
-        public static final TagKey<Block> WET_SAND = createTag("wet_sand");
-
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create( new ResourceLocation(NewAdventures.MODID, name));
         }
@@ -28,6 +26,8 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> YIRA_LOG = createTag("yira_log");
+
+        public static final TagKey<Item> PALME_LOG = createTag("palme_log");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(new ResourceLocation(NewAdventures.MODID, name));

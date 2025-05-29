@@ -22,7 +22,7 @@ atlassian-ide-plugin.xml
 *.log
 *.log.gz
 *.cache/
-
+\.cache
 
 # BlueJ files
 *.ctxt

@@ -21,22 +21,34 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
-        tag(BlockTags.FENCES).add(ModBlocks.YIRA_FENCE.get());
-        tag(BlockTags.FENCE_GATES).add(ModBlocks.YIRA_FENCE_GATE.get());
-
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.YIRA_FENCE.get())
+                .add(ModBlocks.PALME_FENCE.get());
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.YIRA_FENCE_GATE.get())
+                .add(ModBlocks.PALME_FENCE_GATE.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.YIRA_WOOD.get())
                 .add(ModBlocks.YIRA_LOG.get())
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get())
-                .add(ModBlocks.STRIPPED_YIRA_WOOD.get());
+                .add(ModBlocks.STRIPPED_YIRA_WOOD.get())
+                .add(ModBlocks.PALME_WOOD.get())
+                .add(ModBlocks.PALME_LOG.get())
+                .add(ModBlocks.STRIPPED_PALME_LOG.get())
+                .add(ModBlocks.STRIPPED_PALME_WOOD.get());
         this.tag(BlockTags.LOGS)
                 .add(ModBlocks.YIRA_WOOD.get())
                 .add(ModBlocks.YIRA_LOG.get())
                 .add(ModBlocks.STRIPPED_YIRA_LOG.get())
-                .add(ModBlocks.STRIPPED_YIRA_WOOD.get());
+                .add(ModBlocks.STRIPPED_YIRA_WOOD.get())
+                .add(ModBlocks.PALME_WOOD.get())
+                .add(ModBlocks.PALME_LOG.get())
+                .add(ModBlocks.STRIPPED_PALME_LOG.get())
+                .add(ModBlocks.STRIPPED_PALME_WOOD.get());
         this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.YIRA_PLANKS.get());
+                .add(ModBlocks.YIRA_PLANKS.get())
+                .add(ModBlocks.PALME_PLANKS.get());
 
         this.tag(ModTags.BLocks.YIRA_DIRT)
                 .add(ModBlocks.YIRA_DIRT.get())
@@ -76,37 +88,5 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SMOOTH_GRAY_SANDSTONE_STAIRS.get())
                 .add(ModBlocks.CUT_GRAY_SANDSTONE.get())
                 .add(ModBlocks.CUT_GRAY_SANDSTONE_SLAB.get());
-
-        this.tag(ModTags.BLocks.WET_SAND)
-                .add(ModBlocks.WET_SAND.get())
-                .add(ModBlocks.WET_SANDSTONE.get())
-                .add(ModBlocks.WET_SANDSTONE_SLAB.get())
-                .add(ModBlocks.WET_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.WET_SANDSTONE_WALL.get())
-                .add(ModBlocks.SMOOTH_WET_SANDSTONE.get())
-                .add(ModBlocks.SMOOTH_WET_SANDSTONE_SLAB.get())
-                .add(ModBlocks.SMOOTH_WET_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.CUT_WET_SANDSTONE.get())
-                .add(ModBlocks.CUT_WET_SANDSTONE_SLAB.get())
-                .add(ModBlocks.WET_RED_SAND.get())
-                .add(ModBlocks.WET_RED_SANDSTONE.get())
-                .add(ModBlocks.WET_RED_SANDSTONE_SLAB.get())
-                .add(ModBlocks.WET_RED_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.WET_RED_SANDSTONE_WALL.get())
-                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE.get())
-                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_SLAB.get())
-                .add(ModBlocks.SMOOTH_WET_RED_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.CUT_WET_RED_SANDSTONE.get())
-                .add(ModBlocks.CUT_WET_RED_SANDSTONE_SLAB.get())
-                .add(ModBlocks.WET_GRAY_SAND.get())
-                .add(ModBlocks.WET_GRAY_SANDSTONE.get())
-                .add(ModBlocks.WET_GRAY_SANDSTONE_SLAB.get())
-                .add(ModBlocks.WET_GRAY_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.WET_GRAY_SANDSTONE_WALL.get())
-                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE.get())
-                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_SLAB.get())
-                .add(ModBlocks.SMOOTH_WET_GRAY_SANDSTONE_STAIRS.get())
-                .add(ModBlocks.CUT_WET_GRAY_SANDSTONE.get())
-                .add(ModBlocks.CUT_WET_GRAY_SANDSTONE_SLAB.get());
     }
 }
