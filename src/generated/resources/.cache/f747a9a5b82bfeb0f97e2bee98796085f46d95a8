@@ -1,6 +1,6 @@
-// 1.20.1	2025-05-24T00:34:05.9918976	Tags for minecraft:item mod id newadventures
-0212eb08b3c4d709104e93d78efbf915683a04f3 data/minecraft/tags/items/logs_that_burn.json
-f057ea4a99764e38daec91a137702c91c8e226ea data/minecraft/tags/items/planks.json
+// 1.20.1	2025-06-17T08:58:28.2727773	Tags for minecraft:item mod id newadventures
+9a32b2b143caf135cbb807317ea15467258f29e1 data/minecraft/tags/items/logs_that_burn.json
+90b362f9eb9f11b53a5b5ba8ff608b592361d522 data/minecraft/tags/items/planks.json
 2b42648582c92af691064232e6e0f6d92d5ecd43 data/minecraft/tags/items/trim_materials.json
 ba0d8adc898f16647b1cca95fe9982e78dee0fe4 data/minecraft/tags/items/trim_templates.json
-0212eb08b3c4d709104e93d78efbf915683a04f3 data/newadventures/tags/items/yira_log.json
+9a32b2b143caf135cbb807317ea15467258f29e1 data/newadventures/tags/items/yira_log.json

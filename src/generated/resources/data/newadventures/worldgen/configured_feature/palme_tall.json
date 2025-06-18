@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "decorators": [],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:grass_block",
+        "Properties": {
+          "snowy": "false"
+        }
+      }
+    },
+    "foliage_placer": {
+      "type": "newadventures:palme_foliage_placer",
+      "hanging_extension_chance": 0.2,
+      "hanging_leaves_chance": 0.5,
+      "height": 4,
+      "offset": 0,
+      "radius": 3
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "newadventures:palme_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": false,
+    "ignore_vines": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 1
+    },
+    "trunk_placer": {
+      "type": "newadventures:palme_trunk_placer",
+      "base_height": 6,
+      "height_rand_a": 5,
+      "height_rand_b": 3,
+      "more_curve": 0.1
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "newadventures:palme_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

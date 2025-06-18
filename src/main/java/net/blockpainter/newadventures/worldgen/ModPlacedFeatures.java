@@ -24,9 +24,9 @@ import java.util.stream.Stream;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> YIRA_PLACED_KEY = registerKey("yira_placed");
 
-    public static final ResourceKey<PlacedFeature> LARGE_BASIN_PLACED =
-            ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(NewAdventures.MODID, "large_basin"));
+    //public static final ResourceKey<PlacedFeature> PALME_PLACED_KEY = registerKey("palme_placed");
 
+    //public static final ResourceKey<PlacedFeature> PALME_TALL_PLACED_KEY = registerKey("palme_tall_placed");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -38,10 +38,15 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.YIRA_SAPLING.get())
         );
 
-        register(context, LARGE_BASIN_PLACED,
-                        configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_BASIN),
-                        List.of(RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())
+        /*register(context, PALME_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PALME_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.4f, 2), ModBlocks.PALME_SAPLING.get())
         );
+
+        register(context, PALME_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PALME_TALL_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2), ModBlocks.PALME_SAPLING.get())
+        );*/
 
     }
 

@@ -180,7 +180,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<Block> YIRA_SAPLING = registerBlock("yira_sapling",
-            () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
+            () -> new ModSaplingBlock(ModTreeGrowers.YIRA_TREE_GROWER, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
 
     public static final RegistryObject<Block> BLOODROSE = registerBlock("bloodrose",
             () -> new ModFlowerBlock(() -> MobEffects.CONFUSION, 6 , BlockBehaviour.Properties.copy(Blocks.POPPY).noOcclusion()));
@@ -326,7 +326,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> PALME_SAPLING = registerBlock("palme_sapling",
-            () -> new ModSaplingBlock(new ModTreeGrowers(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
+            () -> new ModSaplingBlock(ModTreeGrowers.PALME_TREE_GROWER, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion(), ModBlocks.YIRA_GRASS_BLOCK));
 
 
     public static void register(IEventBus eventBus) {

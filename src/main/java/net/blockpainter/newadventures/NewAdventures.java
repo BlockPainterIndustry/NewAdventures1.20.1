@@ -8,7 +8,6 @@ import net.blockpainter.newadventures.entity.ModEntities;
 import net.blockpainter.newadventures.entity.client.ModBoatRenderer;
 import net.blockpainter.newadventures.util.ModWoodTypes;
 import net.blockpainter.newadventures.items.ModItems;
-import net.blockpainter.newadventures.worldgen.ModFeatures;
 import net.blockpainter.newadventures.worldgen.biome.ModRegionDesert;
 import net.blockpainter.newadventures.worldgen.biome.ModSurfaceRuleData;
 import net.blockpainter.newadventures.worldgen.biome.ModTerrablender;
@@ -26,9 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.openjdk.nashorn.internal.ir.annotations.Ignore;
 import org.slf4j.Logger;
-import terrablender.api.RegionType;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 
@@ -55,8 +52,6 @@ public class NewAdventures {
         ModTrunkPlacerTypes.TRUNK_PLACER.register(modEventBus);
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-
-        ModFeatures.FEATURES.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
