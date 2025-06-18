@@ -1,0 +1,9 @@
+{
+  "asset_name": "blood_crystal",
+  "description": {
+    "color": "#CE1A1D",
+    "translate": "trim_material.newadventures.blood_crystal"
+  },
+  "ingredient": "newadventures:blood_crystal_shard",
+  "item_model_index": 0.8
+}

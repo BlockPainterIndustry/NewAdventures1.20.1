@@ -88,9 +88,16 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.newadventures.items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.GOBLIN_GOLD_INGOT.get());
+
+                        output.accept(ModItems.MANA_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.BLOOD_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.KARNA_CRYSTAL_SHARD.get());
+
                         output.accept(ModItems.CURSE_SMITHING_TEMPALTE.get());
                         output.accept(ModItems.SHAPE_SMITHING_TEMPALTE.get());
                         output.accept(ModItems.BLIND_SMITHING_TEMPALTE.get());
+
+                        output.accept(ModItems.SHELL_SMITHING_TEMPALTE.get());
                     })
                     .build());
 

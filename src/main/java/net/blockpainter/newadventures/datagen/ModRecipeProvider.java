@@ -216,5 +216,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trimSmithing(pWriter, ModItems.CURSE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "curse"));
         trimSmithing(pWriter, ModItems.SHAPE_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "shape"));
         trimSmithing(pWriter, ModItems.BLIND_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "blind"));
+        trimSmithing(pWriter, ModItems.SHELL_SMITHING_TEMPALTE.get(), new ResourceLocation(NewAdventures.MODID, "shell"));
     }
 }

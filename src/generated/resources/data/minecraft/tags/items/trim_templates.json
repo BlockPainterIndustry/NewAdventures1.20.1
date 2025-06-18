@@ -2,6 +2,7 @@
   "values": [
     "newadventures:curse_armor_trim_smithing_template",
     "newadventures:blind_armor_trim_smithing_template",
-    "newadventures:shape_armor_trim_smithing_template"
+    "newadventures:shape_armor_trim_smithing_template",
+    "newadventures:shell_armor_trim_smithing_template"
   ]
 }

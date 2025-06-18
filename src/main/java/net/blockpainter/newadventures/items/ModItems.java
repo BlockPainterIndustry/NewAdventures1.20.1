@@ -20,6 +20,14 @@ public class ModItems {
                     .stacksTo(1)
                     .rarity(Rarity.EPIC)
             ));
+
+    public static final RegistryObject<Item> MANA_CRYSTAL_SHARD = ITEMS.register("mana_crystal_shard",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLOOD_CRYSTAL_SHARD = ITEMS.register("blood_crystal_shard",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KARNA_CRYSTAL_SHARD = ITEMS.register("karna_crystal_shard",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> YIRA_BOAT = ITEMS.register("yira_boat",
             () -> new ModBoatItem(false, ModBoatEntity.Type.YIRA, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> YIRA_CHEST_BOAT = ITEMS.register("yira_chest_boat",
@@ -47,6 +55,9 @@ public class ModItems {
             () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "shape")));
     public static final RegistryObject<Item> BLIND_SMITHING_TEMPALTE = ITEMS.register("blind_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "blind")));
+
+    public static final RegistryObject<Item> SHELL_SMITHING_TEMPALTE = ITEMS.register("shell_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(NewAdventures.MODID, "shell")));
 
 
     public static final RegistryObject<Item> PALME_BOAT = ITEMS.register("palme_boat",

@@ -49,10 +49,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.PALME_PLANKS.get().asItem());
 
         this.tag(ItemTags.TRIM_MATERIALS)
-                .add(ModItems.GOBLIN_GOLD_INGOT.get());
+                .add(ModItems.GOBLIN_GOLD_INGOT.get())
+                .add(ModItems.MANA_CRYSTAL_SHARD.get())
+                .add(ModItems.BLOOD_CRYSTAL_SHARD.get())
+                .add(ModItems.KARNA_CRYSTAL_SHARD.get());
+
         this.tag(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.CURSE_SMITHING_TEMPALTE.get())
                 .add(ModItems.BLIND_SMITHING_TEMPALTE.get())
-                .add(ModItems.SHAPE_SMITHING_TEMPALTE.get());
+                .add(ModItems.SHAPE_SMITHING_TEMPALTE.get())
+                .add(ModItems.SHELL_SMITHING_TEMPALTE.get());
+
     }
 }

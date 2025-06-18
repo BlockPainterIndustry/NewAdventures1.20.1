@@ -1,9 +1,12 @@
 {
   "asset_name": "goblin_gold",
   "description": {
-    "color": "#971607",
+    "color": "#8C1706",
     "translate": "trim_material.newadventures.goblin_gold"
   },
   "ingredient": "newadventures:goblin_gold_ingot",
-  "item_model_index": 0.8
+  "item_model_index": 0.8,
+  "override_armor_materials": {
+    "gold": "goblin_gold_darker"
+  }
 }

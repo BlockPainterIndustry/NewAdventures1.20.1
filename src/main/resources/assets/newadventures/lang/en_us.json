@@ -1,5 +1,10 @@
 {
   "item.newadventures.scroll": "Old Scroll",
+
+  "item.newadventures.mana_crystal_shard": "Mana Crystal Shard",
+  "item.newadventures.blood_crystal_shard": "Blood Crystal Shard",
+  "item.newadventures.karna_crystal_shard": "Karna Crystal Shard",
+
   "item.newadventures.yira_boat": "Yira Boat",
   "item.newadventures.yira_chest_boat": "Yira Chest Boat",
   "item.newadventures.palme_boat": "Palme Boat",
@@ -10,6 +15,7 @@
   "item.newadventures.curse_armor_trim_smithing_template": "Curse Trim Template",
   "item.newadventures.shape_armor_trim_smithing_template": "Shape Trim Template",
   "item.newadventures.blind_armor_trim_smithing_template": "Blind Trim Template",
+  "item.newadventures.shell_armor_trim_smithing_template": "Shell Trim Template",
 
 
   "creativetab.newadventures.scroll_tab" : "Scrolls & MagicStuff",
@@ -86,8 +92,12 @@
   "entity.newadventures.yira_chest_boat" : "Chest With Boat xD",
 
   "trim_material.newadventures.goblin_gold" : "Goblin Gold Material",
+  "trim_material.newadventures.mana_crystal_shard" : "Mana Crystal Material",
+  "trim_material.newadventures.blood_crystal_shard" : "Blood Crystal Material",
+  "trim_material.newadventures.karna_crystal_shard" : "Karna Crystal Material",
 
   "trim_pattern.newadventures.curse": "Curse Armor Trim",
   "trim_pattern.newadventures.shape": "Shape Armor Trim",
-  "trim_pattern.newadventures.blind": "Blind Armor Trim"
+  "trim_pattern.newadventures.blind": "Blind Armor Trim",
+  "trim_pattern.newadventures.shell": "Shell Armor Trim"
 }

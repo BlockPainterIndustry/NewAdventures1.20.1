@@ -1,0 +1,8 @@
+{
+  "asset_id": "newadventures:shell",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.newadventures.shell"
+  },
+  "template_item": "newadventures:shell_armor_trim_smithing_template"
+}

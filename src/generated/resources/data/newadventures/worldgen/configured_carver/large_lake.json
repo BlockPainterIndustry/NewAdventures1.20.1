@@ -19,7 +19,12 @@
       "absolute": 128
     },
     "probability": 0.5,
-    "replaceable": "#minecraft:stone_ore_replaceables",
+    "replaceable": [
+      "minecraft:sand",
+      "minecraft:sandstone",
+      "minecraft:red_sand",
+      "minecraft:red_sandstone"
+    ],
     "vertical_radius_multiplier": {
       "type": "minecraft:uniform",
       "value": {

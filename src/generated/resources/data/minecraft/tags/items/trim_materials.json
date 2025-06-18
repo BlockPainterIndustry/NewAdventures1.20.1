@@ -1,5 +1,8 @@
 {
   "values": [
-    "newadventures:goblin_gold_ingot"
+    "newadventures:goblin_gold_ingot",
+    "newadventures:mana_crystal_shard",
+    "newadventures:blood_crystal_shard",
+    "newadventures:karna_crystal_shard"
   ]
 }

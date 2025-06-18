@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "newadventures:item/karna_crystal_shard"
+  }
+}

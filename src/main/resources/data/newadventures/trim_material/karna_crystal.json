@@ -1,0 +1,9 @@
+{
+  "asset_name": "karna_crystal",
+  "description": {
+    "color": "#1ACE6F",
+    "translate": "trim_material.newadventures.karna_crystal"
+  },
+  "ingredient": "newadventures:karna_crystal_shard",
+  "item_model_index": 0.8
+}

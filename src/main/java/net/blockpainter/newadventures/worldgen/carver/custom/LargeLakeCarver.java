@@ -2,6 +2,7 @@ package net.blockpainter.newadventures.worldgen.carver.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
@@ -68,11 +69,29 @@ public class LargeLakeCarver extends WorldCarver<CaveCarverConfiguration> {
                     if (ChunkPos.getX(x) != chunkPos.x || ChunkPos.getZ(z) != chunkPos.z) continue;
 
                     pos.set(x, y, z);
-                    if (y == maxY) {
+
+                    // Prüfe alle Nachbarn, ob sie außerhalb des Carving-Bereichs liegen
+                    boolean shouldPlaceConcrete = false;
+                    for (Direction dir : Direction.values()) {
+                        BlockPos neighbor = pos.relative(dir);
+                        double dxn = neighbor.getX() - center.getX();
+                        double dzn = neighbor.getZ() - center.getZ();
+                        double distNeighbor = Math.sqrt(dxn * dxn + dzn * dzn);
+
+                        if (distNeighbor > radiusXZ) {
+                            shouldPlaceConcrete = true;
+                            break;
+                        }
+                    }
+
+                    if (shouldPlaceConcrete) {
+                        chunk.setBlockState(pos, Blocks.RED_CONCRETE.defaultBlockState(), false);
+                    } else if (y == maxY) {
                         chunk.setBlockState(pos, Blocks.WATER.defaultBlockState(), false);
                     } else {
                         chunk.setBlockState(pos, Blocks.AIR.defaultBlockState(), false);
                     }
+
                     mask.set(x & 15, y, z & 15);
                 }
             }

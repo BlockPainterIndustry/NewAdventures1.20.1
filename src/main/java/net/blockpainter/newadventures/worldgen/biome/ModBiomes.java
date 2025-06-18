@@ -2,6 +2,9 @@ package net.blockpainter.newadventures.worldgen.biome;
 
 import net.blockpainter.newadventures.NewAdventures;
 import net.blockpainter.newadventures.worldgen.ModConfiguredCarvers;
+import net.blockpainter.newadventures.worldgen.carver.ModCarvers;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -10,6 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 
 
 public class ModBiomes {
@@ -42,8 +46,8 @@ public class ModBiomes {
         return new Biome.BiomeBuilder()
 
                 .hasPrecipitation(true)
-                .downfall(0.8f)
-                .temperature(0.7f)
+                .temperature(2.0F)
+                .downfall(0.0F)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
@@ -86,8 +90,8 @@ public class ModBiomes {
                 context.lookup(Registries.PLACED_FEATURE).getOrThrow(MiscOverworldPlacements.SPRING_WATER));
         biomeBuilder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS,
                 context.lookup(Registries.PLACED_FEATURE).getOrThrow(MiscOverworldPlacements.SPRING_WATER));
-        biomeBuilder.addCarver(GenerationStep.Carving.AIR,
-                context.lookup(Registries.CONFIGURED_CARVER).getOrThrow(ModConfiguredCarvers.LARGE_LAKE_KEY));
+
+        biomeBuilder.addCarver(GenerationStep.Carving.LIQUID, ModConfiguredCarvers.LARGE_LAKE_KEY);
         return new Biome.BiomeBuilder()
 
                 .hasPrecipitation(true)

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "newadventures:item/blood_crystal_shard"
+  }
+}

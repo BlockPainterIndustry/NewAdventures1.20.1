@@ -1,0 +1,9 @@
+{
+  "asset_name": "mana_crystal",
+  "description": {
+    "color": "#1D6AB3",
+    "translate": "trim_material.newadventures.mana_crystal"
+  },
+  "ingredient": "newadventures:mana_crystal_shard",
+  "item_model_index": 0.8
+}

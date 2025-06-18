@@ -41,7 +41,9 @@
         "newadventures:trims/models/armor/shape",
         "newadventures:trims/models/armor/shape_leggings",
         "newadventures:trims/models/armor/blind",
-        "newadventures:trims/models/armor/blind_leggings"
+        "newadventures:trims/models/armor/blind_leggings",
+        "newadventures:trims/models/armor/shell",
+        "newadventures:trims/models/armor/shell_leggings"
 
       ],
       "palette_key": "trims/color_palettes/trim_palette",
@@ -60,7 +62,11 @@
         "gold_darker": "trims/color_palettes/gold_darker",
         "diamond_darker": "trims/color_palettes/diamond_darker",
         "netherite_darker": "trims/color_palettes/netherite_darker",
-        "goblin_gold": "newadventures:trims/color_palettes/goblin_gold"
+        "goblin_gold": "newadventures:trims/color_palettes/goblin_gold",
+        "goblin_gold_darker": "newadventures:trims/color_palettes/goblin_gold_darker",
+        "mana_crystal": "newadventures:trims/color_palettes/mana_crystal",
+        "blood_crystal": "newadventures:trims/color_palettes/blood_crystal",
+        "karna_crystal": "newadventures:trims/color_palettes/karna_crystal"
       }
     }
   ]
