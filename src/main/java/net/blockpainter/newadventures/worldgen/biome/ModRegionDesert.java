@@ -24,12 +24,12 @@ public class ModRegionDesert extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(Climate.Parameter.span(1.5F, 2.0F))
-                .humidity(Climate.Parameter.span(0.0F, 0.5F))
-                .continentalness(Climate.Parameter.span(0.1F, 1.0F))
-                .erosion(Climate.Parameter.span(0.0F, 1.0F))
+                .temperature(Climate.Parameter.span(1.2F, 1.5F))
+                .humidity(Climate.Parameter.span(0.45F, 0.8F))
+                .continentalness(Climate.Parameter.span(-0.11F, 6.0F))
+                .erosion(Climate.Parameter.span(0.55F, 1.0F))
                 .depth(Climate.Parameter.point(0.0F))
-                .weirdness(Climate.Parameter.span(-0.25F, 0.25F))
+                .weirdness(Climate.Parameter.span(-0.2F, 0.2F))
                 .build().forEach(p -> builder.add(p, ModBiomes.DESERT_OASIS));
         builder.build().forEach(mapper);
     }

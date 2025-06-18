@@ -11,6 +11,7 @@ import net.blockpainter.newadventures.items.ModItems;
 import net.blockpainter.newadventures.worldgen.biome.ModRegionDesert;
 import net.blockpainter.newadventures.worldgen.biome.ModSurfaceRuleData;
 import net.blockpainter.newadventures.worldgen.biome.ModTerrablender;
+import net.blockpainter.newadventures.worldgen.carver.ModCarvers;
 import net.blockpainter.newadventures.worldgen.tree.ModFoliagePlacers;
 import net.blockpainter.newadventures.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.renderer.Sheets;
@@ -53,6 +54,7 @@ public class NewAdventures {
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
+        ModCarvers.CARVERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

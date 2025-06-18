@@ -3,7 +3,8 @@
     "air": [
       "minecraft:cave",
       "minecraft:cave_extra_underground",
-      "minecraft:canyon"
+      "minecraft:canyon",
+      "newadventures:large_lake"
     ]
   },
   "downfall": 0.1,

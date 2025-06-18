@@ -1,6 +1,7 @@
 package net.blockpainter.newadventures.datagen;
 
 import net.blockpainter.newadventures.NewAdventures;
+import net.blockpainter.newadventures.worldgen.ModConfiguredCarvers;
 import net.blockpainter.newadventures.worldgen.ModConfiguredFeatures;
 import net.blockpainter.newadventures.worldgen.ModPlacedFeatures;
 import net.blockpainter.newadventures.worldgen.biome.ModBiomes;
@@ -17,7 +18,9 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
 public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
         .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
         .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+        .add(Registries.CONFIGURED_CARVER, ModConfiguredCarvers::bootstrap)
         .add(Registries.BIOME, ModBiomes::boostrap);
+
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(NewAdventures.MODID));

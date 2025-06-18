@@ -1,6 +1,7 @@
 package net.blockpainter.newadventures.worldgen.biome;
 
 import net.blockpainter.newadventures.NewAdventures;
+import net.blockpainter.newadventures.worldgen.ModConfiguredCarvers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -67,6 +68,7 @@ public class ModBiomes {
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
@@ -84,6 +86,8 @@ public class ModBiomes {
                 context.lookup(Registries.PLACED_FEATURE).getOrThrow(MiscOverworldPlacements.SPRING_WATER));
         biomeBuilder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS,
                 context.lookup(Registries.PLACED_FEATURE).getOrThrow(MiscOverworldPlacements.SPRING_WATER));
+        biomeBuilder.addCarver(GenerationStep.Carving.AIR,
+                context.lookup(Registries.CONFIGURED_CARVER).getOrThrow(ModConfiguredCarvers.LARGE_LAKE_KEY));
         return new Biome.BiomeBuilder()
 
                 .hasPrecipitation(true)
