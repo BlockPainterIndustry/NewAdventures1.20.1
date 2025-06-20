@@ -24,7 +24,10 @@ All textures and models are All Rights Reserved unless otherwise given permissio
 
 ## Future Plans
 
-First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version alpha-0.1.0 will also be the first version I will release.
+First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version alpha-0.1.0 will also be the first version I will release. (alpha-0.1.0 uploaded)
+
+You can find the roadmap on [curseforge](https://www.curseforge.com/minecraft/mc-mods/new-adventures-adventure-magic-alchemy). This is only a roughly plan for the alpha version.
+
 
 ## Warning
 
