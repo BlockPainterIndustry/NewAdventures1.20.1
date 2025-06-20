@@ -5,7 +5,7 @@ This the repository for the New Adventures Mod
 
 ## Getting Started
 ### Download
-The mod is work in progress and at this moment not available for download.
+The mod is work in progres. The first two alpha-versions are uploaded on [curseforge](https://www.curseforge.com/minecraft/mc-mods/new-adventures-adventure-magic-alchemy) 
 You can of course download the dev branch build as a .jar but there is not much you could do especially in survival.
 
 ### Build it your self
@@ -24,8 +24,8 @@ All textures and models are All Rights Reserved unless otherwise given permissio
 
 ## Future Plans
 
-First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version a0.1.0 will also be the first version I will release.
+First Alpha Version: The mod will reach the first alpha Version (Version: alpha-0.1.0). Version alpha-0.1.0 will also be the first version I will release.
 
 ## Warning
 
-Please Understand that all versions with alpha or beta in name could be unstable and or game breaking especially the dev branch. I will try to keep all versions in master and the uploaded mods on the mod poertal as clean and bug free as possible but understand that at    this point i coding the mod alone and to this in my free time.
+Please Understand that all versions with alpha or beta in name could be unstable and or game breaking especially the versions uploaded on the dev branch. I will try to keep all versions in master aswell as the uploaded mods on the mod portal as clean and bug free as possible but understand that at this point i coding the mod alone and to this in my free time.
